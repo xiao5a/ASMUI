@@ -1,14 +1,14 @@
 package com.example.H5PlusPlugin;
-import io.dcloud.common.DHInterface.IWebview;
-import io.dcloud.common.DHInterface.StandardFeature;
-import io.dcloud.common.util.JSUtil;
+import android.content.Context;
+import android.os.Bundle;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import android.content.Context;
-import android.os.Bundle;
+import io.dcloud.common.DHInterface.IWebview;
+import io.dcloud.common.DHInterface.StandardFeature;
+import io.dcloud.common.util.JSUtil;
 
 
 /**

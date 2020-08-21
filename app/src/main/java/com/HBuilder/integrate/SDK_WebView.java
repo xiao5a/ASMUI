@@ -1,12 +1,5 @@
 package com.HBuilder.integrate;
 
-import io.dcloud.EntryProxy;
-import io.dcloud.common.DHInterface.ICore;
-import io.dcloud.common.DHInterface.ICore.ICoreStatusListener;
-import io.dcloud.common.DHInterface.ISysEventListener.SysEventType;
-import io.dcloud.common.DHInterface.IWebview;
-import io.dcloud.common.DHInterface.IWebviewStateListener;
-import io.dcloud.feature.internal.sdk.SDK;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -23,6 +16,14 @@ import android.view.Window;
 import android.webkit.WebView;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
+
+import io.dcloud.EntryProxy;
+import io.dcloud.common.DHInterface.ICore;
+import io.dcloud.common.DHInterface.ICore.ICoreStatusListener;
+import io.dcloud.common.DHInterface.ISysEventListener.SysEventType;
+import io.dcloud.common.DHInterface.IWebview;
+import io.dcloud.common.DHInterface.IWebviewStateListener;
+import io.dcloud.feature.internal.sdk.SDK;
 
 /**
  * 本demo为以webview控件方式集成5+ sdk， 

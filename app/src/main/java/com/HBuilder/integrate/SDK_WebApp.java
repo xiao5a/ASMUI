@@ -1,19 +1,5 @@
 package com.HBuilder.integrate;
 
-import io.dcloud.EntryProxy;
-import io.dcloud.RInformation;
-import io.dcloud.common.DHInterface.IActivityDelegate;
-import io.dcloud.common.DHInterface.IApp;
-import io.dcloud.common.DHInterface.IApp.IAppStatusListener;
-import io.dcloud.common.DHInterface.ICore;
-import io.dcloud.common.DHInterface.ICore.ICoreStatusListener;
-import io.dcloud.common.DHInterface.IOnCreateSplashView;
-import io.dcloud.common.DHInterface.ISysEventListener.SysEventType;
-import io.dcloud.common.DHInterface.IWebview;
-import io.dcloud.common.DHInterface.IWebviewStateListener;
-import io.dcloud.common.util.BaseInfo;
-import io.dcloud.common.util.ImageLoaderUtil;
-import io.dcloud.feature.internal.sdk.SDK;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -28,6 +14,20 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.FrameLayout;
+
+import io.dcloud.EntryProxy;
+import io.dcloud.common.DHInterface.IActivityDelegate;
+import io.dcloud.common.DHInterface.IApp;
+import io.dcloud.common.DHInterface.IApp.IAppStatusListener;
+import io.dcloud.common.DHInterface.ICore;
+import io.dcloud.common.DHInterface.ICore.ICoreStatusListener;
+import io.dcloud.common.DHInterface.IOnCreateSplashView;
+import io.dcloud.common.DHInterface.ISysEventListener.SysEventType;
+import io.dcloud.common.DHInterface.IWebview;
+import io.dcloud.common.DHInterface.IWebviewStateListener;
+import io.dcloud.common.util.BaseInfo;
+import io.dcloud.common.util.ImageLoaderUtil;
+import io.dcloud.feature.internal.sdk.SDK;
 
 /**
  * 本demo为以widget方式集成5+ sdk，

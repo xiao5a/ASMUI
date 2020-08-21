@@ -1,7 +1,5 @@
 package com.HBuilder.integrate;
 
-import java.util.Random;
-
 import android.app.ListActivity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,6 +9,8 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+
+import java.util.Random;
 
 
 public class ActivityEntry extends ListActivity {
