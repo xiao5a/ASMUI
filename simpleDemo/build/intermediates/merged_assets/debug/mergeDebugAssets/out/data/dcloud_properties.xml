@@ -40,24 +40,24 @@
 		<feature name="Orientation" value="io.dcloud.feature.sensor.OrientationFeatureImpl"/>
 		<feature name="NativeObj" value="io.dcloud.feature.nativeObj.FeatureImpl"/>		
 		<feature name="Geolocation" value="io.dcloud.js.geolocation.GeolocationFeatureImpl"/>
-<!--		<feature name="Payment" value="io.dcloud.feature.payment.PaymentFeatureImpl">-->
-<!--			<module name="AliPay" value="io.dcloud.feature.payment.alipay.AliPay"/>-->
-<!--			<module name="Payment-Weixin" value="io.dcloud.feature.payment.weixin.WeiXinPay"/>-->
-<!--			<module name="Payment-Qihoo" value="io.dcloud.feature.payment.qihoopay.QihooPay"/>-->
-<!--		</feature>-->
-<!--		<feature name="Share" value="io.dcloud.share.ShareFeatureImpl">-->
-<!--			<module name="Sina" value="io.dcloud.share.sina.SinaWeiboApiManager"/>-->
-<!--			<module name="Tencent" value="io.dcloud.share.tencent.TencentWeiboApiManager"/>-->
-<!--			<module name="Weixin" value="io.dcloud.share.mm.WeiXinApiManager"/>-->
-<!--            <module name="QQ" value="io.dcloud.share.qq.QQApiManager"/>-->
-<!--		</feature>-->
-<!--		<feature name="OAuth" value="io.dcloud.feature.oauth.OAuthFeatureImpl">-->
-<!--			<module name="OAuth-Weixin" value="io.dcloud.feature.oauth.weixin.WeiXinOAuthService"/>-->
-<!--			<module name="OAuth-QQ" value="io.dcloud.feature.oauth.qq.QQOAuthService"/>-->
-<!--			<module name="OAuth-Sina" value="io.dcloud.feature.oauth.sina.SinaOAuthService"/>-->
-<!--			<module name="OAuth-Qihoo" value="io.dcloud.oauth.qihoo.QihooOAuthService"/>-->
-<!--			<module name="OAuth-MiUi" value="io.dcloud.feature.oauth.miui.MiUiOAuthService"/>-->
-<!--		</feature>-->
+		<feature name="Payment" value="io.dcloud.feature.payment.PaymentFeatureImpl">
+			<module name="AliPay" value="io.dcloud.feature.payment.alipay.AliPay"/>
+			<module name="Payment-Weixin" value="io.dcloud.feature.payment.weixin.WeiXinPay"/>
+			<module name="Payment-Qihoo" value="io.dcloud.feature.payment.qihoopay.QihooPay"/>
+		</feature>
+		<feature name="Share" value="io.dcloud.share.ShareFeatureImpl">
+			<module name="Sina" value="io.dcloud.share.sina.SinaWeiboApiManager"/>
+			<module name="Tencent" value="io.dcloud.share.tencent.TencentWeiboApiManager"/>
+			<module name="Weixin" value="io.dcloud.share.mm.WeiXinApiManager"/>
+            <module name="QQ" value="io.dcloud.share.qq.QQApiManager"/>
+		</feature>
+		<feature name="OAuth" value="io.dcloud.feature.oauth.OAuthFeatureImpl">
+			<module name="OAuth-Weixin" value="io.dcloud.feature.oauth.weixin.WeiXinOAuthService"/>
+			<module name="OAuth-QQ" value="io.dcloud.feature.oauth.qq.QQOAuthService"/>
+			<module name="OAuth-Sina" value="io.dcloud.feature.oauth.sina.SinaOAuthService"/>
+			<module name="OAuth-Qihoo" value="io.dcloud.oauth.qihoo.QihooOAuthService"/>
+			<module name="OAuth-MiUi" value="io.dcloud.feature.oauth.miui.MiUiOAuthService"/>
+		</feature>
 		<feature name="Stream" value="io.dcloud.appstream.js.StreamAppFeatureImpl"/>
 		<feature name="Fingerprint" value="io.dcloud.feature.fingerprint.FingerPrintsImpl"/>
 		<feature name="iBeacon" value="io.dcloud.feature.iBeacon.WxBluetoothFeatureImpl"/>
@@ -78,10 +78,10 @@
 		<!-- 百度定位 end -->
 	</features>
 
-<!--	<services>-->
-<!--		<service name="push" value="io.dcloud.feature.aps.APSFeatureImpl"/>-->
-<!--		<service name="Statistic" value="io.dcloud.feature.statistics.StatisticsBootImpl"/>-->
-<!--		<service name="Downloader" value="io.dcloud.net.DownloaderBootImpl"/>-->
-<!--		&lt;!&ndash;<service name="Maps" value="io.dcloud.js.map.MapInitImpl"/>&ndash;&gt;-->
-<!--	</services>-->
+	<services>
+		<service name="push" value="io.dcloud.feature.aps.APSFeatureImpl"/>
+		<service name="Statistic" value="io.dcloud.feature.statistics.StatisticsBootImpl"/>
+		<service name="Downloader" value="io.dcloud.net.DownloaderBootImpl"/>
+		<!--<service name="Maps" value="io.dcloud.js.map.MapInitImpl"/>-->
+	</services>
 </properties>
