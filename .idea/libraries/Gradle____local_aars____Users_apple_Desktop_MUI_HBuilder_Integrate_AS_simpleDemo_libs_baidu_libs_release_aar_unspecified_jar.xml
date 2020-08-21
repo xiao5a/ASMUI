@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: __local_aars__:/Users/apple/Desktop/MUI/HBuilder-Integrate-AS/simpleDemo/libs/baidu-libs-release.aar:unspecified@jar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/baidu-libs-release.aar/f153de0aedbcdef03b6dd66a50488d3c/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/baidu-libs-release.aar/f153de0aedbcdef03b6dd66a50488d3c/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/baidu-libs-release.aar/f153de0aedbcdef03b6dd66a50488d3c/jars/libs/BaiduLBS_Android.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

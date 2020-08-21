@@ -1,0 +1,148 @@
+/* html,body{height: 100%;} */
+body{font-size: 0.9rem; line-height: 1.25rem;}
+ul,li{margin:0 ;padding: 0;list-style: none; }
+.ex-title-bar{background:linear-gradient(#1FC9A7,#2DD7BE);}
+.ex-title-bar a{color: #fff;}
+.ex-title-bar .mui-title{color: #fff;}
+.ex-title-bar .mui-btn-link{font-size: 0.84rem;color: #fff; }
+
+.mui-bar-tab-ex-new {
+	height: 3.125rem;
+	padding-top: 5px;
+	background-color:#888888;
+}
+
+.mui-navigate-right:after, .mui-push-left:after, .mui-push-right:after {
+	font-size: 25px;
+	padding-right: 2px;
+}
+			
+			
+.mui-card {
+	box-shadow:0 0 0 0;
+}
+			
+.mui-title {
+	font-size:16px;
+	font-weight:normal;
+}
+.mui-search {
+    margin-top: 10px;
+	margin-left: 10px;margin-right: 10px;
+}
+
+.mui-search .mui-placeholder {
+	text-align: left;
+	font-size: 13px;
+	height: 30px;
+}
+
+.mui-popover .mui-table-view {
+	max-height: 400px;
+}
+
+.ex-job-listname .ex-job-listvalue{
+	white-space: nowrap;  /*强制span不换行*/
+	display: inline-block;  /*将span当做块级元素对待*/
+	overflow: hidden;  /*超出宽度部分隐藏*/
+	text-overflow: ellipsis;  /*超出部分以点号代替*/
+}
+
+.mui-table-view-cell {
+	padding: 5px 10px;
+}
+
+.mui-table-view-cell:after {
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+.mui-col-xs-6 div{
+	display:inline-block; 
+	margin:auto;
+	width:100%;
+	text-align:center;
+}
+.mui-col-xs-6 img{
+	margin:0px;
+	padding-top: 5px;
+}
+.mui-col-xs-6 p {
+	margin:-7px 50px;
+	color: #ffffff;
+	font-size: xx-small;
+}
+
+.mui-col-xs-12 div{
+	display:inline-block; 
+	margin:auto;
+	width:100%;
+	text-align:center;
+}
+.mui-col-xs-12 img{
+	margin:0px;
+	padding-top: 5px;
+}
+.mui-col-xs-12 p {
+	margin:-7px 50px;
+	color: #ffffff;
+	font-size: xx-small;
+}
+
+.mui-table-view-cell:after {
+	left:0px;
+}
+.mui-input-group .mui-input-row:after {
+	left:0px;
+}
+
+.title-op button {
+	border: 1px solid #F69802;
+	background-color: #F69802;
+	padding: 2px 5px 0px 5px ;
+	margin-right: 10px;
+	margin-top: 3px;
+	font-size: 12px; 
+	width: 65px;
+	height: 25px;
+}
+
+.mui-input-row button {
+	border: 1px solid #F69802;
+	background-color: #F69802;
+	padding: 2px 5px 0px 5px ;
+	margin-right: 10px;
+	margin-top: 3px;
+	font-size: 12px; 
+	width: 65px;
+	height: 25px;
+}
+
+.mui-card-content-inner {
+    margin: 0px 0px;
+    padding: 10px 10px;
+}
+
+.mui-input-row label {
+    padding: 14px 0px;
+}
+
+.mui-input-row label{
+	width: 20%;
+	font-size: 13px;
+	text-align: right;
+}
+
+.mui-input-row label~input, .mui-input-row label~select, .mui-input-row label~textarea {
+	width: 76%;
+	font-size: 13px;
+	padding-top: 10px;
+}
+
+.input-container input{
+	font-size: 13px;
+}
+
+#onLineBtns {
+	background-color:rgba(45,45,45,0.8);
+}

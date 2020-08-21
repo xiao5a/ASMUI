@@ -1,0 +1,175 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../../../css/common/mui.min.css" rel="stylesheet" />
+		<link href="../../../css/common/mui.picker.min.css" rel="stylesheet" />
+		<link href="../../../css/common/mui.poppicker.css" rel="stylesheet" />
+		<link href="../../../css/common/mui-show-loading.css" rel="stylesheet" />
+		<link href="../../../css/common/common.css" rel="stylesheet" />
+		<link href="../../../css/common/common-ex.css" rel="stylesheet" /> 
+		<link href="./zwcnList.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav ex-title-bar ">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title" id="til">自我承诺信息填报</h1>
+		</header>
+		<div class="mui-content">
+			<div id="tab_con" class="mui-scroll-wrapper mui-control-content tab mui-active" style='margin-top: 3.4375rem;;top: 0rem;bottom: 0.625rem;'>
+				<div id="scrollin" class="mui-scroll">
+					<div class="addTemplate">
+						
+						
+						<!-- <div class="mui-card" style="margin: 0px;margin-bottom: 10px;">
+							<ul class="mui-table-view">
+								<li class="mui-table-view-cell" style="padding-top: 0.625rem;">
+									<div class="mui-slider-right mui-disabled">
+										<a class="mui-btn mui-btn-red">删除</a>
+									</div>
+									<div class="mui-slider-handle mui-table">
+										<div class="mui-table-cell">											
+											<div class="flexGrid">
+												<div class="flexGrid-item img_bg">
+													<img src="../../../img/message/spjd.png" />
+												</div>
+												<div class="flexGrid-item">
+													<div class="mui-media-body" style="margin-left:0.5rem;">
+														<div attr-name="UNIT_NAME">
+															辽宁德胜原食品加工有限公司
+														</div>
+														<p style="font-size: 13px;" attr-name="QY_CATEGORY_NAME">企业类别：普通食品生产者</p>
+													</div>
+												</div>
+											</div>
+											<div style="width: 100%;float: left; margin-top: 0.625rem;">
+												<span class="ex-job-listname">许可证号：</span><span class="ex-job-listvalue" attr-name="XKZBH">SC10844040300017</span>
+											</div>
+										</div>
+									</div>
+								 </li>
+								 <li class="mui-table-view-cell" style="padding-bottom: 0.625rem;">
+									 <div style="width: 50%;float: left; margin-top: 0.625rem;">
+										<span class="ex-job-listname">承诺人：</span><span class="ex-job-listvalue" attr-name="CN_NAME">陈学良</span>
+									 </div>
+									 <div style="width: 50%;float: left; margin-top: 0.625rem;">
+										<span class="ex-job-listname">承诺日期：</span><span class="ex-job-listvalue" attr-name="CN_TIME">2020-06-08</span>
+									 </div>
+								 </li>
+							</ul>
+						</div> -->
+						
+						
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<nav id="onLineBtns" class="mui-bar mui-bar-tab mui-row op-btns mui-bar-tab-ex-new isFinish">
+			<div id="addBtn" class="col mui-col-xs-12">
+				<div>
+					<img src="../../../img/common/save_2.png" align="bottom" >
+					<p>增加</p>
+				</div>
+			</div>
+		</nav>
+		
+		<template id="templateId">
+			<div class="mui-card" style="margin: 0px;margin-bottom: 10px;">
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell" style="padding-top: 0.625rem;">
+						<div class="mui-slider-right mui-disabled">
+							<a class="mui-btn mui-btn-red">删除</a>
+						</div>
+						<div class="mui-slider-handle mui-table">
+							<div class="mui-table-cell">
+								<!-- 左滑自动触发删除 -->
+								<div class="flexGrid">
+									<div class="flexGrid-item img_bg">
+										<img src="../../../img/message/spjd.png" />
+									</div>
+									<div class="flexGrid-item">
+										<div class="mui-media-body" style="margin-left:0.5rem;">
+											<div attr-name="UNIT_NAME">
+												辽宁德胜原食品加工有限公司
+											</div>
+											<p style="font-size: 13px;" attr-name="QY_CATEGORY_NAME">企业类别：普通食品生产者</p>
+										</div>
+									</div>
+								</div>
+								<div style="width: 100%;float: left; margin-top: 0.625rem;">
+									<span class="ex-job-listname">许可证号：</span><span class="ex-job-listvalue" attr-name="XKZBH">SC10844040300017</span>
+								</div>
+							</div>
+						</div>
+					 </li>
+					 <li class="mui-table-view-cell" style="padding-bottom: 0.625rem;">
+						 <div style="width: 50%;float: left; margin-top: 0.625rem;">
+							<span class="ex-job-listname">承诺人：</span><span class="ex-job-listvalue" attr-name="CN_NAME">陈学良</span>
+						 </div>
+						 <div style="width: 50%;float: left; margin-top: 0.625rem;">
+							<span class="ex-job-listname">承诺日期：</span><span class="ex-job-listvalue" attr-name="CN_TIME">2020-06-08</span>
+						 </div>
+					 </li>
+				</ul>
+			</div>
+		</template>
+
+		<script src="../../../js/common/jquery-1.11.1.min.js"></script>
+		<script src="../../../js/common/mui.min.js"></script>
+		<script src="../../../js/common/mui.picker.min.js"></script>
+		<script src="../../../js/common/mui.poppicker.js"></script>
+		<script src="../../../js/common/mui.showLoading.js"></script>
+		<script src="../../../js/common/baseUtils.js"></script>
+		<script src="./zwcnList.js"></script>
+		<script type="text/javascript">
+			mui.init({
+				pullRefresh: {	//分页初始化控件。【适用于需要分页的功能】
+					container: '#scrollin',
+					up: {
+						height: 50, //可选.默认50.触发上拉加载拖动距离
+						auto: true, //可选,默认false.自动上拉加载一次
+						contentrefresh: "正在加载...", //可选，正在加载状态时，上拉加载控件上显示的标题内容
+						contentnomore: '没有更多数据了', //可选，请求完毕若没有更多数据时显示的提醒内容；
+						callback: zwcnList.pullupRefresh
+					}
+				}
+			});
+			
+			// mui('.mui-scroll-wrapper').scroll({
+			// 	scrollY: true, //是否竖向滚动
+			// 	scrollX: false, //是否横向滚动
+			// 	startX: 0, //初始化时滚动至x
+			// 	startY: 0, //初始化时滚动至y
+			// 	indicators: true, //是否显示滚动条
+			// 	deceleration:0.0006, //阻尼系数,系数越小滑动越灵敏
+			// 	bounce: true //是否启用回弹
+			// });
+			
+			mui.plusReady(function() {
+				var webview = plus.webview.currentWebview();
+				zwcnList.pageload(webview);
+				
+				window.addEventListener("refreshData", function(e) {
+					var webview = plus.webview.currentWebview();
+					zwcnList.refresh();
+				});
+				
+				var old_back = mui.back;
+				mui.back = function(refreshData) {
+					if (refreshData){
+						var curr = plus.webview.currentWebview();
+						mui.fire(curr.opener(), "refreshData");
+					}
+					old_back();
+				};
+			});
+			
+		</script>
+	</body>
+
+</html>

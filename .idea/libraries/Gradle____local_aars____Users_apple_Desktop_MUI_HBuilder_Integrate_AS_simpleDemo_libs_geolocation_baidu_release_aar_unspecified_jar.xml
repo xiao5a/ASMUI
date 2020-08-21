@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="Gradle: __local_aars__:/Users/apple/Desktop/MUI/HBuilder-Integrate-AS/simpleDemo/libs/geolocation-baidu-release.aar:unspecified@jar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/geolocation-baidu-release.aar/9d3ea950e5d650e44ae111f721c812b4/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/geolocation-baidu-release.aar/9d3ea950e5d650e44ae111f721c812b4/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

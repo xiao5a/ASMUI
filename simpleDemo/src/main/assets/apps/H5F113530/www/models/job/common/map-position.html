@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../../../css/common/mui.min.css" rel="stylesheet" />
+		<link href="../../../css/common/mui.picker.min.css" rel="stylesheet" />
+		<link href="../../../css/common/mui.poppicker.css" rel="stylesheet" />
+		<link href="../../../css/common/mui-show-loading.css" rel="stylesheet" />
+		<link href="../../../css/common/common.css" rel="stylesheet" />
+		<link href="../../../css/common/common-ex.css" rel="stylesheet" /> 
+		<link href="./map-position.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav ex-title-bar">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<button id="saveBtn" type="button" class="mui-btn mui-btn-link mui-pull-right">确认</button>
+			<h1 class="mui-title">位置信息</h1>
+		</header>
+		<div class="container">
+			<div class="map" background-color: #ffff00; id="map"></div>
+			<div style="position:relative; bottom: 2.0rem; padding: 0.12rem;">
+				<div class="location"><span class="iconfont icon-dingwei"></span></div>
+				<div class="place-info">
+					<div class="place" style="word-break:break-all;line-height: 0.5rem;">
+						<h3 class="title" id="mapentname"></h3>
+						<p class="address"><span id="mapdom"></span></p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="../../../js/common/jquery-1.11.1.min.js"></script>
+		<script src="../../../js/common/mui.min.js"></script>
+		<script src="../../../js/common/mui.picker.min.js"></script>
+		<script src="../../../js/common/mui.poppicker.js"></script>
+		<script src="../../../js/common/mui.showLoading.js"></script>
+		<script src="../../../js/common/baseUtils.js"></script>
+		<script src="../../../js/common/ajax.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../../js/common/rem.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../../js/common/util.js" type="text/javascript" charset="utf-8"></script>
+		<!-- 需要申请自己的KEY -->
+		<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=Rxkd42FqEuneUMkKuU9pbAsbUm8hKbG2"></script>
+		<script src="../../../js/common/BMap_search.js"></script>
+		<script src="./convertor.js"></script>
+		<script src="./map-position.js"></script>
+		<script type="text/javascript">
+			mui.plusReady(function() {
+				var curr = plus.webview.currentWebview();
+				mapPosition.load(curr);
+			})
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,401 @@
+.font0 {
+  font-size: 0;
+}
+.font10 {
+  font-size: 0.5rem;
+}
+.font12 {
+  font-size: 0.6rem;
+}
+.font13 {
+  font-size: 0.65rem;
+}
+.font14 {
+  font-size: 0.7rem;
+}
+.font15 {
+  font-size: 0.75rem;
+}
+.font16 {
+  font-size: 0.8rem;
+}
+.ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.flex {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* layout */
+body.loginPage {
+  padding-top: 2.5rem;
+  background: url(../../img/common/bg1.png);
+  background-size: cover;
+}
+body.hasFooter {
+  padding-bottom: 2.75rem;
+}
+.main-layout {
+  height: 100%;
+  background: #f0f0f3;
+  position: relative;
+  overflow-x: hidden;
+}
+.footer {
+  width: 100%;
+  height: 2.75rem;
+  position: absolute;
+  bottom: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.footer.fButton {
+  padding: 0 0.75rem;
+  background: #f0f0f3;
+}
+.footer.fButton .fbu-btn {
+  height: 1.75rem;
+  line-height: 1.75rem;
+}
+.footer.fButton .fbu-btn.logot {
+  background: #fe3c2e;
+}
+.footer.fNav {
+  background: #f7f7f7;
+  border-top: solid 0.05rem #e5e5e5;
+}
+.footer.fNav .fna-btn {
+  height: 100%;
+  line-height: 1rem;
+  font-size: 0.6rem;
+  color: #929292;
+  display: block;
+  text-align: center;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -moz-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  position: relative;
+}
+.footer.fNav .fna-btn:before {
+  content: "";
+  width: 1.1rem;
+  height: 1.1rem;
+  margin: 0.4rem auto 0.1rem;
+  background-repeat: no-repeat;
+  background-position: center 0;
+  background-size: cover;
+  display: block;
+  position: relative;
+}
+.footer.fNav .fna-btn:hover,
+.footer.fNav .fna-btn:active,
+.footer.fNav .fna-btn.cur {
+  color: #0398e7;
+}
+.footer.fNav .fna-btn:first-child:before {
+  background-image: url(../../img/common/s1.png);
+}
+.footer.fNav .fna-btn:nth-child(2):before {
+  background-image: url(../../img/common/s2.png);
+}
+.footer.fNav .fna-btn:last-child:before {
+  background-image: url(../../img/common/s3.png);
+}
+.footer.fNav .fna-btn:first-child:active:before,
+.footer.fNav .fna-btn:first-child.cur:before {
+  background-image: url(../../img/common/s1_1.png);
+}
+.footer.fNav .fna-btn:nth-child(2):active:before,
+.footer.fNav .fna-btn:nth-child(2).cur:before {
+  background-image: url(../../img/common/s2_1.png);
+}
+.footer.fNav .fna-btn:last-child:active:before,
+.footer.fNav .fna-btn:last-child.cur:before {
+  background-image: url(../../img/common/s3_1.png);
+}
+.baseBtn {
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  font-size: 0.8rem;
+  background: #0398e7;
+  border-radius: 0.25rem;
+  text-align: center;
+  display: inline-block;
+}
+/* login */
+.loginLogo {
+  width: 3.25rem;
+  margin: 0 auto;
+  display: block;
+}
+.loginTitle {
+  margin-top: 0.5rem;
+  color: #fff;
+  font-size: 1rem;
+  text-align: center;
+}
+.loginForm {
+  width: 80%;
+  margin: 2rem auto 0;
+}
+.loginForm input::-webkit-input-placeholder {
+  color: #adddfe;
+}
+.loginForm input:-webkit-input-placeholder {
+  color: #adddfe;
+}
+.loginForm input::-moz-placeholder {
+  color: #adddfe;
+}
+.loginForm input:-moz-placeholder {
+  color: #adddfe;
+}
+.loginForm input:-ms-input-placeholder {
+  color: #adddfe;
+}
+.lform-div {
+  margin-top: 1rem;
+}
+.lform-title {
+  width: 100%;
+  height: 1rem;
+  line-height: 1rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-content: space-between;
+}
+.lform-title span {
+  color: #fff;
+  font-size: 0.65rem;
+}
+.lform-title img {
+  height: 100%;
+  display: block;
+}
+.lform-input {
+  width: 100%;
+  height: 2rem;
+  line-height: 2rem;
+  color: #fff;
+  font-size: 0.75rem;
+  background: transparent;
+  border: 0;
+  border-bottom: solid 0.05rem rgba(255, 255, 255, 0.6);
+  outline: 0;
+}
+.lform-btn {
+  height: 2rem;
+  margin-top: 2.5rem;
+  color: #000;
+  background: #fff;
+  border-radius: 1rem;
+}
+/* inside */
+.index-header {
+  width: 100%;
+  height: 7rem;
+  padding-top: 1rem;
+  background: url(../../img/common/bg2.png);
+  background-size: cover;
+}
+.index-header div {
+  margin-top: 0.25rem;
+  font-size: 0.8rem;
+  color: #fff;
+  text-align: center;
+}
+.indexBox {
+  width: 100%;
+  padding: 0.5rem 0;
+  margin-top: 0.5rem;
+  background: #fff;
+}
+.indexBox:first-of-type {
+  margin-top: 0;
+}
+.indexHead {
+  width: 100%;
+  height: 1rem;
+  padding: 0 0.5rem;
+  margin-bottom: 0.25rem;
+  background: #fff;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-content: space-between;
+  position: relative;
+}
+.indexHead span {
+  color: #333;
+  font-weight: bold;
+}
+.indexHead label {
+  color: #8e8e8e;
+}
+.indexHead label b {
+  color: #fc4138;
+}
+.indexList {
+  font-size: 0;
+}
+.indexList li {
+  width: 25%;
+  padding: 0.5rem;
+  text-align: center;
+  display: inline-block;
+}
+.indexList li:active span {
+  color: #0398e7;
+}
+.indexList li img {
+  width: 80%;
+}
+.indexList li span {
+  font-size: 0.65rem;
+}
+.inside-header {
+  width: 100%;
+  padding: 1rem 0.5rem;
+  background: #fff;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-content: space-between;
+}
+.ihPic {
+  width: 2.5rem;
+  height: 2.5rem;
+  line-height: 2.5rem;
+  color: #fff;
+  font-size: 1.3rem;
+  background: #0398e7;
+  border-radius: 0.5rem;
+  display: block;
+  text-align: center;
+}
+.ihInfo {
+  padding: 0 0.5rem;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -moz-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+.ihInfo span {
+  width: 100%;
+  line-height: 1.25rem;
+  font-size: 0.8rem;
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.ihInfo div {
+  width: 100%;
+  line-height: 1rem;
+  color: #868686;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.arrow-right {
+  width: 0.75rem;
+  display: block;
+}
+.inside-content {
+  padding: 0 0.5rem;
+  margin-top: 0.5rem;
+  background: #fff;
+}
+.inside-content .indexHead {
+  padding: 0;
+  margin-bottom: 0;
+  height: 2rem;
+}
+.inside-content .icBox:last-child {
+  border-bottom: 0;
+}
+.icBox {
+  border-bottom: solid 0.05rem #e0e0e0;
+}
+.icContent {
+  padding: 0.5rem 0;
+  padding-top: 0;
+}
+.icNewTip {
+  padding: 0.05rem 0.35rem;
+  margin-left: 0.25rem;
+  color: #fff;
+  font-size: 0.5rem;
+  background: #fe3c2e;
+  border-radius: 0.5rem;
+  display: inline-block;
+}
+.icNews {
+  color: #868686;
+}
+.icFileList {
+  font-size: 0;
+  margin: -0.25rem;
+}
+.icFileList li {
+  width: 25%;
+  padding: 0.25rem;
+  height: 3.5rem;
+  display: inline-block;
+  position: relative;
+}
+.icFileList li img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.icFileList li .icClosed {
+  width: 1rem;
+  height: 1rem;
+  background: url(../../img/common/pic_delete.png) no-repeat center;
+  background-size: 0.9rem;
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.icFileList li .icAdd {
+  width: 100%;
+  height: 100%;
+  background: #e5e5e5 url(../../img/common/pic_add.png) no-repeat center;
+  display: block;
+}

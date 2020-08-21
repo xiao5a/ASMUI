@@ -1,0 +1,6 @@
+# Referenced at /Users/apple/Desktop/MUI/HBuilder-Integrate-AS/simpleDemo/build/intermediates/merged_manifests/debug/AndroidManifest.xml:43
+-keep class android.support.v4.app.CoreComponentFactory { <init>(); }
+# Referenced at /Users/apple/Desktop/MUI/HBuilder-Integrate-AS/simpleDemo/build/intermediates/merged_manifests/debug/AndroidManifest.xml:43
+-keep class io.dcloud.application.DCloudApplication { <init>(); }
+# Referenced at /Users/apple/Desktop/MUI/HBuilder-Integrate-AS/simpleDemo/build/intermediates/merged_manifests/debug/AndroidManifest.xml:154
+-keep class io.dcloud.multiprocess.activity.WebAppActivity1 { <init>(); }

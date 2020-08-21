@@ -1,0 +1,32 @@
+body{padding-top: 44px; padding-bottom: 65px; position: relative;}
+
+.mui-bar-nav~.mui-content{padding-top: 0;}
+.mui-content{width: 100%; height: 100%; position: relative;}
+.hotdeTip{padding: 10px; padding-bottom: 0; display: flex; justify-content: space-between;}
+.hotdeTip > span{margin: 0 5px; line-height: 20px; color: #aaa; font-size: 14px;}
+.mui-card{border-radius: 5px;}
+.mui-card-content-inner{padding: 15px; line-height: 22px; color: #333;}
+.mui-checkbox input[type=checkbox]:checked:before, .mui-radio input[type=radio]:checked:before{color: #32c241;}
+.payHead{display: flex; justify-content: space-between;}
+.payHead .mui-checkbox{width: 25px; height: 25px;}
+.payHead .mui-checkbox input[type=checkbox], .mui-radio input[type=radio]{width: 25px; height: 25px; top: 0; right: 0;}
+.payHead .mui-checkbox input[type=checkbox]:before, .mui-radio input[type=radio]:before{font-size: 25px;}
+.phNum{line-height: 25px;}
+.phNum span{margin-left: 10px;}
+.payMoney{margin: 10px 0; color: #ff0000; font-size: 22px;}
+.payMoney b{margin-right: 3px; font-size: 12px;}
+.paylineBox{padding: 10px 15px; background: #f8f8f8; border-radius: 5px;}
+.payLine{display: flex; justify-content: space-between;}
+.plName{line-height: 30px; color: #a0a0a0;}
+.plInfo{line-height: 30px; color: #333;}
+.plInfo.amount{color: #fc4c4c;}
+.mui-card.selected{border: solid 1px #32c241; box-shadow: 0 0 5px #87e691;}
+
+.mui-content-padded{width: 100%; padding: 10px; margin: 0; background: #fff; border-top: solid 1px #ddd; position: fixed; bottom: 0; z-index: 5;}
+.mui-btn-block{padding: 9px 0; margin-bottom: 0;}
+
+.successBox .mui-popup-inner{padding-top: 30px; padding-bottom: 30px; background: #fff;}
+.successBox .paylineBox{margin-top: 10px;}
+.sucTip1{font-size: 18px;}
+.sucTip2{margin-top: 5px; color: #aaa;}
+.successBox .mui-popup-inner .mui-btn{padding: 5px 0; margin-top: 20px;}

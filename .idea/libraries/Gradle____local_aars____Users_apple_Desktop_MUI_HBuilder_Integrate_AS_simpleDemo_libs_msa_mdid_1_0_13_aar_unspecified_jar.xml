@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="Gradle: __local_aars__:/Users/apple/Desktop/MUI/HBuilder-Integrate-AS/simpleDemo/libs/msa_mdid_1.0.13.aar:unspecified@jar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/msa_mdid_1.0.13.aar/dee017fffa80fe7052303f3bc4b8f31f/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/msa_mdid_1.0.13.aar/dee017fffa80fe7052303f3bc4b8f31f/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

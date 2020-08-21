@@ -1,0 +1,51 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 28
+    buildToolsVersion '28.0.3'
+    defaultConfig {
+        applicationId "com.HBuilder.integrate"
+        minSdkVersion 19 // uniapp������19������
+        targetSdkVersion 28 //���������ֵ��Ϊ23 io.dcloud.PandoraEntry ��Ϊapk���ʱ   �������� targetSDKVersion>=21 ����ʽ����Ч
+
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled true
+        ndk {
+            abiFilters 'x86','armeabi-v7a'
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    //ʹ��uniappʱ���踴���������
+    /*���뿪ʼ*/
+    aaptOptions {
+        additionalParameters '--auto-add-overlay'
+        //noCompress 'foo', 'bar'
+        ignoreAssetsPattern "!.svn:!.git:.*:!CVS:!thumbs.db:!picasa.ini:!*.scc:*~"
+    }
+    /*�������*/
+}
+repositories {
+    flatDir {
+        dirs 'libs'
+    }
+}
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation fileTree(include: ['*.aar'], dir: 'libs')
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    /*uniapp�����-----------------------��ʼ*/
+    implementation 'com.android.support:recyclerview-v7:28.0.0'
+    implementation 'com.facebook.fresco:fresco:1.13.0'
+    implementation "com.facebook.fresco:animated-gif:1.13.0"
+    /*uniapp�����-----------------------����*/
+    // ������Ҫ���������
+    implementation 'com.github.bumptech.glide:glide:4.9.0'
+    implementation 'com.alibaba:fastjson:1.1.46.android'
+}
