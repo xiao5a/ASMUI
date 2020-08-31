@@ -1,0 +1,9 @@
+body{padding-top: 44px; position: relative;}
+
+.mui-bar-nav~.mui-content{padding-top: 0;}
+.mui-content{width: 100%; height: 100%; position: relative;}
+.systemList .mui-table-view-cell{padding: 11px 15px;}
+.systemList .mui-table-view-cell:after{background-color: #ddd;}
+.mui-media-body{line-height: 40px; font-size: 15px;}
+.systemList .mui-navigate-right:after, .mui-push-right:after{right: 10px;}
+.mui-table-view .mui-media-object{height: 40px;}

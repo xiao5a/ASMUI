@@ -1,0 +1,343 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../../../css/common/mui.min.css" rel="stylesheet" />
+		<link href="../../../css/common/mui.picker.min.css" rel="stylesheet" />
+		<link href="../../../css/common/mui.poppicker.css" rel="stylesheet" />
+		<link href="../../../css/common/mui-show-loading.css" rel="stylesheet" />
+		<link href="../../../css/common/common.css" rel="stylesheet" />
+		<link href="../../../css/common/common-ex.css" rel="stylesheet" />
+		
+		<link href="./grsbdjxx.css" rel="stylesheet" />
+		<link href="./payment.css" rel="stylesheet" />
+		<script src="../../../js/common/vue.js"></script>
+		<style>
+
+		</style>
+	</head>
+
+	<body class="colorbody html5box fixbtnbox">
+		
+		
+	
+		
+		<header class="mui-bar mui-bar-nav ex-title-bar">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<button id="saveBtn" type="button" class="mui-btn mui-btn-link mui-pull-right"></button>
+			<h1 class="mui-title">个人社保核定信息</h1>
+		</header>
+		
+		<!-- <div class="pagetop">
+			<p class="headertitle">城乡居民养老缴费</p>
+			<div class="subtitle">服务适用范围：<span class="colordarkblue">湖北省</span></div>
+		</div> -->
+		<div class="mui-content  " style="padding-top: 80px;" id="app">
+			<div id="" class="mui-card" style="margin-top: 20px;"> 
+				<ul class="   mui-table-view" style="margin-top: 10px; " >
+					<!-- 非自然人显示信息 -->
+					<li class="mui-table-view-cell" >
+						<div class="tabletitle" style="margin-bottom:5px;"><b></b>灵活就业人员社保自主择当申报信息</div>
+					</li>
+					<li class="mui-table-view-cell" id="jklxli">
+						<div class="mui-input-row ">
+							<div class="inputlabeltitle">缴费险种</div>
+							<div class="selectinputblock">
+								<div class="divinput mui-input nomargin" onclick="chosexzlx()" id="jklx" name="jklx">{{xzlx}}</div>
+							</div>
+						</div>
+					</li>
+
+					<li v-if="xzlx_value =='0'||(xzlx_value =='1'&&bjlx_value!=''&&bjns_value!='')  " class="mui-table-view-cell">
+						<div id="" class="mui-input-row">
+							<div class="inputlabeltitle">缴费档次</div>
+
+							<div class="selectinputblock">
+								<div class="divinput mui-input nomargin" @click="chosejfdc()" id="jfdc">  
+								<div v-html="jfdc"></div>
+								
+								
+								</div>
+							</div>
+						</div>
+
+					</li>
+					
+					
+					<li v-if="xzlx_value =='0'||xzlx_value =='1'  " class="mui-table-view-cell">
+						<div id="" class="mui-input-row">
+							<div class="inputlabeltitle">所属期起</div>
+					
+							<div class="selectinputblock">
+								<div class="divinput mui-input nomargin" onclick="chosessqq()" id="ssqq">{{ssqq}}</div>
+							</div>
+						</div>
+					
+					</li>
+					
+					
+					<li v-if="xzlx_value =='0'||xzlx_value =='1'  " class="mui-table-view-cell">
+						<div id="" class="mui-input-row">
+							<div class="inputlabeltitle">所属期止</div>
+					
+							<div class="selectinputblock">
+								<div class="divinput mui-input nomargin" onclick="chosessqz()" id="ssqz">{{ssqz}}</div>
+							</div>
+						</div>
+					
+					</li>
+
+					
+
+				</ul>
+
+			</div>
+			
+			<div class="mui-content">
+<!-- 				<a href="#modal" class=""></a>
+ -->			</div>
+					<div id="modal" class="mui-modal"   style="margin-top: 100px ;margin-bottom: 100px">
+				<header class="mui-bar mui-bar-nav">
+					<a class="mui-icon mui-icon-close mui-pull-right"  onclick="hidemodal()" ></a>
+					<h1 class="mui-title">订单详情</h1>
+				</header>
+				<div class="mui-content" style="height: 80%;">
+
+						<template v-for="(value, key, index) in hdxx" >
+						
+						
+							
+							<div class="mui-card">
+								<!--页眉，放置标题-->
+								<div class="mui-card-header"></div>
+								<!--内容区-->
+								<div class="mui-card-content">
+									
+									<ul class="mui-table-view">
+										
+										
+									
+											
+											<li class="mui-table-view-cell"   >
+												<a   class="mui-navigate">
+												
+											<div class="tabletitle"><b></b>金额{{value.je}}元</div>
+													
+													<div class="mui-input-row ">
+														<label>征收项目: {{value.pm}}</label>
+													</div>
+													<div class="mui-input-row ">
+														<label>征收品目：{{value.pm }}</label>
+													</div>
+													<div class="mui-input-row ">
+														<label>所属期: {{value.ssq}}</label>
+													</div>
+													
+												</a>
+											</li>
+										
+									</ul>
+									
+								</div>
+								<!--页脚，放置补充信息或支持的操作-->
+								<div class="mui-card-footer" style="">
+									
+									<button type="button" style= " width: 50%; height: 20%;" class="mui-btn-green  " onclick="gotojk()">确认缴款</button>
+									
+									</div>
+							</div>
+							
+						</template>
+				</div>
+			</div>
+			
+			<div v-if="hdxxshow" >
+				<div class="mui-popup mui-popup-in successBox">
+					<div class="mui-popup-inner">
+						<a class="mui-icon mui-icon-close mui-pull-right"  onclick="hidemodal()" ></a>
+						<div class="sucTip1">订单信息</div>
+						<div class="sucTip2">您的预缴付申报税订单详情如下</div>
+						<div class="paylineBox">
+							<div class="payLine">
+								<span class="plName">申报日期</span>
+								<span class="plInfo">2018/07/12</span>
+							</div>
+							<div class="payLine">
+								<span class="plName">所属日期</span>
+								<span class="plInfo">2018/07/12</span>
+							</div>
+							<div class="payLine">
+								<span class="plName">金额</span>
+								<span class="plInfo amount">5800.00元</span>
+							</div>
+						</div>
+						<div class="paylineBox">
+							<div class="payLine">
+								<span class="plName">申报日期</span>
+								<span class="plInfo">2018/07/12</span>
+							</div>
+							<div class="payLine">
+								<span class="plName">所属日期</span>
+								<span class="plInfo">2018/07/12</span>
+							</div>
+							<div class="payLine">
+								<span class="plName">金额</span>
+								<span class="plInfo amount">5800.00元</span>
+							</div>
+						</div>
+						<button onclick="gotojk()" type="button" class="mui-btn mui-btn-success mui-btn-block">确定缴费</button>
+					</div>
+				</div>
+			<!-- 	<div class="mui-popup-backdrop mui-active"></div> -->
+			</div>
+			
+			<div class="fix-btn  mui-text-center zdyfixbtn onebtn">
+			<button id="yljkBtn" type="button" class="mui-btn  " onclick="gethdxxnew()" v-bind:class="{'mui-btn-primary':jfdc_value>'',' mui-btn-outlined':jfdc_value==''}">核定（已确认信息准确无误）</button>
+		</div>
+			
+		</div>
+		
+		
+		
+
+
+		<!-- <nav id="onLineBtns" class="mui-bar mui-bar-tab mui-row op-btns mui-bar-tab-ex-new isFinish">
+			<div id="submitBtn" class="col mui-col-xs-6">
+				<div>
+					<img src="../../img/common/save_1.png" align="bottom" >
+					<p>提交</p>
+				</div>
+			</div>
+			<div id="closeBtn" class="col mui-col-xs-6">
+				<div>
+					<img src="../../img/common/close.png" align="bottom" >
+					<p>关闭</p>
+				</div>
+			</div>
+		</nav> -->
+
+		<script src="../../../js/common/jquery-1.11.1.min.js"></script>
+		<script src="../../../js/common/mui.min.js"></script>
+		<script src="../../../js/common/mui.picker.min.js"></script>
+		<script src="../../../js/common/mui.poppicker.js"></script>
+		<script src="../../../js/common/mui.showLoading.js"></script>
+		<script src="../../../js/common/baseUtils.js"></script>
+		<script src="../../../js/common/crypto-js-aes-min.js"></script>
+		
+		<script src="../../../js/common/vue-resource.min.js"></script>
+		<script src="../../../js/cxyl/layer_mobile/layer.js"></script>
+		<script src="./grsbhdxx.js"></script>
+		<script type="text/javascript">
+			var vm = new Vue({
+				el: '#app',
+				data: {
+					cachekey:'',
+					hdxx:[],
+					xzlx: "选择险种",
+					xzlx_value: "",
+					jfdc: "请选择缴费档次",
+					jfdc_value: "",
+					djxx: {}, //页面传递过来的参数
+					dcmc: [], //解析传递过来的参数的档次数组
+					userPicker: new mui.PopPicker(), //当期 补缴
+					jfdc_userPicker: new mui.PopPicker(), //档次信息
+					dtoption:{},
+					ssqqdtPicker:null,
+					ssqzdtPicker:null,
+					ssqq:'请选择所属期起',
+					ssqz:'请选择所属期止',
+					jfje: "55555555",
+					hdxxshow:false,
+
+				},
+				directives: {
+					// 注册一个局部的自定义指令 v-focus
+					focus: {
+						// 指令的定义
+						inserted: function(el) {
+							// 聚焦元素
+							el.focus()
+						}
+					}
+				},
+				
+				
+				// 在 `methods` 对象中定义方法
+				methods: {
+					
+					chosejfdc:function () {
+						var vm = this;
+							console.log("vmchosejfdc", vm.jfdc_value);
+						
+							console.log("chosejfdc", vm.dcmc);
+							var jfdc = document.getElementById('jfdc');
+							// VM.jfdc_userPicker = new mui.PopPicker();
+						
+							vm.jfdc_userPicker.show(function(items) {
+								// userResult.innerText = JSON.stringify(items[0]);
+						
+						
+								vm.jfdc = items[0];
+								vm.jfdc_value = items[0];
+						
+						
+								//返回 false 可以阻止选择框的关闭
+								//return false;
+							});
+						
+						
+						
+						},
+				},
+				mounted() {
+
+					console.log("mounted");
+					var _this = this
+					mui.init();
+					mui('.mui-scroll-wrapper').scroll({
+						scrollY: true,
+						scrollX: false,
+						startX: 0,
+						startY: 0,
+						indicators: true,
+						deceleration: 0.0006,
+						bounce: true
+					});
+
+					mui.plusReady(function() {
+						console.log("mui.plusReady");
+						var webview = plus.webview.currentWebview();
+
+						_this.djxx = webview.djxx;
+						_this.cachekey=webview.cachekey;
+						_this.dcmc = webview.djxx.pzmx[0].dcmc;
+						console.log("参数",JSON.stringify(_this.djxx ));
+						console.log("参数cachekey",JSON.stringify(_this.cachekey ));
+						
+						//console.log("参数",JSON.stringify(_this.djxx.jbjg_dm ))
+
+						cxylhdxx.pageload(webview);
+
+						window.addEventListener("refreshData", function(e) {
+							var webview = plus.webview.currentWebview();
+							cxylhdxx.refresh();
+						});
+
+						var old_back = mui.back;
+						mui.back = function() {
+							var curr = plus.webview.currentWebview();
+							mui.fire(curr.opener(), "refreshData");
+							old_back();
+						};
+					});
+				}
+
+
+			});
+		</script>
+	</body>
+
+</html>

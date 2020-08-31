@@ -1,0 +1,129 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../../../css/common/mui.min.css" rel="stylesheet" />
+		<link href="../../../css/common/mui.picker.min.css" rel="stylesheet" />
+		<link href="../../../css/common/mui.poppicker.css" rel="stylesheet" />
+		<link href="../../../css/common/mui-show-loading.css" rel="stylesheet" />
+		<link href="../../../css/common/common.css" rel="stylesheet" />
+		<link href="../../../css/common/common-ex.css" rel="stylesheet" /> 
+		<link href="./zwcnAdd.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav ex-title-bar ">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title" id="til">新增自我承诺</h1>
+		</header>
+		<div class="mui-content">
+			<div id="tab_con" class="mui-scroll-wrapper mui-control-content tab mui-active" style='margin-top: 2.7rem;' id="scroll">
+				<div class="mui-scroll" id="scrollin">
+					<div class="mui-input-row">
+						<div class="mui-card">
+							<label style="width: 25%;">承诺企业类别</label>
+							<input style="margin-left: 0.625rem;" id="qy_category_code" placeholder="请选择承诺企业类型" type="text" class="myPopPicker mui-input-clear" placeholder=""  data-default="" data-options="" on-Change="zwcnAdd.onChangePopPicker">
+						</div>
+						<div class="mui-card">
+							<label style="width: 25%;">许可证号</label>
+							<input style="margin-left: 0.625rem;" id="xkzbh" placeholder="请选择许可证号" type="text" class="myPopPicker mui-input-clear" placeholder=""  data-default="" data-options="" on-Change="zwcnAdd.onChangePopPicker">
+						</div>
+
+						<div id="addTemplate" class="addTemplate mui-card zwcn">
+<!-- 							<p id="CN_TITLE" class="CN_TITLE">食品生产企业食品安全公开承诺</p>
+							<p id="CN_SUB_TITLE" class="CN_SUB_TITLE">为确保人民群众身体健康和生命安全，本企业向社会作出如下承诺：</p>
+							<div class="bindData mui-input-row mui-checkbox mui-left" style="width: 100%;">
+								<label style="width: 100%;text-align: left;padding-top: 1.0625rem;" attr-name="CN_ITEM">1.严格执行食品安全</label>
+								<input name="checkbox" value="Item 1" type="checkbox" attr-name="ID">
+							</div> -->
+						</div>
+						
+						<div class="mui-card zwcn">
+							<div class="mui-input-row mui-checkbox mui-left">
+								<div class="mui-input-row">
+									<label style="width: 100%;text-align: left;color: #ff6600;">以上承诺真实、有效，是本人真实意思的表示。并严格履行以上承诺，如有违反，愿意承担相应的法律责任，并接受处罚。本承诺将通过辽宁省食品安全信用监管系统对社会公众展示。</label>
+									<input id="cn_confirm" name="checkbox" style="top: 15px;" value="1" type="checkbox" >
+								</div>
+								<div class="mui-input-row">
+									<label style="width:20%;padding-left: 10px;padding-right: 0px;">承诺人</label>
+									<input id="cn_name" type="text" class="mui-input-clear" placeholder="请输入承诺人姓名" attr-name="cn_name">
+								</div>
+								<div class="mui-input-row">
+									<label style="margin-bottom: 2.5rem;width:20%;padding-left: 10px;padding-right: 0px;">承诺时间</label>
+									<input id="cn_time" placeholder="请选择承诺时间" type="text" class="myDtPicker mui-input-clear" placeholder="" data-default="" data-options='{"type":"date","beginYear":2019,"endYear":2030}'>
+								</div>
+							</div>
+						</div>
+					</div>
+	
+				</div>
+			</div>
+		</div>
+		
+		<nav id="onLineBtns" class="mui-bar mui-bar-tab mui-row op-btns mui-bar-tab-ex-new isFinish">
+			<div id="cancelBtn" class="col mui-col-xs-6">
+				<div>
+					<img src="../../../img/common/close.png" align="bottom" >
+					<p>取消</p>
+				</div>
+			</div>
+			<div id="saveBtn" class="col mui-col-xs-6">
+				<div>
+					<img src="../../../img/common/save.png" align="bottom" >
+					<p>保存</p>
+				</div>
+			</div>
+		</nav>
+		
+		<template id="templateId"> 
+			<div class="bindData mui-input-row mui-checkbox mui-left zwcn" style="width: 100%;">
+				<label style="width: 100%;text-align: left;padding-top: 0.8125rem;" attr-name="CN_ITEM">1.严格执行食品安全法律法规和标准，认真履行食品安全主体责任，保证食品质量安全，诚信自律，对社会和公众负责，接受社会监督，承担社会责任。</label>
+				<input name="checkbox" value="Item 1" type="checkbox" attr-name="ID">
+			</div>
+		</template>
+
+		<script src="../../../js/common/jquery-1.11.1.min.js"></script>
+		<script src="../../../js/common/mui.min.js"></script>
+		<script src="../../../js/common/mui.picker.min.js"></script>
+		<script src="../../../js/common/mui.poppicker.js"></script>
+		<script src="../../../js/common/mui.showLoading.js"></script>
+		<script src="../../../js/common/baseUtils.js"></script>
+		<script src="./zwcnAdd.js"></script>
+		<script type="text/javascript">
+			mui.init();
+			mui('.mui-scroll-wrapper').scroll({
+				scrollY: true, //是否竖向滚动
+				scrollX: false, //是否横向滚动
+				startX: 0, //初始化时滚动至x
+				startY: 0, //初始化时滚动至y
+				indicators: true, //是否显示滚动条
+				deceleration:0.0006, //阻尼系数,系数越小滑动越灵敏
+				bounce: true //是否启用回弹
+			});
+			
+			mui.plusReady(function() {
+				var webview = plus.webview.currentWebview();
+				zwcnAdd.pageload(webview);
+				
+				window.addEventListener("refreshData", function(e) {
+					var webview = plus.webview.currentWebview();
+					zwcnAdd.refresh();
+				});
+				
+				var old_back = mui.back;
+				mui.back = function(refreshData) {
+					if (refreshData){
+						var curr = plus.webview.currentWebview();
+						mui.fire(curr.opener(), "refreshData");
+					}
+					old_back();
+				};
+			});
+			
+		</script>
+	</body>
+
+</html>

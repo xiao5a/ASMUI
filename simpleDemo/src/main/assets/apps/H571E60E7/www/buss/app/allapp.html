@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../../css/common/mui.min.css" rel="stylesheet" />
+		<link href="../../css/common/mui.picker.min.css" rel="stylesheet" />
+		<link href="../../css/common/mui.poppicker.css" rel="stylesheet" />
+		<link href="../../css/common/mui-show-loading.css" rel="stylesheet" />
+		<link href="../../css/common/common.css" rel="stylesheet" />
+		<link href="../../css/common/common-ex.css" rel="stylesheet" />
+		<link href="app.css" rel="stylesheet"/>
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav ex-title-bar">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">全部应用</h1>
+			<a class="mui-icon-right-nav mui-pull-right titleText">编辑</a>
+		</header>
+		<div class="mui-content">
+			<div class="mui-scroll-wrapper">
+				<div id="scrollin" class="mui-scroll">
+					<div class="appBox">
+						<div class="appHead">已添加</div>
+						<ul class="mui-table-view mui-grid-view mui-grid-9">
+							<li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
+								<a href="#">
+									<img class="appPic" src="../../images/icon1@2x.png"/>
+									<div class="mui-media-body">预约申请</div>
+								</a>
+								<span class="editIcon editPlus"><b></b></span>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
+								<a href="#">
+									<img class="appPic" src="../../images/icon2@2x.png"/>
+									<div class="mui-media-body">申报缴税</div>
+								</a>
+								<span class="editIcon editPlus"><b></b></span>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
+								<a href="#">
+									<img class="appPic" src="../../images/icon3@2x.png"/>
+									<div class="mui-media-body">我要查询</div>
+								</a>
+								<span class="editIcon editPlus"><b></b></span>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
+								<a href="#">
+									<img class="appPic" src="../../images/icon4@2x.png"/>
+									<div class="mui-media-body">扫一扫</div>
+								</a>
+								<span class="editIcon editPlus"><b></b></span>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
+								<a href="#">
+									<img class="appPic" src="../../images/icon5@2x.png"/>
+									<div class="mui-media-body">为您提醒</div>
+								</a>
+								<span class="editIcon editPlus"><b></b></span>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
+								<a href="#">
+									<img class="appPic" src="../../images/icon6@2x.png"/>
+									<div class="mui-media-body">税费政策</div>
+								</a>
+								<span class="editIcon editPlus"><b></b></span>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
+								<a href="#">
+									<img class="appPic" src="../../images/icon7@2x.png"/>
+									<div class="mui-media-body">我有意见</div>
+								</a>
+								<span class="editIcon editPlus"><b></b></span>
+							</li>
+						</ul>
+					</div>
+					<div class="appBox">
+						<div class="appHead">我的</div>
+						<ul class="mui-table-view mui-grid-view mui-grid-9">
+							<li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
+								<a href="#">
+									<img class="appPic" src="../../images/icon9@2x.png"/>
+									<div class="mui-media-body">快速注册</div>
+								</a>
+								<span class="editIcon editAdd"><b class="mui-icon mui-icon-plusempty"></b></span>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
+								<a href="#">
+									<img class="appPic" src="../../images/icon10@2x.png"/>
+									<div class="mui-media-body">银联实名注册</div>
+								</a>
+								<span class="editIcon editAdd"><b class="mui-icon mui-icon-plusempty"></b></span>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
+								<a href="#">
+									<img class="appPic" src="../../images/icon11@2x.png"/>
+									<div class="mui-media-body">支付宝实名注册</div>
+								</a>
+								<span class="editIcon editAdd"><b class="mui-icon mui-icon-plusempty"></b></span>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
+								<a href="#">
+									<img class="appPic" src="../../images/icon12@2x.png"/>
+									<div class="mui-media-body">微信实名注册</div>
+								</a>
+								<span class="editIcon editAdd"><b class="mui-icon mui-icon-plusempty"></b></span>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
+								<a href="#">
+									<img class="appPic" src="../../images/icon13@2x.png"/>
+									<div class="mui-media-body">忘记密码</div>
+								</a>
+								<span class="editIcon editAdd"><b class="mui-icon mui-icon-plusempty"></b></span>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
+								<a href="#">
+									<img class="appPic" src="../../images/icon14@2x.png"/>
+									<div class="mui-media-body">信息修改</div>
+								</a>
+								<span class="editIcon editAdd"><b class="mui-icon mui-icon-plusempty"></b></span>
+							</li>
+						</ul>
+					</div>	
+					<div class="appBox">
+						<div class="appHead">申报缴税</div>
+						<ul class="mui-table-view mui-grid-view mui-grid-9">
+							<li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
+								<a href="#">
+									<img class="appPic" src="../../images/icon15@2x.png"/>
+									<div class="mui-media-body">灵活就业</div>
+								</a>
+								<span class="editIcon editAdd"><b class="mui-icon mui-icon-plusempty"></b></span>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
+								<a href="#">
+									<img class="appPic" src="../../images/icon16@2x.png"/>
+									<div class="mui-media-body">城乡居民养老</div>
+								</a>
+								<span class="editIcon editAdd"><b class="mui-icon mui-icon-plusempty"></b></span>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
+								<a href="#">
+									<img class="appPic" src="../../images/icon17@2x.png"/>
+									<div class="mui-media-body">代缴城乡养老</div>
+								</a>
+								<span class="editIcon editAdd"><b class="mui-icon mui-icon-plusempty"></b></span>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
+								<a href="#">
+									<img class="appPic" src="../../images/icon18@2x.png"/>
+									<div class="mui-media-body">城乡居民医保</div>
+								</a>
+								<span class="editIcon editAdd"><b class="mui-icon mui-icon-plusempty"></b></span>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
+								<a href="#">
+									<img class="appPic" src="../../images/icon19@2x.png"/>
+									<div class="mui-media-body">代缴城乡医保</div>
+								</a>
+								<span class="editIcon editAdd"><b class="mui-icon mui-icon-plusempty"></b></span>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
+								<a href="#">
+									<img class="appPic" src="../../images/icon20@2x.png"/>
+									<div class="mui-media-body">车购税</div>
+								</a>
+								<span class="editIcon editAdd"><b class="mui-icon mui-icon-plusempty"></b></span>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
+								<a href="#">
+									<img class="appPic" src="../../images/icon21@2x.png"/>
+									<div class="mui-media-body">公路桥梁赔偿费</div>
+								</a>
+								<span class="editIcon editAdd"><b class="mui-icon mui-icon-plusempty"></b></span>
+							</li>
+						</ul>
+					</div>	
+					<div class="appBox">
+						<div class="appHead">我要查询</div>
+						<ul class="mui-table-view mui-grid-view mui-grid-9">
+							<li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
+								<a href="#">
+									<img class="appPic" src="../../images/icon22@2x.png"/>
+									<div class="mui-media-body">办税指南</div>
+								</a>
+								<span class="editIcon editAdd"><b class="mui-icon mui-icon-plusempty"></b></span>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
+								<a href="#">
+									<img class="appPic" src="../../images/icon23@2x.png"/>
+									<div class="mui-media-body">纳税信息</div>
+								</a>
+								<span class="editIcon editAdd"><b class="mui-icon mui-icon-plusempty"></b></span>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
+								<a href="#">
+									<img class="appPic" src="../../images/icon24@2x.png"/>
+									<div class="mui-media-body">发票真伪</div>
+								</a>
+								<span class="editIcon editAdd"><b class="mui-icon mui-icon-plusempty"></b></span>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
+								<a href="#">
+									<img class="appPic" src="../../images/icon25@2x.png"/>
+									<div class="mui-media-body">大厅实况</div>
+								</a>
+								<span class="editIcon editAdd"><b class="mui-icon mui-icon-plusempty"></b></span>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
+								<a href="#">
+									<img class="appPic" src="../../images/icon26@2x.png"/>
+									<div class="mui-media-body">进度结果</div>
+								</a>
+								<span class="editIcon editAdd"><b class="mui-icon mui-icon-plusempty"></b></span>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
+								<a href="#">
+									<img class="appPic" src="../../images/icon27@2x.png"/>
+									<div class="mui-media-body">征期日历</div>
+								</a>
+								<span class="editIcon editAdd"><b class="mui-icon mui-icon-plusempty"></b></span>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
+								<a href="#">
+									<img class="appPic" src="../../images/icon28@2x.png"/>
+									<div class="mui-media-body">帮您算税</div>
+								</a>
+								<span class="editIcon editAdd"><b class="mui-icon mui-icon-plusempty"></b></span>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
+								<a href="#">
+									<img class="appPic" src="../../images/icon35@2x.png"/>
+									<div class="mui-media-body">在线沟通</div>
+								</a>
+								<span class="editIcon editAdd"><b class="mui-icon mui-icon-plusempty"></b></span>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
+								<a href="#">
+									<img class="appPic" src="../../images/icon29@2x.png"/>
+									<div class="mui-media-body">操作文档</div>
+								</a>
+								<span class="editIcon editAdd"><b class="mui-icon mui-icon-plusempty"></b></span>
+							</li>
+						</ul>
+					</div>	
+					<div class="appBox">
+						<div class="appHead">我有意见</div>
+						<ul class="mui-table-view mui-grid-view mui-grid-9">
+							<li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
+								<a href="#">
+									<img class="appPic" src="../../images/icon30@2x.png"/>
+									<div class="mui-media-body">服务意见</div>
+								</a>
+								<span class="editIcon editAdd"><b class="mui-icon mui-icon-plusempty"></b></span>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
+								<a href="#">
+									<img class="appPic" src="../../images/icon31@2x.png"/>
+									<div class="mui-media-body">问卷调查</div>
+								</a>
+								<span class="editIcon editAdd"><b class="mui-icon mui-icon-plusempty"></b></span>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
+								<a href="#">
+									<img class="appPic" src="../../images/icon32@2x.png"/>
+									<div class="mui-media-body">举报投诉</div>
+								</a>
+								<span class="editIcon editAdd"><b class="mui-icon mui-icon-plusempty"></b></span>
+							</li>
+						</ul>
+					</div>	
+					<div class="appBox">
+						<div class="appHead">为您提醒</div>
+						<ul class="mui-table-view mui-grid-view mui-grid-9">
+							<li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
+								<a href="#">
+									<img class="appPic" src="../../images/icon33@2x.png"/>
+									<div class="mui-media-body">缴税提醒</div>
+								</a>
+								<span class="editIcon editAdd"><b class="mui-icon mui-icon-plusempty"></b></span>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
+								<a href="#">
+									<img class="appPic" src="../../images/icon34@2x.png"/>
+									<div class="mui-media-body">通知公告</div>
+								</a>
+								<span class="editIcon editAdd"><b class="mui-icon mui-icon-plusempty"></b></span>
+							</li>
+						</ul>
+					</div>	
+					<div class="appBox">
+						<div class="appHead">无图标菜单</div>
+						<ul class="mui-table-view mui-grid-view mui-grid-9">
+							<li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
+								<a href="#">
+									<img class="appPic" src="../../images/icon10@2x.png"/>
+									<div class="mui-media-body">银联实名注册</div>
+								</a>
+								<span class="editIcon editAdd"><b class="mui-icon mui-icon-plusempty"></b></span>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
+								<a href="#">
+									<img class="appPic" src="../../images/icon10@2x.png"/>
+									<div class="mui-media-body">灵活就业社保费</div>
+								</a>
+								<span class="editIcon editAdd"><b class="mui-icon mui-icon-plusempty"></b></span>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
+								<a href="#">
+									<img class="appPic" src="../../images/icon10@2x.png"/>
+									<div class="mui-media-body">预约排号</div>
+								</a>
+								<span class="editIcon editAdd"><b class="mui-icon mui-icon-plusempty"></b></span>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
+								<a href="#">
+									<img class="appPic" src="../../images/icon10@2x.png"/>
+									<div class="mui-media-body">进度结果</div>
+								</a>
+								<span class="editIcon editAdd"><b class="mui-icon mui-icon-plusempty"></b></span>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
+								<a href="#">
+									<img class="appPic" src="../../images/icon10@2x.png"/>
+									<div class="mui-media-body">申报查询</div>
+								</a>
+								<span class="editIcon editAdd"><b class="mui-icon mui-icon-plusempty"></b></span>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
+								<a href="#">
+									<img class="appPic" src="../../images/icon10@2x.png"/>
+									<div class="mui-media-body">涉税事项办理进度查询</div>
+								</a>
+								<span class="editIcon editAdd"><b class="mui-icon mui-icon-plusempty"></b></span>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
+								<a href="#">
+									<img class="appPic" src="../../images/icon10@2x.png"/>
+									<div class="mui-media-body">物流进度查询</div>
+								</a>
+								<span class="editIcon editAdd"><b class="mui-icon mui-icon-plusempty"></b></span>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
+								<a href="#">
+									<img class="appPic" src="../../images/icon10@2x.png"/>
+									<div class="mui-media-body">电子凭证查询</div>
+								</a>
+								<span class="editIcon editAdd"><b class="mui-icon mui-icon-plusempty"></b></span>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
+								<a href="#">
+									<img class="appPic" src="../../images/icon10@2x.png"/>
+									<div class="mui-media-body">自助终端扫码登录</div>
+								</a>
+								<span class="editIcon editAdd"><b class="mui-icon mui-icon-plusempty"></b></span>
+							</li>
+						</ul>
+					</div>	
+				</div>
+			</div>
+		</div>
+		
+		
+		<script src="../../js/common/jquery-1.11.1.min.js"></script>
+		<script src="../../js/common/mui.min.js"></script>
+		<script src="../../js/common/mui.picker.min.js"></script>
+		<script src="../../js/common/mui.poppicker.js"></script>
+		<script src="../../js/common/mui.showLoading.js"></script>
+		<script src="../../js/common/baseUtils.js"></script>
+		<script src="app.js"></script>
+		<script type="text/javascript">
+			mui.init();
+			mui('.mui-scroll-wrapper').scroll({
+				scrollY: true, //是否竖向滚动
+				scrollX: false, //是否横向滚动
+				startX: 0, //初始化时滚动至x
+				startY: 0, //初始化时滚动至y
+				indicators: true, //是否显示滚动条
+				deceleration:0.0006, //阻尼系数,系数越小滑动越灵敏
+				bounce: true //是否启用回弹
+			});
+			
+			mui.plusReady(function() {
+				var webview = plus.webview.currentWebview();
+				job.pageload(webview);
+				
+				window.addEventListener("refreshData", function(e) {
+					var webview = plus.webview.currentWebview();
+					job.refresh();
+				});
+				
+				var old_back = mui.back;
+				mui.back = function(refreshData) {
+					if (refreshData){
+						var curr = plus.webview.currentWebview();
+						mui.fire(curr.opener(), "refreshData");
+					}
+					old_back();
+				};
+			});
+			
+		</script>
+	</body>
+</html>

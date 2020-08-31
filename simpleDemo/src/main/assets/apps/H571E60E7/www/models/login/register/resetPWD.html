@@ -1,0 +1,109 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../../../css/common/mui.min.css" rel="stylesheet" />
+		<link href="../../../css/common/mui.picker.min.css" rel="stylesheet" />
+		<link href="../../../css/common/mui.poppicker.css" rel="stylesheet" />
+		<link href="../../../css/common/mui-show-loading.css" rel="stylesheet" />
+		<link href="../../../css/common/common.css" rel="stylesheet" /> 
+		<link href="../../../css/common/common-ex.css" rel="stylesheet" />
+		<link href="./resetPWD.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav ex-title-bar ">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title" id="til">忘记密码</h1>
+		</header>
+		<div class="mui-content">
+			<div class="mui-scroll-wrapper" id="mainScroll" style="margin-top: 2.8125rem;">
+				<div class="mui-scroll" id="scrollin">
+					<div class="mui-input-row">
+						<div class="mui-card">
+							<label>用户名</label>
+							<input id="account" type="text" class="mui-input-clear" placeholder="请输入用户名" attr-name="account">
+						</div>
+						<div class="mui-card">
+							<label>密码</label>
+							<input id="password" type="password" class="mui-input-clear" placeholder="请输入密码" attr-name="password">
+						</div>
+						<div class="mui-card">
+							<label>密码确认</label>
+							<input id="confirmPassword" type="password" class="mui-input-clear" placeholder="请输入密码确认" attr-name="confirmPassword">
+						</div>
+						<div class="mui-card">
+							<label>联系电话</label>
+							<input id="phone" type="text" class="mui-input-clear" placeholder="请输入手机号码" attr-name="phone">
+						</div>
+						<div class="mui-card">
+							<label>短息验证码</label>
+							<a id="sendVerificationCode" style="width: 26%;float: right;padding-top: 10px;">获取验证码</a> 
+							<input id="verificationCode" type="text" class="mui-input-clear" placeholder="请输入短息验证码" attr-name="verificationCode" style="width: 50%;" >
+						</div>
+					</div>
+					
+				</div><!-- <div class="mui-scroll" id="scrollin"> -->
+			</div>
+		</div>
+		
+		<nav id="onLineBtns" class="mui-bar mui-bar-tab mui-row op-btns mui-bar-tab-ex-new isFinish">
+			<div id="closeBtn" class="col mui-col-xs-6">
+				<div>
+					<img src="../../../img/common/close.png" align="bottom" >
+					<p>关闭</p>
+				</div>
+			</div>
+			<div id="submitBtn" class="col mui-col-xs-6">
+				<div>
+					<img src="../../../img/common/save_1.png" align="bottom" >
+					<p>提交</p>
+				</div>
+			</div>
+		</nav>
+
+		<script src="../../../js/common/jquery-1.11.1.min.js"></script>
+		<script src="../../../js/common/mui.min.js"></script>
+		<script src="../../../js/common/mui.picker.min.js"></script>
+		<script src="../../../js/common/mui.poppicker.js"></script>
+		<script src="../../../js/common/mui.showLoading.js"></script>
+		<script src="../../../js/common/baseUtils.js"></script>
+		<script src="../../../js/common/crypto-js-aes-min.js"></script> 
+		<script src="./resetPWD.js"></script>
+		<script type="text/javascript">
+			mui.init();
+			mui('.mui-scroll-wrapper').scroll({
+				scrollY: true, //是否竖向滚动
+				scrollX: false, //是否横向滚动
+				startX: 0, //初始化时滚动至x
+				startY: 0, //初始化时滚动至y
+				indicators: true, //是否显示滚动条
+				deceleration:0.0006, //阻尼系数,系数越小滑动越灵敏
+				bounce: true //是否启用回弹
+			});
+			
+			mui.plusReady(function() {
+				var webview = plus.webview.currentWebview();
+				resetPWD.pageload(webview);
+				
+				window.addEventListener("refreshData", function(e) {
+					var webview = plus.webview.currentWebview();
+					resetPWD.refresh();
+				});
+				
+				var old_back = mui.back;
+				mui.back = function(refreshData) {
+					if (refreshData){
+						var curr = plus.webview.currentWebview();
+						mui.fire(curr.opener(), "refreshData");
+					}
+					old_back();
+				};
+			});
+		</script>
+	</body>
+
+</html>

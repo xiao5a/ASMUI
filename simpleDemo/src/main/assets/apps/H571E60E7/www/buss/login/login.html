@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../../css/common/mui.min.css" rel="stylesheet" />
+		<link href="../../css/common/mui.picker.min.css" rel="stylesheet" />
+		<link href="../../css/common/mui.poppicker.css" rel="stylesheet" />
+		<link href="../../css/common/mui-show-loading.css" rel="stylesheet" />
+		<link href="../../css/common/common.css" rel="stylesheet" />
+		<link href="../../css/common/common-ex.css" rel="stylesheet" /> 
+		<link href="login.css" rel="stylesheet"/>
+	</head>
+	<body class="loginPage">
+		<div class="loginHeader">
+			<img class="lhLogo" src="../../images/logo2@2x.png"/>
+			<div class="lhName">国家税务总局湖北省税务局</div>
+			<div class="lhTip">欢迎您登录</div>
+		</div>
+		<div class="loginBox">
+			<form class="mui-input-group">
+				<div class="mui-input-row">
+					<input type="text" class="mui-input-clear" placeholder="请输入用户名" id='userName'>
+				</div>
+				<div class="mui-input-row">
+					<input type="password" class="mui-input-password" placeholder="请输入密码" id='password'>
+				</div>
+				<div class="mui-input-row code loginCode">
+					<input type="text" placeholder="请输入验证码" id="verifycode">
+					<div id="verificationCode" class="codePic">
+						<img id="verifycode_img" src="">
+					</div>
+				</div>
+				
+				<button type="button" class="mui-btn mui-btn-warning mui-btn-block loginBtn" id='login'>登录</button>
+				<div class="remeberBox">
+					<a class="remeCode" id='forgetPassword'>忘记密码？</a>
+					<a class="remeReg" id='register'>注册</a>
+				</div>
+				<div class="otherEntry">
+					<div class="oeTip">第三方登录</div>
+					<div class="oeBox">
+						<a><img src="../../images/j1@2x.png" onclick="" id='aliLogin'></a>
+						<a><img src="../../images/j2@2x.png" id='wechatLogin'></a>
+					</div>
+				</div>
+			</form>
+		</div>
+		
+		
+		<script src="../../js/common/jquery-1.11.1.min.js"></script>
+		<script src="../../js/common/mui.min.js"></script>
+		<script src="../../js/common/mui.picker.min.js"></script>
+		<script src="../../js/common/mui.poppicker.js"></script>
+		<script src="../../js/common/mui.showLoading.js"></script>
+		<script src="../../js/common/baseUtils.js"></script>
+		<script src="../../js/common/commom.js"></script>
+		<script src="../../js/common/alipayPlus.js"></script>
+		
+		<script src="login.js"></script>
+		<script type="text/javascript">
+			
+			mui.init();
+
+			mui('.mui-scroll-wrapper').scroll({
+				scrollY: true, //是否竖向滚动
+				scrollX: false, //是否横向滚动
+				startX: 0, //初始化时滚动至x
+				startY: 0, //初始化时滚动至y
+				indicators: true, //是否显示滚动条
+				deceleration:0.0006, //阻尼系数,系数越小滑动越灵敏
+				bounce: true //是否启用回弹
+			});
+			
+			mui.plusReady(function() {
+
+				var webview = plus.webview.currentWebview();
+				
+				
+
+			});
+
+
+			pageLoad()
+		</script>
+	</body>
+</html>

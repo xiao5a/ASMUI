@@ -1,0 +1,63 @@
+.mui-scroll-wrapper.mui-control-content.tab {
+	position: absolute;
+	margin-top: 0rem;
+	display: none;
+}
+
+.mui-scroll-wrapper.mui-control-content.tab.mui-active {
+	display: block;
+}
+
+.ex-job-title {
+	font-size: 1.125rem;
+	font-weight: bold;
+	color: #327597;
+}
+
+.flexGridTitle {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 2.75rem;
+}
+
+.flexGridTitle-item {
+	color: #FFFFFF;
+	font-size: 1.75rem;
+	font-weight: bold;
+}
+
+.ex-job-box {
+	margin: .8rem 0 0 0;
+	background-color: #fff;
+	border-radius: 0.1875rem;
+}
+
+.ex-job-box .title {
+	font-size: 1rem;
+	line-height: 2rem;
+	padding-left: 0.8rem;
+	border-bottom: solid 1px #DFDFDF;
+	color: #333;
+}
+
+.ex-job-box ul {
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+}
+
+.ex-job-box ul li {
+	border:#e8e8ef 1px solid;
+	display: inline-block;
+	padding-top: 1.25rem;
+	padding-bottom: 0rem;
+	text-align: center;
+	/* border: #d8cece 1px solid; */
+	width: 33%;
+}
+
+.ex-job-box ul li img {
+	border-radius: 0.1875rem;
+}

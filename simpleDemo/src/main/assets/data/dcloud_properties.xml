@@ -76,6 +76,11 @@
 		<!--百度定位 begin -->
 		<feature name="Geolocation" value="io.dcloud.js.geolocation.GeolocationFeatureImpl" />
 		<!-- 百度定位 end -->
+
+		<feature name="LivePlugin" value="com.neusoft.hbsw.demo.LivePlugin"></feature>
+		<feature name="DemoStandardFeature" value="com.neusoft.hbsw.demo.DemoStandardFeature"></feature>
+		<feature name="Alipay" value="com.alipay.sdk.pay.demo.AlipayFeature"></feature>
+
 	</features>
 
 	<services>

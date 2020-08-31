@@ -39,7 +39,6 @@
 			
 		//第三方登录-支付宝登录
 		document.getElementById("aliLogin").addEventListener("tap", function() {
-			alert("aliLogin");
 			aliLogin();
 		})
 		
@@ -188,14 +187,12 @@
 
 
 	function alipay(result) {
-    			alert(result);
 
-    			    			alert(result[0]);
-    			    			alert(result[1]);
-alert(result[0]=="200"&&result[1]=="9000");
     			             if(result[0]=="200"&&result[1]=="9000"){
-    			             alert("授权登录成功,支付宝账户的Id为："+result[2]);
+    			             alert("授权登录成功模拟登录,支付宝账户的Id为："+result[2]);
     			                //授权登录成功
+
+    			                  gotoIndex();
     			             	$.ajax({
     								type: "get",
     								url: apis.getAlipayInfo,//调用后台接口根据auth_code取支付宝账户的基本信息

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title></title>
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<link href="../../../css/common/mui.min.css" rel="stylesheet" />
+	<link href="../../../css/common/mui.picker.min.css" rel="stylesheet" />
+	<link href="../../../css/common/mui.poppicker.css" rel="stylesheet" />
+	<link href="../../../css/common/mui-show-loading.css" rel="stylesheet" />
+	<link href="../../../css/common/common.css" rel="stylesheet" />
+	<link href="../../../css/common/common-ex.css" rel="stylesheet" />
+</head>
+<body>
+<header class="mui-bar mui-bar-nav ex-title-bar">
+	<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+	<h1 class="mui-title">调用原生代码</h1>
+</header>
+<div class="mui-content">
+	<div class="mui-scroll-wrapper">
+		<div id="scrollin" class="mui-scroll">
+
+
+		</div>
+	</div>
+</div>
+
+
+<script src="../../../js/common/jquery-1.11.1.min.js"></script>
+<script src="../../../js/common/mui.min.js"></script>
+<script src="../../../js/common/mui.picker.min.js"></script>
+<script src="../../../js/common/mui.poppicker.js"></script>
+<script src="../../../js/common/mui.showLoading.js"></script>
+<script src="../../../js/common/baseUtils.js"></script>
+
+<script src="../../../js/common/alipayPlus.js" ></script>
+
+<script type="text/javascript">
+			mui.init();
+			mui('.mui-scroll-wrapper').scroll({
+				scrollY: true, //是否竖向滚动
+				scrollX: false, //是否横向滚动
+				startX: 0, //初始化时滚动至x
+				startY: 0, //初始化时滚动至y
+				indicators: true, //是否显示滚动条
+				deceleration:0.0006, //阻尼系数,系数越小滑动越灵敏
+				bounce: true //是否启用回弹
+			});
+
+			mui.plusReady(function() {
+				// 测试调用原生代码 开始
+<!--				var demo = plus.android.importClass("com.alipay.sdk.pay.demo.PayDemoActivity");-->
+<!--				var main = plus.android.runtimeMainActivity();-->
+<!--				 var Intent = plus.android.importClass("android.content.Intent");-->
+<!--				 var intent = new Intent(main.getIntent());-->
+<!--				 intent.setClassName(main, "com.alipay.sdk.pay.demo.PayDemoActivity");-->
+<!--				 intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);-->
+<!--				 intent.putExtra("extra", "需要传递的数据"); //传递数据-->
+				 alert(1);
+
+				 	if(window.plus) {
+				var result = window.plus.bridge.execSync('LivePlugin', 'openlive',[]);
+				alert(result);//参数数组;
+				}
+
+					if(window.plus) {
+					alert(window.plus.bridge.execSync('DemoStandardFeature', 'test',[]));
+				}
+
+<!--				 main.startActivity(intent);-->
+
+				alert(11);
+
+
+				  plus.Alipay.alipayLogin(result.data, function( result ) {
+                    		         //成功之后异步带回来的数据加入判断
+                    		         if(result!=null&&result!=''){
+                    		              alipay(result);
+                    		         }
+                    		       },function(result){
+                    		         window.location.href ="error.html";
+                    		       });
+				//alert(demo.getResult());
+
+				//demo.callbaResult();
+				// 测试调用原生代码 完成
+
+				var webview = plus.webview.currentWebview();
+				job.pageload(webview);
+
+				window.addEventListener("refreshData", function(e) {
+					var webview = plus.webview.currentWebview();
+					job.refresh();
+				});
+
+				var old_back = mui.back;
+				mui.back = function(refreshData) {
+					if (refreshData){
+						var curr = plus.webview.currentWebview();
+						mui.fire(curr.opener(), "refreshData");
+					}
+					old_back();
+				};
+			});
+fufunction alipay(result) {
+alert(result);
+             if(result[0]=="200"&&result[1]=="9000"){
+                //授权登录成功
+             	$.ajax({
+					type: "get",
+					url: apis.getAlipayInfo,//调用后台接口根据auth_code取支付宝账户的基本信息
+					dataType: "json",
+					cache: false, //缓存
+					async: true, //异步
+					data: {
+						'authCode':result[2],
+						'appID':result[4],
+						'scope':result[3],
+						'type': 2
+					},
+					success: function(result) {
+							alert("授权登录成功,支付宝账户的Id为："+result.data.alipayId);
+					}
+				});
+             }else{
+               mui.toast("取消了支付宝授权");
+             }
+		}
+
+			function testCallBack(data){
+				alert(data);
+			}
+		</script>
+</body>
+</html>

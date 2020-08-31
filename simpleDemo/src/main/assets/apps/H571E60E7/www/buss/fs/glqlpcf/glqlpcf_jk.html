@@ -1,0 +1,152 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../../../css/common/mui.css" rel="stylesheet" />
+		<link href="../../../css/common/mui.picker.css" rel="stylesheet" />
+		<link href="../../../css/common/mui.poppicker.css" rel="stylesheet" />
+		<link href="glqlpcf_jk.css" rel="stylesheet" />
+		
+		<script src="../../../js/common/mui.js"></script>
+		<script src="../../../js/common/jquery-1.11.1.min.js"></script>
+		<script src="../../../js/common/mui.picker.js"></script>
+		<script src="../../../js/common/mui.poppicker.js"></script>
+		<script src="../../../js/common/city.data.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../../js/common/city.data-3.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav ex-title-bar ">
+				<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+				<h1 class="mui-title" id="tille">公路桥梁赔偿费缴款</h1>
+			</header>
+			<div class="mui-content">
+			  <div style="position: relative;">
+					<div id="mui_card_header_tip">请选择需要缴纳的核定单</div>
+					<div id="mui_card_header_icon"><span class="mui-icon mui-icon-help"></span></div>
+				</div>
+			  
+			  <div class="mui-scroll-wrapper">
+				 <div class="mui-scroll">
+						<!--这里放置真实显示的DOM内容-->
+				  <div class="mui-card">
+					<div class="mui-card-header" id="header">
+						<div id="header_left">
+							<span>应征凭证序号</span><span style="padding-left: 10px;">10014220000083058193</span>
+						</div>
+						<div class="mui-checkbox" id="header_right">
+							<label></label>
+							<input name="radio1" id="radio1" type="checkbox" onclick="check()">
+						</div>
+					</div>
+					<div class="mui-card-content" id="mid">￥100</div>
+							
+					<div  id="footer">
+						<div id="footer_bg">
+							<div class="footer_span">
+								<span class="span_font_style">证件号码</span>
+								<span class="footer_value span_font_style">429001198812292969</span>
+							</div>
+							<div class="footer_span">
+								<span class="span_font_style">姓名</span>
+								<span class="footer_value span_font_style">敖玉冰</span>
+							</div>
+							<div class="footer_span">
+								<span class="span_font_style">执收单位</span>
+								<span class="footer_value span_font_style" style="text-align: right;margin-left: 70px;">武汉市蔡甸区公路管理段（武汉市蔡甸区公路管理局）</span>
+							</div>
+							<div class="footer_span">
+								<span class="span_font_style">所属期</span>
+								<span class="footer_value span_font_style">2020-08-03</span>
+							</div>
+							<div class="footer_span">
+								<span class="span_font_style">缴款状态</span>
+								<span class="footer_value span_font_style">未缴款</span>
+							</div>
+						</div>
+					</div>
+				  </div>
+				</div>
+			</div>
+		</div>
+				<div class="submitBtn">
+					<button type="button" class="mui-btn mui-btn-block mui-btn-primary" onclick="createOrder()">缴款</button>
+				</div>
+			</div>
+		
+			<!-- 弹窗区域 -->
+			<div id="popover" class="mui-popover">
+				<!-- 区域滚动 -->
+				<div class="mui-scroll-wrapper">
+				    <div class="mui-scroll">
+				       <div id="order_Header_title">
+				       	<h4>订单信息</h4>
+				       	<h5>您的预付缴纳订单详情如下</h5>
+				       </div>
+					   <!-- 动态添加订单信息-->
+				       <div id="order_popover_append">
+				       </div>
+				    </div>
+				</div>
+			</div>
+				
+		</body>
+		
+		
+		
+		<script type="text/javascript">
+			
+		    let check  = () =>{
+				var val=$('input[name="radio1"]:checked').val();
+				if(val == "on"){
+					$(".mui-card").css("background-image","linear-gradient(-60deg, #96deda 0%, #50c9c3 100%)");
+				}else{
+					$(".mui-card").css("background-image","");
+				}
+			}
+			
+			let createOrder = () =>{
+				mui("#popover").popover('toggle');
+				$("#order_popover_append").empty()
+				// for(let i = 0 ; i < 5 ; i++){
+					$("#order_popover_append").append(`<div id="footer_bg_append">
+							<div class="footer_span">
+								<span class="span_font_style">证件号码</span>
+								<span class="footer_value span_font_style">429001198812292969</span>
+							</div>
+							<div class="footer_span">
+								<span class="span_font_style">姓名</span>
+								<span class="footer_value span_font_style">敖玉冰</span>
+							</div>
+							<div class="footer_span">
+								<span class="span_font_style">所属期</span>
+								<span class="footer_value span_font_style">2020-08-03</span>
+							</div>
+							<div class="footer_span">
+								<span class="span_font_style">纳执收单位</span>
+								<span class="footer_value span_font_style">武汉市蔡甸区公路管理段（武汉市蔡甸区公路管理局）</span>
+							</div>
+						</div>`)
+				// }
+				$("#popover").append(`	<div id="order_popover_button">
+					<button type="button" class="mui-btn mui-btn-primary" onclick="createOrder()">确定缴费</button>
+				</div>`);
+			}
+			$("#footer_bg").next().remove();
+		</script>
+		<script>
+				(function(mui, doc) {
+					mui.init({
+						statusBarBackground: '#f7f7f7'
+					});
+					mui('.mui-scroll-wrapper').scroll({
+						scrollY: true,
+					    deceleration: 0.0005 //flick 减速系数，系数越大，滚动速度越慢，滚动距离越小，默认值0.0006
+					});
+				}(mui, document));
+			</script>
+		</script>
+</html>

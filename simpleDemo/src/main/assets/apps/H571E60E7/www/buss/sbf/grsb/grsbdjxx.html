@@ -1,0 +1,177 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../../../css/common/mui.min.css" rel="stylesheet" />
+		<link href="../../../css/common/mui.picker.min.css" rel="stylesheet" />
+		<link href="../../../css/common/mui.poppicker.css" rel="stylesheet" />
+		<link href="../../../css/common/mui-show-loading.css" rel="stylesheet" />
+		<link href="../../../css/common/common.css" rel="stylesheet" />
+		<link href="../../../css/common/common-ex.css" rel="stylesheet" />
+		<link href="./grsbdjxx.css" rel="stylesheet" />
+		<style>
+
+		</style>
+	</head>
+
+	<body class="colorbody html5box fixbtnbox">
+		
+		
+	
+		
+		<header class="mui-bar mui-bar-nav ex-title-bar">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<button id="saveBtn" type="button" class="mui-btn mui-btn-link mui-pull-right"></button>
+			<h1 class="mui-title">个人社保登记信息</h1>
+		</header>
+		
+		<!-- <div class="pagetop">
+			<p class="headertitle">城乡居民养老缴费</p>
+			<div class="subtitle">服务适用范围：<span class="colordarkblue">湖北省</span></div>
+		</div> -->
+		<div class="mui-content  " style="padding-top: 80px;" id="app">
+			<div id="ylxxinfo" class="mui-card" >
+				<ul class="mui-table-view">
+					<template v-for="(value, key, index) in djxxs" >
+						<li class="mui-table-view-cell"   @click="toHdPage(value)">
+							<a   class="mui-navigate-right">
+							
+								<div class="mui-input-row ">
+									<label>社保机构{{value.jbjg}}</label>
+								</div>
+								<div class="mui-input-row ">
+									<label>社保号：{{value.sbh }}</label>
+								</div>
+							</a>
+						</li>
+					</template>
+				</ul>
+			</div>
+
+			
+			<div class="fix-btn  mui-text-center zdyfixbtn onebtn">
+<!-- 			<button id="yljkBtn" type="button" class="mui-btn  " @click="gotojk()" v-bind:class="{'mui-btn-primary':jfdc_value>'',' mui-btn-outlined':jfdc_value==''}">缴款</button>
+ -->		</div>
+			
+		</div>
+		
+		
+		
+
+
+		<!-- <nav id="onLineBtns" class="mui-bar mui-bar-tab mui-row op-btns mui-bar-tab-ex-new isFinish">
+			<div id="submitBtn" class="col mui-col-xs-6">
+				<div>
+					<img src="../../img/common/save_1.png" align="bottom" >
+					<p>提交</p>
+				</div>
+			</div>
+			<div id="closeBtn" class="col mui-col-xs-6">
+				<div>
+					<img src="../../img/common/close.png" align="bottom" >
+					<p>关闭</p>
+				</div>
+			</div>
+		</nav> -->
+
+		<script src="../../../js/common/jquery-1.11.1.min.js"></script>
+		<script src="../../../js/common/mui.min.js"></script>
+		<script src="../../../js/common/mui.picker.min.js"></script>
+		<script src="../../../js/common/mui.poppicker.js"></script>
+		<script src="../../../js/common/mui.showLoading.js"></script>
+		<script src="../../../js/common/baseUtils.js"></script>
+		<script src="../../../js/common/crypto-js-aes-min.js"></script>
+		
+		<script src="./grsbdjxx.js"></script>
+		
+		<script src="../../js/common/vue.js"></script>
+		<script src="../../js/common/vue-resource.min.js"></script>
+		<script type="text/javascript">
+			
+			
+			var vm = new Vue({
+				el: '#app',
+				data: {
+					cachekey:'',
+					djxxs:[],
+
+				},
+				directives: {
+					// 注册一个局部的自定义指令 v-focus
+					focus: {
+						// 指令的定义
+						inserted: function(el) {
+							// 聚焦元素
+							el.focus()
+						}
+					}
+				},
+				created() {
+					console.log("个人社保登记信息个created");
+					// window.grsbdjxx.grsbdjxx();
+					// 
+				},
+				// 在 `methods` 对象中定义方法
+				methods: {
+					
+					
+					toHdPage: function(event) {
+					mui.openWindow({
+						url: './grsbhdxx.html',
+						id: "grsbhdxx.html",
+						extras: {
+							djxx: event,
+							cachekey:this.cachekey,
+						}
+					});
+					
+					},
+					
+					// toHdPage:function(event){
+					// 	window.grsbdjxx.toHdPage();
+					// }
+					
+					
+					
+				},
+				mounted() {
+
+					console.log("个人社保登记信息个人社保登记信息mounted");
+					var _this = this
+					mui.init();
+					mui('.mui-scroll-wrapper').scroll({
+						scrollY: true,
+						scrollX: false,
+						startX: 0,
+						startY: 0,
+						indicators: true,
+						deceleration: 0.0006,
+						bounce: true
+					});
+
+					mui.plusReady(function() {
+						console.log("个人社保登记信息mui.plusReady");
+						var webview = plus.webview.currentWebview();
+						grsbdjxx.pageload(webview);
+						window.addEventListener("refreshData", function(e) {
+							var webview = plus.webview.currentWebview();
+							grsbdjxx.refresh();
+						});
+						var old_back = mui.back;
+						mui.back = function() {
+							var curr = plus.webview.currentWebview();
+							mui.fire(curr.opener(), "refreshData");
+							old_back();
+						};
+					});
+				}
+
+
+			});
+		</script>
+	</body>
+
+</html>

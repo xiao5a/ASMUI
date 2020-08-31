@@ -3,13 +3,16 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 28
     defaultConfig {
-        applicationId "com.neusoft.hbsw"
+        applicationId "com.neusoft.tax"
         minSdkVersion 19
         targetSdkVersion 28
         versionCode 100
         versionName "1.0.0"
         multiDexEnabled true
     }
+    lintOptions {
+       checkReleaseBuilds false
+        abortOnError false }
     buildTypes {
         release {
             minifyEnabled false
@@ -23,7 +26,6 @@ dependencies {
     implementation 'com.github.bumptech.glide:glide:4.9.0' // 基座依赖
     implementation 'com.android.support:support-v4:28.0.0'
     implementation 'com.alibaba:fastjson:1.1.46.android'
-    compile (name: 'alipaySdk-15.7.9-20200727142846', ext: 'aar')
 
 }
 
