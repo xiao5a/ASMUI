@@ -4,9 +4,9 @@
 .lhLogo{width: 70px;}
 .lhName{margin: 5px 0; font-size: 20px; color: #fff;}
 .lhTip{color: #fff; color: rgba(255,255,255,0.8);}
-.loginBox{width: 90%; height: 80%; padding: 20px; margin: 0 auto; background: #fff; border-radius: 10px;}
+.loginBox{width: 90%; height:60%; padding: 20px; margin: 0 auto; background: #fff; border-radius: 10px;}
 .mui-input-group:before, .mui-input-group:after{content: none;}
-.mui-input-group input, .mui-input-group textarea{font-size: 14px;}
+.mui-input-group input, .mui-input-group textarea{font-size: 11px;}
 .mui-input-group .mui-input-row{height: 50px;}
 input[type=color], input[type=date], input[type=datetime-local], input[type=datetime], input[type=email], input[type=month], input[type=number], input[type=password], input[type=search], input[type=tel], input[type=text], input[type=time], input[type=url], input[type=week], select, textarea{height: 50px;}
 .mui-input-group .mui-input-row.code{padding-right: 100px;}
