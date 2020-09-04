@@ -1,5 +1,7 @@
 body{padding-top: 44px; position: relative;}
-
+.mui-grid-view.mui-grid-9 .mui-table-view-cell{
+	border: none;
+}
 .titleText{padding: 0 5px; line-height: 44px;}
 .editIcon{width: 25px; height: 25px; display: block; position: absolute; top: 0; right: 0; z-index: 5;}
 .editIcon > b{width: 20px; height: 20px; background: #f59072; display: block; position: absolute; top: 0; right: 0;}

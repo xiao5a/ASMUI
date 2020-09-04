@@ -4,14 +4,15 @@
 		<meta charset="utf-8">
 		<title></title>
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-		<link href="../../../css/common/mui.min.css" rel="stylesheet" />
-		<link href="../../../css/common/mui.picker.min.css" rel="stylesheet" />
-		<link href="../../../css/common/mui-show-loading.css" rel="stylesheet" />
-		<link href="../../../css/common/common.css" rel="stylesheet" /> 
-		<link href="../../../css/common/common-ex.css" rel="stylesheet" />
-		<link href="../../../css/common/mui.css" rel="stylesheet" />
-		<link href="../../../css/common/mui.poppicker.css" rel="stylesheet" />
-		<link href="../../../css/common/buss.css" rel="stylesheet" />
+		<link href="../../css/common/mui.min.css" rel="stylesheet" />
+		<link href="../../css/common/mui.picker.min.css" rel="stylesheet" />
+		<link href="../../css/common/mui-show-loading.css" rel="stylesheet" />
+		<link href="../../css/common/common.css" rel="stylesheet" /> 
+		<link href="../../css/common/common-ex.css" rel="stylesheet" />
+		<link href="../../css/common/mui.css" rel="stylesheet" />
+		<link href="../../css/common/mui.poppicker.css" rel="stylesheet" />
+		<link href="../../css/common/buss.css" rel="stylesheet" />
+		<link href="../../css/common/iconfont.css" rel="stylesheet" />
 		<link href="./myinfo.css" rel="stylesheet" />
 	</head>
 
@@ -40,7 +41,7 @@
 					</li>
 					<li class="mui-table-view-cell">
 						<span>性别</span>
-						<lebal id="XB">男</lebal>
+						<lebal id="XB">女</lebal>
 					</li>
 					<li class="mui-table-view-cell">
 						<span>用户名</span>
@@ -57,24 +58,23 @@
 				</div>
 				<ul class="mui-table-view">
 					<li class="mui-table-view-cell">
-						<a class="mui-navigate-right">
-							换账号登录
-						</a>
-					</li>
-					<li class="mui-table-view-cell">
-						<a class="mui-navigate-right">
-							退出登录
+						<a class="mui-navigate-right onclick">
+							<svg class="icon" aria-hidden="true">
+							  <use xlink:href="#icon-mimaxiugai6"></use>
+							</svg>
+							<span>密码修改</span>
 						</a>
 					</li>
 				</ul>
-			</div>
 		</div>
-		<script src="../../../js/common/jquery-1.11.1.min.js"></script>
-				<script src="../../../js/common/mui.min.js"></script>
-				<script src="../../../js/common/mui.picker.min.js"></script>
-				<script src="../../../js/common/mui.poppicker.js"></script>
-				<script src="../../../js/common/mui.showLoading.js"></script>
-				<script src="../../../js/common/baseUtils.js"></script>
+		<script src="../../js/common/jquery-1.11.1.min.js"></script>
+				<script src="../../js/common/mui.min.js"></script>
+				<script src="../../js/common/mui.picker.min.js"></script>
+				<script src="../../js/common/mui.poppicker.js"></script>
+				<script src="../../js/common/mui.showLoading.js"></script>
+				<script src="../../js/common/baseUtils.js"></script>
+				<script src="../../js/common/iconfont.js"></script>
+				<script src="../../js/common/common.js"></script>
 				<script type="text/javascript">
 					mui.init();
 					mui('.mui-scroll-wrapper').scroll({
@@ -89,11 +89,11 @@
 					
 					mui.plusReady(function() {
 						var webview = plus.webview.currentWebview();
-						job.pageload(webview);
+						myinfo.pageload(webview);
 						
 						window.addEventListener("refreshData", function(e) {
 							var webview = plus.webview.currentWebview();
-							job.refresh();
+							myinfo.refresh();
 						});
 						
 						var old_back = mui.back;

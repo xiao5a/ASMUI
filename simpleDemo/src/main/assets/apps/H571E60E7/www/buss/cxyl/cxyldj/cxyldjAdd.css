@@ -1,0 +1,14 @@
+.loginBox{
+		width: 96%; 
+		background: #fff; 
+		margin-left: 2%;
+		border-radius: 10px ;
+}
+.mui-bar-nav~.mui-content {
+    padding-top: 47px;
+}
+.mui-input-row label {
+    width: 20%;
+    font-size: 14px;
+    text-align: left;
+}

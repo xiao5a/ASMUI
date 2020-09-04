@@ -8,7 +8,9 @@
 		<link href="../../../css/common/mui.css" rel="stylesheet" />
 		<link href="../../../css/common/mui.picker.css" rel="stylesheet" />
 		<link href="../../../css/common/mui.poppicker.css" rel="stylesheet" />
+		<link href="../../../css/common/iconfont.css" rel="stylesheet" />
 		<link href="glqlpcf_jk.css" rel="stylesheet" />
+		<link href="../../../css/common/buss.css" rel="stylesheet" />
 		
 		<script src="../../../js/common/mui.js"></script>
 		<script src="../../../js/common/jquery-1.11.1.min.js"></script>
@@ -16,6 +18,7 @@
 		<script src="../../../js/common/mui.poppicker.js"></script>
 		<script src="../../../js/common/city.data.js" type="text/javascript" charset="utf-8"></script>
 		<script src="../../../js/common/city.data-3.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../../js/common/iconfont.js"></script>
 	</head>
 
 	<body>
@@ -72,11 +75,89 @@
 				</div>
 			</div>
 		</div>
+			<a href="#jk">
 				<div class="submitBtn">
-					<button type="button" class="mui-btn mui-btn-block mui-btn-primary" onclick="createOrder()">缴款</button>
+					<button type="button" class="mui-btn mui-btn-block mui-btn-primary">缴款</button>
+				</div>
+				 <!-- onclick="createOrder()" -->
+				</a>
+			</div>
+		<div id="jk" class="mui-popover mui-popover-action mui-popover-bottom">
+			
+			<div class="mui-card">
+				<h5 class="mui-content-padded">请选择付款方式</h5>
+				<form class="mui-input-group">
+					<div class="mui-input-row mui-radio">
+						<label>
+							<svg class="icon" aria-hidden="true">
+							  <use xlink:href="#icon-tubiao-"></use>
+							</svg>
+							<span class="zffs">云闪付</span>
+							<span class="rkfs">快捷支付</span>
+						</label>
+						<input name="radio1" value="Item 3" type="radio" >
+					</div>
+					<div class="mui-input-row mui-radio">
+						<label>
+							<svg class="icon" aria-hidden="true">
+								<use xlink:href="#icon-umidd17"></use>
+							</svg>
+							<span class="zffs">支付宝</span>
+							<span class="rkfs">直达国库</span>
+						</label>
+						<input name="radio1" value="Item 4" type="radio" >
+					</div>
+					<div class="mui-input-row mui-radio">
+						<label>
+							<svg class="icon" aria-hidden="true">
+							  <use xlink:href="#icon-umidd17"></use>
+							</svg>
+							<span class="zffs">支付宝</span>
+							<span class="rkfs">快捷支付</span>
+						</label>
+						<input name="radio1" value="Item 3" type="radio" >
+					</div>
+					<div class="mui-input-row mui-radio">
+						<label>
+							<svg class="icon" aria-hidden="true">
+							  <use xlink:href="#icon-weixinzhifu2"></use>
+							</svg>
+							<span class="zffs">微信</span>
+							<span class="rkfs">直达国库</span>
+						</label>
+						<input name="radio1" value="Item 3" type="radio" >
+					</div>
+					<div class="mui-input-row mui-radio">
+						<label>
+							<svg class="icon" aria-hidden="true">
+							  <use xlink:href="#icon-weixinzhifu2"></use>
+							</svg>
+							<span class="zffs">微信</span>
+							<span class="rkfs">快捷支付</span>
+						</label>
+						<input name="radio1" value="Item 3" type="radio" >
+						
+					</div>
+					<!-- <div class="mui-input-row mui-checkbox mui-disabled">
+						<label>disabled checkbox</label>
+						<input name="checkbox1" type="checkbox" disabled="disabled">
+					</div> -->
+				</form>
+				<div class="mui-card-content fkze" >
+					<h5 class="mui-content-padded xyfk">需要付款
+					<span class="fkje">
+						<svg class="icon fkje" aria-hidden="true">
+						  <use xlink:href="#icon-renminbi"></use>
+						</svg>
+						2000000.00
+					</span>
+					</h5>
+				</div>
+				<div class="submitBtn">
+					<button type="button" class="mui-btn mui-btn-block mui-btn-primary">确认缴款</button>
 				</div>
 			</div>
-		
+		</div>
 			<!-- 弹窗区域 -->
 			<div id="popover" class="mui-popover">
 				<!-- 区域滚动 -->

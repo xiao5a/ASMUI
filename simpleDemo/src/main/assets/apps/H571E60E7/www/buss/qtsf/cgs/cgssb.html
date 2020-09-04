@@ -27,13 +27,11 @@
 			</div>
 			<div class="mui-card" style="margin-bottom: 35px;">
 				<ul class="mui-table-view">
-					<li class="mui-table-view-cell">
-						<span>姓名</span>
-						<lebal id="XM">敖玉冰</lebal>
+					<li id="nsrmc" class="mui-table-view-cell">
+						姓名：
 					</li>
-					<li class="mui-table-view-cell">
-						<span>身份证号</span>
-						<lebal id="SFZH">429001198812292969</lebal>
+					<li id="nsrsbh" class="mui-table-view-cell">
+						身份证号：
 					</li>
 				</ul>
 			</div>
@@ -51,7 +49,7 @@
 								</div>
 								<div class="mui-input-row">
 									<label>车辆挂牌地:</label>
-									<input id="gpdPicker" type="text" class="myPopPicker"  placeholder="请选择车辆挂牌地"
+									<input id="spdPicker" type="text" class="myPopPicker"  placeholder="请选择车辆挂牌地"
 										data-default="" data-options="" on-Change="">
 								</div>
 							</form>
@@ -60,8 +58,8 @@
 				</ul>
 			</div>
 		</div>
-		<button id="nextBtn" type="button" class="mui-btn mui-btn-block mui-btn-primary">下一步</button>
-		<!-- <button id='nexBtn' class="mui-btn1" type='button' >下一步</button> -->
+		<button id="nextBtn" type="button" class="mui-btn mui-btn-primary">下一步</button>
+		<button id="searchBtn" type="button" class="mui-btn mui-btn-primary">查询申报数据</button>
 		<script src="../../../js/common/jquery-1.11.1.min.js"></script>
 		<script src="../../../js/common/mui.min.js"></script>
 		<script src="../../../js/common/mui.picker.min.js"></script>
@@ -69,6 +67,7 @@
 		<script src="../../../js/common/mui.showLoading.js"></script>
 		<script src="../../../js/common/baseUtils.js"></script>
 		<script src="../../../js/common/city.data.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../../js/common/common.js"></script>
 		<script src="./cgssb.js"></script>
 		<script type="text/javascript">
 			mui.init();
@@ -99,6 +98,9 @@
 				};
 				
 			});
+			// cgssb.myInit();
+			// cgssb.addEvent();
+			
 		</script>
 	</body>
 

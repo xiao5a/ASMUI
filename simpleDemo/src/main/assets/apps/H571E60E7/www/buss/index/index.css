@@ -1,16 +1,26 @@
-body{padding-top: 135px; position: relative;}
+body{position: relative;}
 
-.indexHeader{width: 100%; height: 160px; padding-top: 5px; background: url(../../images/bg2@2x.png) no-repeat; background-size: cover; position: absolute; top: 0; left: 0;}
-.inhLogo{height: 60px; margin: 0 auto; margin-top: 20px;mmargin-bottom: 5px; display: block;}
+.indexHeader{
+	width: 100%; 
+	height: 135px;
+	 padding-top: 5px; 
+	 background: url(../../images/bg2@2x.png) no-repeat; 
+	 background-size: cover; 
+	 position: absolute; 
+	 top: 0px; 
+	 left: 0;
+	 z-index:99;
+	 }
+.inhLogo{height: 60px; margin: 0 auto; margin-bottom: 5px; display: block;}
 .inhTitle{margin-top: -10px; color: #fff; font-size: 18px; text-align: center;}
-.inhNum{padding-right: 25px; position: absolute; top: 10px; right: 10px;}
-.inhNum img{width: 15px; padding-top: 25px;}
-.inhNum .mui-badge{padding: 1px 5px; position: absolute; top: 20px; right: 0;}
+.inhNum{padding-right: 25px; position: absolute; top: 42px; right: 10px;}
+.inhNum img{width: 15px; padding-top: 5px;}
+.inhNum .mui-badge{padding: 1px 5px; position: absolute; top: 0; right: 0;}
 .indexHeader .mui-search .mui-placeholder{line-height: 35px; text-align: center;}
 .indexHeader .mui-search .mui-placeholder .mui-icon{margin-right: 5px;}
 .indexHeader .mui-search input[type=search]{background: #fff;}
 
-.mui-content{width: 100%; height: 100%; position: relative;top: 20px;}
+.mui-content{width: 100%; height: 100%; position: relative;background-color: rgb(34,94,217)}
 .indexNav{padding: 0 10px; padding-top: 5px; background: #fff;}
 .appPic{width: 30px; margin-top: 5px;}
 .indexNav .mui-grid-view.mui-grid-9{background-color: #fff; border: 0;}
@@ -33,3 +43,37 @@ body{padding-top: 135px; position: relative;}
 .ibPic{width: 45px; position: absolute; top: 11px; right: 5px;}
 .indexBlock .mui-badge{padding: 2px 5px; margin-left: 5px; color: #fff; font-weight: normal; background: #fd5742; position: relative; top: -2px;}
 .indexBlock .mui-grid-view.mui-grid-9 .mui-table-view-cell>a:not(.mui-btn){padding: 5px 0; padding-right: 60px;} 
+
+.issues{
+	position: relative;
+	margin-top: 10px;
+	background-color:#fff;
+	padding: 10px 5px 5px 15px;
+	font-size: 15px;
+}
+.mui-table-view-condensed{
+	margin-top: 5px;
+}
+.issues .icon-issues{
+	color: #aa00ff;
+	font-size: 15px;
+}	
+.issues .more,.mui-icon-arrowright{
+	color: #2464dd;
+}
+.issues .more{
+	position: absolute;
+	right: 25px;
+	font-size: 13px;
+}
+.mui-icon-arrowright{
+	position: absolute;
+	right: 9px;
+	font-size: 20px;
+}
+.mui-table-view-cell{
+	padding:8px 0px;
+}
+.mui-col-xs-1{
+	width: 5%;
+}

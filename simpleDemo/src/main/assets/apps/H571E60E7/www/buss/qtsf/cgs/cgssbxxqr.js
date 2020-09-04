@@ -3,13 +3,9 @@
 	var appUrl = baseUtils.URL;
 	//超时时间
 	var atimeout = baseUtils.timeout;
-	//账号
-	var account = baseUtils.getState().account;
-	//token 同时检查是否过期
-	var token = baseUtils.getApiToken();
+	//djxh
+	var djxh = UserInfoUtils.getUserInfo().djxh;
 
-	console.log("---appUrl=" + appUrl + "---atimeout=" + atimeout + "---account=" + account + "---token=" + token );
-	//以下编写业务代码
 
 	owner.pageload = function(webview) {
 		owner.myInit();
@@ -30,7 +26,7 @@
 		document.getElementById('SPD_SWJGMC').innerText = backinfo.body.taxML.NSRXXFORM.SPD_SWJGMC;
 		//发票信息
 		document.getElementById('JDCXSTYFPJSHJ').innerText = backinfo.body.taxML.fpxxs[0].JDCXSTYFPJSHJ;
-		document.getElementById('GMFMC').innerText = backinfo.body.taxML.fpxxs[0].GMFMC;
+		// document.getElementById('GMFMC').innerText = backinfo.body.taxML.fpxxs[0].GMFMC;
 		document.getElementById('FPDM').innerText = backinfo.body.taxML.fpxxs[0].FPDM;
 		document.getElementById('JDCXSTYFPHM').innerText = backinfo.body.taxML.fpxxs[0].JDCXSTYFPHM;
 		document.getElementById('FPKJRQ').innerText = backinfo.body.taxML.fpxxs[0].FPKJRQ;
@@ -38,12 +34,12 @@
 		//合格证信息
 		document.getElementById('JDCZCCCHGZ').innerText = backinfo.body.taxML.hgzxx.JDCZCCCHGZ;
 		document.getElementById('CLSCQYMC').innerText = backinfo.body.taxML.hgzxx.CLSCQYMC;
-		// document.getElementById('CLCP1').innerText = backinfo.body.taxML.hgzxx.CLCP1;
+		document.getElementById('CLMC').innerText = backinfo.body.taxML.cshxxMap.CLGZSSBXXFORM.CLMC;
 		document.getElementById('CLXH').innerText = backinfo.body.taxML.hgzxx.CLXH;
 		document.getElementById('CLSBDH').innerText = backinfo.body.taxML.hgzxx.CLSBDH;
 		// document.getElementById('CLYS').innerText = backinfo.body.taxML.hgzxx.CLYS;
 		document.getElementById('FDJHM').innerText = backinfo.body.taxML.hgzxx.FDJHM;
-		document.getElementById('JDCZCCCHGZ').innerText = backinfo.body.taxML.hgzxx.JDCZCCCHGZ;
+		document.getElementById('XNYBS').innerText = backinfo.body.taxML.cshxxMap.CLGZSSBXXFORM.SFXNY=='1'?'是':'否';
 		//车辆购置申报-计税信息
 		document.getElementById('SBJSJG').innerText = backinfo.body.taxML.sbjsxx.SBJSJG;
 		document.getElementById('JSJG').innerText = backinfo.body.taxML.sbjsxx.JSJG;
@@ -51,9 +47,9 @@
 		document.getElementById('YNSE').innerText = backinfo.body.taxML.sbjsxx.YNSE;
 		document.getElementById('MSJSE').innerText = backinfo.body.taxML.sbjsxx.MSJSE;
 		document.getElementById('YJSE').innerText = backinfo.body.taxML.sbjsxx.YJSE;
-		document.getElementById('YBTSE1').innerText = backinfo.body.taxML.sbjsxx.YBTSE;
-		document.getElementById('ZNJ').innerText = backinfo.body.taxML.sbjsxx.ZNJ;
 		document.getElementById('YBTSE').innerText = backinfo.body.taxML.sbjsxx.YBTSE;
+		document.getElementById('ZNJ').innerText = backinfo.body.taxML.sbjsxx.ZNJ;
+		document.getElementById('YJJHJ').innerText = backinfo.body.taxML.sbjsxx.YJJHJ;
 	}
 
 	// 初始化
@@ -81,71 +77,102 @@
 	//申报
 	owner.submitFun = function() {
 		var cacheKey = document.getElementById('cacheKey').value;
-		var reqInfo={
-						"service": {
-							"body": {
-								"taxML": {
-									"cachekey": cacheKey,
-									"DLRDJXH": "20124200000011958577"
-								}
-							},
-							"head": {
-								"tran_time": "104606000",
-								"tran_date": "20190806",
-								"tran_seq": "270799db98b548528e7160dd0be73abb",
-								"expand": [{
-									"name": "identityType",
-									"value": "Hbswwb#476"
-								},
-								{
-									"name": "sjry",
-									"value": "14200dzswj1"
-								},
-								{
-									"name": "sjjg",
-									"value": "14201091400"
-								}],
-								"tran_id": "com.neusoft.cgs.cgssb",
-								"channel_id": "HBSW.NFWB.DZSWJWB"
-							}
-						}
+		
+		var tran_id = tranIdInfo.cgssb;
+		var taxML = {
+						"cachekey": cacheKey,
+						"DLRDJXH": djxh
 					};
-		var appUrl = 'http://192.168.1.100:9090/surrservice/cgs/cgssb';
-		mui.ajax(appUrl, {
-			data: reqInfo,
-			// dataType: 'json',
-			type: 'post',
-			// timeout: atimeout,
-			headers: {
-				'X-Requested-With': 'XMLHttpRequest',
-				'Content-Type': 'application/json;charset=utf-8',
-				'sso-token': '6666'
-			},
-			success: function(data) {
-				if (data != null && data != '') {
-					var backinfo = JSON.parse(data);
-					var code_head = backinfo.head.rtn_code;
-					if(code_head == '0'){
-						mui.openWindow({
-							url: 'cgssb_jk.html',
-							id: 'cgssb_jk.html',
-							extras: {
-								sbxxdata: backinfo.body.taxML.sbxxs[0]
-							}
-						});
-					}else{
-						mui.alert(backinfo.head.rtn_msg.Message);
-					}
-				} else {
-					mui.toast("数据异常！");
+		var reqInfo = ReqInfo.getReqInfo(tran_id,taxML);
+		mui.showLoading("操作中...");
+		$http.post(appUrl,reqInfo,(res)=>{
+			mui.hideLoading();
+			if(res != null && res != ''){
+				console.log(JSON.stringify(res));
+				var code_head = res.head.rtn_code;
+				if(code_head == '0'){
+					mui.openWindow({
+						url: 'cgssb_jk.html',
+						id: 'cgssb_jk.html',
+						extras: {
+							sbxxdata: res.body.taxML.sbxxs[0]
+						}
+					});
+				}else{
+					mui.alert(res.head.rtn_msg.Message);
 				}
-			
-			},
-			error: function(xhr, type, errorThrown) {
-				// mui.hideLoading();
-				//获取本地数据
-				mui.toast("网络连接异常，请确认手机网络状态！");
+				
+			}else{
+				mui.toast("数据异常！");
 			}
 		});
+		
+		
+		// var reqInfo={
+		// 				"service": {
+		// 					"body": {
+		// 						"taxML": {
+		// 							"cachekey": cacheKey,
+		// 							"DLRDJXH": "20124200000011958577"
+		// 						}
+		// 					},
+		// 					"head": {
+		// 						"tran_time": "104606000",
+		// 						"tran_date": "20190806",
+		// 						"tran_seq": "270799db98b548528e7160dd0be73abb",
+		// 						"expand": [{
+		// 							"name": "identityType",
+		// 							"value": "Hbswwb#476"
+		// 						},
+		// 						{
+		// 							"name": "sjry",
+		// 							"value": "mobile"
+		// 						},
+		// 						{
+		// 							"name": "sjjg",
+		// 							"value": "14200000000"
+		// 						}],
+		// 						"tran_id": "com.neusoft.cgs.cgssb",
+		// 						"channel_id": "HBSW.NFWB.DZSWJWB"
+		// 					}
+		// 				}
+		// 			};
+		// var appUrl = 'http://192.168.1.100:9090/surrservice/cgs/cgssb';
+		// mui.ajax(appUrl, {
+		// 	data: reqInfo,
+		// 	// dataType: 'json',
+		// 	type: 'post',
+		// 	// timeout: atimeout,
+		// 	headers: {
+		// 		'X-Requested-With': 'XMLHttpRequest',
+		// 		'Content-Type': 'application/json;charset=utf-8',
+		// 		'sso-token': '6666'
+		// 	},
+		// 	success: function(data) {
+		// 		if (data != null && data != '') {
+		// 			var backinfo = JSON.parse(data);
+		// 			var code_head = backinfo.head.rtn_code;
+		// 			if(code_head == '0'){
+		// 				mui.openWindow({
+		// 					url: 'cgssb_jk.html',
+		// 					id: 'cgssb_jk.html',
+		// 					extras: {
+		// 						sbxxdata: backinfo.body.taxML.sbxxs[0]
+		// 					}
+		// 				});
+		// 			}else{
+		// 				mui.alert(backinfo.head.rtn_msg.Message);
+		// 			}
+		// 		} else {
+		// 			mui.toast("数据异常！");
+		// 		}
+			
+		// 	},
+		// 	error: function(xhr, type, errorThrown) {
+		// 		// mui.hideLoading();
+		// 		//获取本地数据
+		// 		mui.toast("网络连接异常，请确认手机网络状态！");
+		// 	}
+		// });
 	}
 }(mui, window.cgssbxxqr = {}));

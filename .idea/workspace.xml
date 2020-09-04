@@ -10,10 +10,118 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6979718a-c80b-4096-b9de-af331095b8cd" name="Default Changelist" comment="支付宝集成">
+      <change afterPath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/buss/app/searchAppUrl.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/buss/common/ewm.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/buss/common/ewm.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/buss/cxyb/cxyb/cxyb.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/buss/cxyb/cxyb/cxyb.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/buss/cxyb/cxyb/cxyb.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/buss/cxyb/cxyb/cxybhd.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/buss/cxyb/cxyb/cxybhd.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/buss/cxyb/cxyb/cxybhd.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/buss/cxyb/cxybdj/cxybdj.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/buss/cxyb/cxybdj/cxybdj.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/buss/cxyb/cxybdj/cxybdj.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/buss/cxyb/cxybdj/cxybdjhd.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/buss/cxyb/cxybdj/cxybdjhd.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/buss/cxyb/cxybdj/cxybdjhd.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/buss/cxyb/cxybdj/orderDj.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/buss/cxyb/cxybdj/orderDj.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/buss/cxyl/cxyl/cxylnext.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/buss/cxyl/cxyl/cxylnext.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/buss/cxyl/cxyl/cxylnext.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/buss/cxyl/cxyldj/cxyldj.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/buss/cxyl/cxyldj/cxyldjAdd.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/buss/cxyl/cxyldj/cxyldjAdd.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/buss/cxyl/cxyldj/cxyldjAdd.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/buss/cxyl/cxyldj/cxyldjnext.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/buss/cxyl/cxyldj/cxyldjnext.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/buss/cxyl/cxyldj/cxyldjnext.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/buss/fs/glqlpcf/glqlpcf_sbxx.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/buss/fs/glqlpcf/glqlpcf_sbxx.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/buss/issues/issues.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/buss/issues/issues.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/buss/issues/issues.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/buss/issues/issues_detail.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/buss/login/forgetPwd.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/buss/login/forgetPwd.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/buss/login/forgetPwd.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/buss/login/updatePwd.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/buss/login/updatePwd.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/buss/login/updatePwd.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/buss/main/main.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/buss/main/main.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/buss/main/main.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/buss/myinfo/gezx.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/buss/myinfo/grzx.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/buss/qtsf/cgs/cgsfpxx.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/buss/qtsf/cgs/cgsfpxx.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/buss/register/uniRegister.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/buss/register/uniRegister.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/buss/register/uniRegister.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/buss/sbf/grsb/jkxx.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/buss/sbf/grsb/jkxx.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/css/common/iconfont.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/css/common/mui.indexedlist.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/fonts/iconfont.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/fonts/iconfont.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/fonts/iconfont.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/fonts/iconfont.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/fonts/iconfont.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/fonts/iconfont_old.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/js/common/iconfont.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/js/common/mui.indexedlist.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/js/common/vue.min.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/buss/app/allapp.html" beforeDir="false" afterPath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/buss/app/allapp.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/buss/app/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/buss/app/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/buss/app/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/buss/app/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/buss/common/ewm.html" beforeDir="false" afterPath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/buss/common/ewm.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/buss/cxyl/cxyl/cxyl.css" beforeDir="false" afterPath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/buss/cxyl/cxyl/cxyl.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/buss/cxyl/cxyl/cxyl.html" beforeDir="false" afterPath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/buss/cxyl/cxyl/cxyl.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/buss/cxyl/cxyl/cxyl.js" beforeDir="false" afterPath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/buss/cxyl/cxyl/cxyl.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/buss/cxyl/cxyldj/cxyldj.html" beforeDir="false" afterPath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/buss/cxyl/cxyldj/cxyldj.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/buss/cxyl/cxyldj/cxyldj.js" beforeDir="false" afterPath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/buss/cxyl/cxyldj/cxyldj.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/buss/fs/glqlpcf/glqlpcf_jcxx.html" beforeDir="false" afterPath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/buss/fs/glqlpcf/glqlpcf_jcxx.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/buss/fs/glqlpcf/glqlpcf_jcxx.js" beforeDir="false" afterPath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/buss/fs/glqlpcf/glqlpcf_jcxx.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/buss/fs/glqlpcf/glqlpcf_jk.css" beforeDir="false" afterPath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/buss/fs/glqlpcf/glqlpcf_jk.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/buss/fs/glqlpcf/glqlpcf_jk.html" beforeDir="false" afterPath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/buss/fs/glqlpcf/glqlpcf_jk.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/buss/fs/glqlpcf/glqlpcf_sb.html" beforeDir="false" afterPath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/buss/fs/glqlpcf/glqlpcf_sb.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/buss/fs/glqlpcf/glqlpcf_sb.js" beforeDir="false" afterPath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/buss/fs/glqlpcf/glqlpcf_sb.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/buss/index/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/buss/index/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/buss/index/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/buss/index/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/buss/index/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/buss/index/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/buss/login/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/buss/login/login.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/buss/login/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/buss/login/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/buss/login/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/buss/login/login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/js/common/alipayPlus.js" beforeDir="false" afterPath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/js/common/alipayPlus.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/simpleDemo/src/main/java/com/alipay/sdk/pay/demo/AlipayFeature.java" beforeDir="false" afterPath="$PROJECT_DIR$/simpleDemo/src/main/java/com/alipay/sdk/pay/demo/AlipayFeature.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/buss/myinfo/myinfo.css" beforeDir="false" afterPath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/buss/myinfo/myinfo.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/buss/myinfo/myinfo.html" beforeDir="false" afterPath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/buss/myinfo/myinfo.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/buss/qtsf/cgs/cgssb.html" beforeDir="false" afterPath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/buss/qtsf/cgs/cgssb.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/buss/qtsf/cgs/cgssb.js" beforeDir="false" afterPath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/buss/qtsf/cgs/cgssb.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/buss/qtsf/cgs/cgssb_jk.html" beforeDir="false" afterPath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/buss/qtsf/cgs/cgssb_jk.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/buss/qtsf/cgs/cgssb_jk.js" beforeDir="false" afterPath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/buss/qtsf/cgs/cgssb_jk.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/buss/qtsf/cgs/cgssb_sbxx.html" beforeDir="false" afterPath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/buss/qtsf/cgs/cgssb_sbxx.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/buss/qtsf/cgs/cgssb_sbxx.js" beforeDir="false" afterPath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/buss/qtsf/cgs/cgssb_sbxx.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/buss/qtsf/cgs/cgssb_sbxxcx.js" beforeDir="false" afterPath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/buss/qtsf/cgs/cgssb_sbxxcx.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/buss/qtsf/cgs/cgssbxxqr.html" beforeDir="false" afterPath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/buss/qtsf/cgs/cgssbxxqr.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/buss/qtsf/cgs/cgssbxxqr.js" beforeDir="false" afterPath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/buss/qtsf/cgs/cgssbxxqr.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/buss/qtsf/cgs/wszmimgtest.html" beforeDir="false" afterPath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/buss/qtsf/cgs/wszmimgtest.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/buss/register/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/buss/register/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/buss/register/register.js" beforeDir="false" afterPath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/buss/register/register.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/buss/sbf/grsb/grsbdjxx.css" beforeDir="false" afterPath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/buss/sbf/grsb/grsbdjxx.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/buss/sbf/grsb/grsbdjxx.html" beforeDir="false" afterPath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/buss/sbf/grsb/grsbdjxx.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/buss/sbf/grsb/grsbdjxx.js" beforeDir="false" afterPath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/buss/sbf/grsb/grsbdjxx.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/buss/sbf/grsb/grsbhdxx.css" beforeDir="false" afterPath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/buss/sbf/grsb/grsbhdxx.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/buss/sbf/grsb/grsbhdxx.html" beforeDir="false" afterPath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/buss/sbf/grsb/grsbhdxx.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/buss/sbf/grsb/grsbhdxx.js" beforeDir="false" afterPath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/buss/sbf/grsb/grsbhdxx.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/buss/sbf/grsb/payment.css" beforeDir="false" afterPath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/buss/sbf/grsb/payment.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/css/common/buss.css" beforeDir="false" afterPath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/css/common/buss.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/fonts/iconfont.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/fonts/iconfont.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/js/common/city.data-fssb.js" beforeDir="false" afterPath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/js/common/city.data-fssb.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/js/common/common.js" beforeDir="false" afterPath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/js/common/common.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/js/common/flashcanvas.swf" beforeDir="false" afterPath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/js/common/flashcanvas.swf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/manifest.json" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -24,7 +132,7 @@
   <component name="DefaultGradleProjectSettings">
     <option name="isMigrated" value="true" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="Pixel_2_API_30" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="fba1c89a" />
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
       <state>
@@ -45,28 +153,37 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/js/common/alipayPlus.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-404">
-              <caret line="10" column="24" selection-end-line="49" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/manifest.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-886">
-              <caret line="13" column="12" lean-forward="true" selection-start-line="13" selection-start-column="12" selection-end-line="13" selection-end-column="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/simpleDemo/src/main/assets/data/dcloud_control.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="132">
               <caret line="6" selection-start-line="6" selection-end-line="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/js/common/alipayPlus.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="176">
+              <caret line="17" column="31" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/buss/login/login.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="287">
+              <caret line="58" column="34" lean-forward="true" selection-start-line="58" selection-end-line="59" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/readme.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="462">
+              <caret line="21" column="23" lean-forward="true" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -94,15 +211,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-1472">
               <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/buss/login/login.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="215" lean-forward="true" selection-start-line="170" selection-start-column="4" selection-end-line="215" />
             </state>
           </provider>
         </entry>
@@ -206,7 +314,6 @@
         <option value="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H5F113530/www/manifest.json" />
         <option value="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/models/java/java.html" />
         <option value="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/models/demo/java/java.html" />
-        <option value="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/buss/login/login.html" />
         <option value="$PROJECT_DIR$/simpleDemo/src/main/java/com/neusoft/hbsw/demo/wx/uikit/CameraUtil.java" />
         <option value="$PROJECT_DIR$/simpleDemo/src/main/java/com/neusoft/hbsw/demo/wx/uikit/MMAlert.java" />
         <option value="$PROJECT_DIR$/simpleDemo/src/main/java/com/neusoft/hbsw/demo/wx/SendToWXActivity.java" />
@@ -225,6 +332,7 @@
         <option value="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/js/common/alipayPlus.js" />
         <option value="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/buss/login/login.js" />
         <option value="$PROJECT_DIR$/simpleDemo/src/main/java/com/alipay/sdk/pay/demo/AlipayFeature.java" />
+        <option value="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/buss/login/login.html" />
       </list>
     </option>
   </component>
@@ -293,18 +401,7 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="assets" type="462c0819:PsiDirectoryNode" />
               <item name="www" type="462c0819:PsiDirectoryNode" />
-              <item name="buss" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="HBuilder-Integrate-AS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="HBuilder-Integrate-AS" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="simpleDemo" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-              <item name="www" type="462c0819:PsiDirectoryNode" />
-              <item name="buss" type="462c0819:PsiDirectoryNode" />
-              <item name="login" type="462c0819:PsiDirectoryNode" />
+              <item name="common" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="HBuilder-Integrate-AS" type="b2602c69:ProjectViewProjectNode" />
@@ -334,7 +431,7 @@
     <property name="ExportApk.SignV2" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="android.sdk.path" value="$USER_HOME$/Downloads/androidsdk" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/simpleDemo/libs" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.17" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -347,20 +444,20 @@
     <option name="LAST_EDITED_BUILD_TYPE" value="release" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/js" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www" />
       <recent name="$PROJECT_DIR$/simpleDemo/libs" />
+      <recent name="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/buss" />
+      <recent name="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/css/common" />
+      <recent name="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/js/common" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.alipay.sdk.pay.demo" />
       <recent name="com.neusoft.hbsw.demo" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/js" />
       <recent name="$PROJECT_DIR$/simpleDemo/libs" />
-      <recent name="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/buss" />
-      <recent name="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/css/common" />
-      <recent name="$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/js/common" />
-      <recent name="$PROJECT_DIR$/simpleDemo/src/main/java/com/neusoft/tax/wx" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -528,7 +625,14 @@
       <option name="project" value="LOCAL" />
       <updated>1598868452349</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="支付宝集成">
+      <created>1599183978289</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1599183978289</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -545,7 +649,7 @@
     <editor active="true" />
     <layout>
       <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
-      <window_info content_ui="combo" id="Project" order="1" weight="0.36552218" />
+      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.36552218" />
       <window_info id="Structure" order="2" side_tool="true" />
       <window_info id="Build Variants" order="3" side_tool="true" />
       <window_info id="Image Layers" order="4" />
@@ -554,11 +658,11 @@
       <window_info id="Capture Tool" order="7" />
       <window_info id="Favorites" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="0" weight="0.32962447" />
-      <window_info anchor="bottom" id="Run" order="1" sideWeight="0.6688126" weight="0.42436975" />
+      <window_info active="true" anchor="bottom" id="Run" order="1" sideWeight="0.6688126" visible="true" weight="0.42420027" />
       <window_info anchor="bottom" id="Find" order="2" weight="0.32962447" />
       <window_info anchor="bottom" id="Logcat" order="3" weight="0.32962447" />
       <window_info anchor="bottom" id="TODO" order="4" weight="0.32962447" />
-      <window_info anchor="bottom" id="Android Profiler" order="5" show_stripe_button="false" weight="0.32962447" />
+      <window_info anchor="bottom" id="Android Profiler" order="5" weight="0.32962447" />
       <window_info anchor="bottom" id="Debug" order="6" weight="0.472879" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32962447" />
       <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.3311874" side_tool="true" weight="0.33379695" />
@@ -730,7 +834,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/simpleDemo/src/main/java/com/tax/wx/Constants.java" />
     <entry file="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/lib.5plus.base-release.aar/c905b8c09dfe5216493b18c67b5b36ed/jars/classes.jar!/io/dcloud/common/DHInterface/StandardFeature.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="286">
@@ -990,13 +1093,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/buss/login/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1650">
-          <caret line="75" column="38" selection-start-line="75" selection-start-column="38" selection-end-line="75" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/models/login/login.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1848">
@@ -1028,13 +1124,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/manifest.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-886">
-          <caret line="13" column="12" lean-forward="true" selection-start-line="13" selection-start-column="12" selection-end-line="13" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/lib.5plus.base-release.aar/c905b8c09dfe5216493b18c67b5b36ed/jars/classes.jar!/io/dcloud/feature/payment/IPaymentListener.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="33">
@@ -1056,6 +1145,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/buss/login/login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="215" lean-forward="true" selection-start-line="170" selection-start-column="4" selection-end-line="215" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/manifest.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="6" column="18" selection-start-line="6" selection-start-column="9" selection-end-line="6" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/readme.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="21" column="23" lean-forward="true" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/simpleDemo/src/main/assets/data/dcloud_properties.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1738">
@@ -1072,15 +1182,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/js/common/alipayPlus.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-404">
-          <caret line="10" column="24" selection-end-line="49" />
+        <state relative-caret-position="176">
+          <caret line="17" column="31" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="31" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/buss/login/login.js">
+    <entry file="file://$PROJECT_DIR$/simpleDemo/src/main/assets/apps/H571E60E7/www/buss/login/login.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="215" lean-forward="true" selection-start-line="170" selection-start-column="4" selection-end-line="215" />
+        <state relative-caret-position="287">
+          <caret line="58" column="34" lean-forward="true" selection-start-line="58" selection-end-line="59" />
         </state>
       </provider>
     </entry>

@@ -1,124 +1,97 @@
+
 	//url
 	var url = baseUtils.URL;
+	//超时时间
+	var atimeout = baseUtils.timeout;
 	//账号
 	var nsrmc = UserInfoUtils.getUserInfo().nsrmc
 	//身份证号
 	var nsrsbh = UserInfoUtils.getUserInfo().nsrsbh
 	
 	//页面加载
-	 function pageload(webview,vm) {
-		init(vm)
-		addEvent()
+	 function pageload(userName,idCard) {
+		init(userName,idCard);
+		addEvent();
 	}
 	
 	// 初始化
-	function init(vm) {
+	function init(userName,idCard) {
 		//获取页面数据
-		getSbdjry()
+		getCxjmylSbdjxx(userName,idCard)
 	}
 	
 	//添加事件
 	function addEvent() {
+		
 	}
 	
-	function getSbdjry(){
-		let data = {
-			"head": {
-				"tran_id": "com.neusoft.cxjmyb.getSbdjry",
-				"channel_id": "HBSW.NFWB.DZSWJWB",
-				"tran_seq": "270799db98b548528e7160dd0be73abb",
-				"tran_date": baseUtils.formatDate(new Date(),'yyyy-MM-dd'),
-				"tran_time": new Date().getTime(),
-				"expand": [{
-						"name": "identityType",
-						"value": "Hbswwb#476"
-					},
-					{
-						"name": "sjry",
-						"value": "14200dzswj1"
-					},
-					{
-						"name": "sjjg",
-						"value": "14201091400"
-					}
-				]
-			},
-			"body": {
-				"taxML": {
-					"xm": "李刚",
-					"zjhm": "422801195811120210"
-				}
-			}
+	//城乡居民养老登记信息查询
+	function getCxjmylSbdjxx(userName,idCard){
+		let tran_id = tranIdInfo.cxjmyl_getSbdjxx
+		let taxML = {
+				"xm":userName,
+				"zjhm": idCard
 		}
+		let data = ReqInfo.getReqInfo(tran_id,taxML)
+		console.log("养老代缴请求数据>>>>>"+JSON.stringify(data))
 		$http.post(url,data,(res)=>{
 			let rs = resResult.setAndGetAttrValue(res)
-			//将返回的列表数据绑定到vue中的cxjgGrid属性
-			vm.cxjgGrid = rs.cxjgGrid
-		})
-	}
-	
-	function addDjry(){
-		mui("#popover").popover('toggle')
-	}
-	
-	// function getSbdjryList(){
-	// 	let url = 'http://localhost:9090/cxjmyb/getSbdjry'
-	// 	$http.get(url,(res)=>{
-	// 		let r = resResult.setAndGetAttrValue(res)
-	// 		vm.cxjgGrid = r.cxjgGrid
-	// 		if(!vm.cxjgGrid.length){
-	// 			mui.confirm('暂无代缴人员信息','',['取消','新增代缴人员'],
-	// 			function (e) {
-	// 				if(e.index){
-	// 					vm.addDj()
-	// 				}
-	// 			},'div')
-	// 		}
-	// 	})
-	// }
-	function addDj(){
-		mui("#popover").popover('toggle');
-	}
-	
-	//缴费
-	function  dj(){
-		mui.openWindow({
-			url:"OrderDj.html",
-			id:"OrderDj",
-			/* styles:{
-			  top:0px,//新页面顶部位置
-			  bottom:0px,//新页面底部位置
-			  width:100%,//新页面宽度，默认为100%
-			  height:100%,//新页面高度，默认为100%
-			  
-			}, */
-			extras:{
-			  name:'李明'//自定义扩展参数，可以用来处理页面间传值
+			//响应成功
+			if(rs.Code === '000'){
+				vm.cxjgGrid = rs.cxjgGrid
+				vm.cachekey = rs.cachekey
+			}else{
+				dialog.alert(rs.Message)
 			}
 		})
 	}
-	//删除代缴人员
-	function delDjry(){
-		let url = "http://192.168.11.110:9090/surrservice/cxjmyb/delDjry"
-		let data = {"service":{"body":{"taxML":{"id":"f4549a038a8f49138892d13c50b50ea7"}},"head":{"tran_time":"104606000","tran_date":"20190806","tran_seq":"270799db98b548528e7160dd0be73abb","expand":[{"name":"identityType","value":"Hbswwb#476"},{"name":"sjry","value":"14200dzswj1"},{"name":"sjjg","value":"14201091400"}],"tran_id":"com.neusoft.cxjmyb.delDjry","channel_id":"HBSW.NFWB.DZSWJWB"}}}
-		$http.get(url,(res)=>{
-			let r = resResult.setAndGetAttrValue(res)
-			console.log(r.tran_id)
-			mui.alert("删除成功",function(){
-				vm.getSbdjryList()
-			})
-		})
+	
+	//下一步
+	function next(cxjgGrid){
+		if(vm.jflx_value == ''){
+			dialog.alert("请选择缴费类型")
+			return
+		}
+		mui.openWindow({
+		  url: "cxyldjnext.html",
+		  id: "cxyldjnext.html",
+		  // styles: {                             // 窗口参数 参考5+规范中的WebviewStyle,也就是说WebviewStyle下的参数都可以在此设置
+		  //   titleNView: {                       // 窗口的标题栏控件
+		  //     titleText:"城乡居民养老",                // 标题栏文字,当不设置此属性时，默认加载当前页面的标题，并自动更新页面的标题
+		  //     titleColor:"#000000",             // 字体颜色,颜色值格式为"#RRGGBB",默认值为"#000000"
+		  //     titleSize:"17px",                 // 字体大小,默认17px
+		  //     backgroundColor:"#F7F7F7",        // 控件背景颜色,颜色值格式为"#RRGGBB",默认值为"#F7F7F7"
+		  //     progress:{                        // 标题栏控件的进度条样式
+		  //       color:"#00FF00",                // 进度条颜色,默认值为"#00FF00"  
+		  //       height:"2px"                    // 进度条高度,默认值为"2px"         
+		  //     },
+		  //     splitLine:{                       // 标题栏控件的底部分割线，类似borderBottom
+		  //       color:"#CCCCCC",                // 分割线颜色,默认值为"#CCCCCC"  
+		  //       height:"1px"                    // 分割线高度,默认值为"2px"
+		  //     }
+		  //   }
+		  // },
+		  //传到下一个页面的参数
+		  extras:{
+				"cxjgGrid":cxjgGrid,  //扩展参数
+				"jflx_value":vm.jflx_value,
+				"cachekey":vm.cachekey
+		  }
+		});
 	}
-	//复选框勾选添加样式
-	function check(index){
-	  if(vm.active.length && vm.active.indexOf(index)!=-1){
-		vm.active.splice(vm.active.indexOf(index),1)
-	  }else{
-		vm.active.push(index)
-	  }
-	   console.log(".....:"+vm.active)
-	 }
-
-	function createOrder(){
-	  mui("#popover").popover('toggle');
+	
+	function chooseJfType() {
+		vm.userPicker.setData([{
+			value: '0',
+			xzdm:'102011201',
+			text: "当期"
+		}, {
+			value: '1',
+			xzdm:'102031201',
+			text: "补缴"
+		}]);
+		vm.userPicker.show(function(items) {
+			vm.jflx = items[0].text;
+			vm.jflx_value = items[0].value;
+		});
 	}

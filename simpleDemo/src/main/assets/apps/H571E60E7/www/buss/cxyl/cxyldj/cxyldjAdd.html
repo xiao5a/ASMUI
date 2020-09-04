@@ -1,0 +1,100 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../../../css/common/mui.min.css" rel="stylesheet" />
+		<link href="../../../css/common/mui.picker.min.css" rel="stylesheet" />
+		<link href="../../../css/common/mui.poppicker.css" rel="stylesheet" />
+		<link href="../../../css/common/mui-show-loading.css" rel="stylesheet" />
+		<link href="../../../css/common/common.css" rel="stylesheet" />
+		<link href="../../../css/common/common-ex.css" rel="stylesheet" />
+		<link href="./cxyldjAdd.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav ex-title-bar">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<button id="saveBtn" type="button" class="mui-btn mui-btn-link mui-pull-right"></button>
+			<h1 class="mui-title">城乡居民养老代缴</h1>
+		</header>
+		
+		<div class="mui-content loginBox" id="app">				
+				<form class="mui-input-group">
+				    <div class="mui-input-row">
+				        <label><span style="color: red;">*</span>姓名</label>
+						<input type="text" id="userName" class="mui-input-clear" placeholder="请输入用户名">
+				    </div>
+				    <div class="mui-input-row">
+				        <label><span style="color: red;">*</span>身份证</label>
+				        <input type="text" class="mui-input-clear" id="idCard" placeholder="请输入身份证">
+				    </div>
+					<div class="mui-input-row">
+					    <label><span style="color: red;">*</span>证件类型</label>
+					    <input type="text" id="cardType"   @tap="choose()" v-model="cardType" Readonly>
+					</div>
+				    <div class="mui-button-row">
+				        <button type="button" class="mui-btn mui-btn-primary" id="submitYldj" >确定</button>
+				    </div>
+				</form>
+		</div>
+		
+		<script src="../../../js/common/jquery-1.11.1.min.js"></script>
+		<script src="../../../js/common/mui.min.js"></script>
+		<script src="../../../js/common/mui.picker.min.js"></script>
+		<script src="../../../js/common/mui.poppicker.js"></script>
+		<script src="../../../js/common/mui.showLoading.js"></script>
+		<script src="../../../js/common/baseUtils.js"></script>
+		<script src="../../../js/common/crypto-js-aes-min.js"></script>
+		<script src="../../../js/common/common.js"></script>
+		<script src="../../../js/common/vue.min.js"></script>
+		<script src="./cxyldjAdd.js"></script>
+		<script type="text/javascript">
+			var vm = new Vue({
+			  el: '#app',
+			  //数据绑定
+			  data() {
+				return{
+					cardType:'——请选择证件类型——',
+					cardType_value:''
+				}
+			  }
+			})
+		
+			mui.init();
+			
+			mui('.mui-scroll-wrapper').scroll({
+				scrollY: true, //是否竖向滚动
+				scrollX: false, //是否横向滚动
+				startX: 0, //初始化时滚动至x
+				startY: 0, //初始化时滚动至y
+				indicators: true, //是否显示滚动条
+				deceleration:0.0006, //阻尼系数,系数越小滑动越灵敏
+				bounce: true //是否启用回弹
+			});
+			
+			mui.plusReady(function() {
+				var webview = plus.webview.currentWebview();
+				
+				//获取状态栏的高度
+				var statusbarHeight = plus.navigator.getStatusbarHeight()
+				console.log("statusbarHeight>>"+statusbarHeight)
+				//header高度
+				var headerHeight = $("header").height()
+				console.log("headerHeight>>"+headerHeight)
+				//header paddingTop高度
+				$("header").css("paddingTop",statusbarHeight+"px")
+				$("header").css("height",statusbarHeight+headerHeight)
+				//预留高度
+				var preHeight = 0
+				var allHeight = statusbarHeight+headerHeight+preHeight
+				//body paddingTop高度
+				$("body").css("paddingTop",allHeight+"px")
+				
+			});
+			pageload()
+		</script>
+	</body>
+
+</html>

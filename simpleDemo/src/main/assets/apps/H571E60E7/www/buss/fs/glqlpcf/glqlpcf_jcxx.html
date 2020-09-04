@@ -11,7 +11,6 @@
 		<link href="../../../css/common/common.css" rel="stylesheet" /> 
 		<link href="../../../css/common/common-ex.css" rel="stylesheet" />
 		<link href="../../../css/common/mui.css" rel="stylesheet" />
-		<!-- <link href="../../../css/common/mui.picker.css" rel="stylesheet" /> -->
 		<link href="../../../css/common/mui.poppicker.css" rel="stylesheet" />
 		<link href="./glqlpcf.css" rel="stylesheet" />
 	</head>
@@ -27,11 +26,11 @@
 			</div>
 			<div class="mui-card" style="margin-bottom: 35px;">
 				<ul class="mui-table-view">
-					<li class="mui-table-view-cell">
-						姓名：敖玉冰
+					<li id="nsrmc" class="mui-table-view-cell">
+						姓名：
 					</li>
-					<li class="mui-table-view-cell">
-						身份证号：429001198812292969
+					<li id="nsrsbh" class="mui-table-view-cell">
+						身份证号：
 					</li>
 				</ul>
 			</div>
@@ -56,11 +55,6 @@
 									<input id="zsdPicker" type="text" class="myPopPicker"  placeholder="请选择执收地"
 										data-default="" data-options="" on-Change="">
 								</div>
-								<!-- <div class="mui-input-row">
-									<label>执收部门</label>
-									<input id="zsbmPicker" type="text" key="" class="myPopPicker"  placeholder="请选择执收部门" 
-										data-default="" data-options="" on-Change="glqlpcf_jcxx.onChangePopPicker">
-								</div> -->
 								<div class="mui-input-row">
 									<label>非税项目:</label>
 									<input id="fsxmPicker" key="" type="text" class="myPopPicker"  placeholder="请选择非税项目"
@@ -72,16 +66,16 @@
 				</ul>
 			</div>
 		</div>
-		<button id="nextBtn" type="button" class="mui-btn mui-btn-block mui-btn-primary">下一步</button>
-
+		<button id="nextBtn" type="button" class="mui-btn mui-btn-primary">申报</button>
+		<button id="searchBtn" type="button" class="mui-btn mui-btn-primary">查询申报数据</button>
+		
 		<script src="../../../js/common/jquery-1.11.1.min.js"></script>
 		<script src="../../../js/common/mui.min.js"></script>
 		<script src="../../../js/common/mui.picker.min.js"></script>
 		<script src="../../../js/common/mui.poppicker.js"></script>
 		<script src="../../../js/common/mui.showLoading.js"></script>
 		<script src="../../../js/common/baseUtils.js"></script>
-		<!-- <script src="../../../js/common/mui.js"></script> -->
-		<script src="../../../js/common/city.data-fssb.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../../js/common/common.js"></script>
 		<script src="./glqlpcf_jcxx.js"></script>
 		<script type="text/javascript">
 			mui.init();
@@ -109,7 +103,6 @@
 					mui.fire(curr.opener(), "refreshData");
 					old_back();
 				};
-				
 			});
 		</script>
 	</body>

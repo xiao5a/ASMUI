@@ -1,34 +1,36 @@
 (function(mui, owner) {
 	//url前缀
 	var appUrl = baseUtils.URL;
-	//超时时间
-	var atimeout = baseUtils.timeout;
-	//账号
-	var account = baseUtils.getState().account;
-	//token 同时检查是否过期
-	var token = baseUtils.getApiToken();
-
-	console.log("---appUrl=" + appUrl + "---atimeout=" + atimeout + "---account=" + account + "---token=" + token );
-	//以下编写业务代码
+	//djxh
+	var djxh = UserInfoUtils.getUserInfo().djxh;
 
 	owner.pageload = function(webview) {
 		owner.myInit();
 		owner.addEvent();
-		
+		console.log(webview.sbxxjsonstr)
 		var sbxxs = JSON.parse(webview.sbxxjsonstr);
 		document.getElementById('SBJKZT').innerText = sbxxs.sbzt +"|"+sbxxs.jkzt;
 		document.getElementById('NSRMC').innerText = sbxxs.NSRMC;
 		document.getElementById('ZJHM').innerText = sbxxs.ZJHM;
 		document.getElementById('SPD_SWJGMC').innerText = sbxxs.SPD_SWJGMC;
 		document.getElementById('sbsj').innerText = sbxxs.sbsj;
-		document.getElementById('SB_JE').innerText = sbxxs.SB_JE;
+		document.getElementById('SB_JE').innerText = sbxxs.SB_JE+"元";
 		document.getElementById('yzpzlsh').innerText = sbxxs.yzpzlsh;
 		document.getElementById('SKSSQ').innerText = sbxxs.SKSSQQ +"至"+ sbxxs.SKSSQZ;
+		
+		document.getElementById('zblsh').value = sbxxs.zblsh;
+		document.getElementById('SPD_SWJG').value = sbxxs.SPD_SWJG;
+		
+		if(sbxxs.jkzt == "缴款成功"){
+			document.getElementById('sbzf').classList.add('mui-hidden');
+			document.getElementById('pay').classList.add('mui-hidden');
+		}else{
+			document.getElementById('prtwszm').classList.add('mui-hidden');
+		}
 	}
 
 	// 初始化
 	owner.myInit = function() {
-
 	}
 
 	// 刷新
@@ -55,206 +57,112 @@
 	}
 	//缴款
 	owner.payFun = function() {
-		// var sbje = document.getElementById('sbje').value;
-		// var jdsbh = document.getElementById('jdsbh').value;
-		var reqInfo = {
-							"service": {
-								"head": {
-									"tran_id": "com.neusoft.fs.fsunionPay",
-									"channel_id": "HBSW.NFWB.DZSWJWB",
-									"tran_seq": "270799db98b548528e7160dd0be73abb",
-									"tran_date": "20190806",
-									"tran_time": "104606000",
-									"expand": [{
-										"name": "identityType",
-										"value": "Hbswwb#476"
-									},
-									{
-										"name": "sjry",
-										"value": "14200dzswj1"
-									},
-									{
-										"name": "sjjg",
-										"value": "14201091400"
-									}]
-								},
-								"body": {
-									"taxML": {
-										"nsrsbh": "422801195811120210",
-										"yzpzxh": "10014219000001482966",
-										"djxh": "20124200000011958577",
-										"SPD_SWJG": "14201770000",
-										"zblsh": "78987a6e5cc0475bbf4e8e26543a2595"
-									}
-								}
-							}
-						};
-		var appUrl = 'http://192.168.1.100:9090/surrservice/fs/fsunionPay';
-		mui.ajax(appUrl, {
-			data: reqInfo,
-			// dataType: 'json',
-			type: 'post',
-			// timeout: atimeout,
-			headers: {
-				'X-Requested-With': 'XMLHttpRequest',
-				'Content-Type': 'application/json;charset=utf-8',
-				'sso-token': '6666'
-			},
-			success: function(data) {
-				if (data != null && data != '') {
-					var backinfo = JSON.parse(data);
-					var code_head = backinfo.head.rtn_code;
-					if(code_head == '0'){
-						var dzsph = backinfo.body.taxML.dzsph;
-						mui.alert(dzsph);
-					}else{
-						mui.alert(backinfo.head.rtn_msg.Message);
-					}
-					
-					console.log("---getData---:" + JSON.stringify(data));
-				} else {
-					mui.toast("数据异常！");
-				}
+		var ZJHM = document.getElementById('ZJHM').innerText;
+		var yzpzlsh = document.getElementById('yzpzlsh').innerText;
+		var SPD_SWJG = document.getElementById('SPD_SWJG').value;
+		var zblsh = document.getElementById('zblsh').value;
 		
-			},
-			error: function(xhr, type, errorThrown) {
-				// mui.hideLoading();
-				//获取本地数据
-				mui.toast("网络连接异常，请确认手机网络状态！");
-			}
-		});
+		var tran_id = tranIdInfo.fsunionPay;
+		var taxML = {
+					"nsrsbh": ZJHM,
+					"yzpzxh": yzpzlsh,
+					"djxh": djxh,
+					"SPD_SWJG": SPD_SWJG,
+					"zblsh": zblsh
+				};
+		var reqInfo = ReqInfo.getReqInfo(tran_id,taxML);
+		mui.alert("缴款成功，打开对应的注释代码");
+		// mui.showLoading("获取数据中...");
+		// console.log(JSON.stringify(reqInfo));
+		// $http.post(appUrl,reqInfo,(res)=>{
+		// 	console.log(JSON.stringify(res));
+		// 	mui.hideLoading();
+		// 	if(res != null && res != ''){
+		// 		var code_head = res.head.rtn_code;
+		// 		if(code_head == '0'){
+		// 			mui.alert("调用缴款接口成功，打开对应的注释代码");
+		// 			//安卓支付宝，需要加if判断是android还是ios
+		// 			// var Intent = plus.android.importClass("android.content.Intent");
+		// 			// var Uri = plus.android.importClass("android.net.Uri");
+		// 			// var main = plus.android.runtimeMainActivity();
+		// 			// // var uri = Uri.parse('weixin:\/\/dl\/business\/?ticket=t617b498b65a698b9e165565e8e71f04c');
+		// 			// var uri = Uri.parse('alipays:\/\/platformapi\/startapp?appId=10000007&sourceId=420000&actionType=route&codeContent=tips%3A%2F%2Fbt%3D02%26ea%3D01%26ck%3D42%26ed%3DG31bpiDEIypPbancFzpVYjgHKRKYV4Ej%2FmFI6aAB7bO%2BrNwvXieXoSbWmLW6Go8E7Xbo%2F%2BGHpqiSpkjRNCgluz7nph2sI%2FGI%2Bki35DxcZ%2Bw%3D%26sa%3D01%26ek%3D00%26sn%3D8mtfCqaolMBgxFSqKTdpgT4IZBjRLDQbwSxfJKUCYq9oBaa6vKxTtCdDCapJ27SLZb04XtuYNFsvEmKOTbUDZA%3D%3D&biz_return_url=hbtaxapp%3A%2F%2Fpay%2Fresult%3Fbqtu%3D442016200500043706%26ywlx%3DCXYBSBF');
+		// 			// var intent1 = new Intent(Intent.ACTION_VIEW,uri);
+		// 			// main.startActivity(intent1);
+					
+		// 			//银联支付
+		// 			// var payurl = "https://etax.hubei.chinatax.gov.cn/webroot/UnionTipsPay?"
+		// 			// 			+ "dzsph="+res.body.taxML.dzsph 
+		// 			// 			+ "&nsrsbh="+res.body.taxML.nsrsbh 
+		// 			// 			+ "&hsjgdm="+res.body.taxML.hsjgdm ;
+		// 			// mui.openWindow({
+		// 			// 	url: payurl,
+		// 			// 	id: payurl,
+		// 			// 	extras: {}
+		// 			// });
+		// 		}else{
+		// 			mui.alert(res.head.rtn_msg.Message);
+		// 		}
+				
+		// 	}else{
+		// 		mui.toast("数据异常！");
+		// 	}
+		// });
 	}
 	//查验状态
 	owner.cyztFun = function() {
-		// var sbje = document.getElementById('sbje').value;
-		// var jdsbh = document.getElementById('jdsbh').value;
-		
-		var reqInfo = {
-			"service": {
-				"head": {
-					"tran_id": "com.neusoft.fs.fsunionPaycyjkzt",
-					"channel_id": "HBSW.NFWB.DZSWJWB",
-					"tran_seq": "270799db98b548528e7160dd0be73abb",
-					"tran_date": "20190806",
-					"tran_time": "104606000",
-					"expand": [{
-							"name": "identityType",
-							"value": "Hbswwb#476"
-						},
-						{
-							"name": "sjry",
-							"value": "14200dzswj1"
-						},
-						{
-							"name": "sjjg",
-							"value": "14201091400"
-						}
-					]
-				},
-				"body": {
-					"taxML": {
+		var zblsh = document.getElementById('zblsh').value;
+		var tran_id = tranIdInfo.fsunionPaycyjkzt;
+		var taxML = {
 						"JKFS": "union",
-						"djxh": "20124200000011958577",
-						"zblsh": "78987a6e5cc0475bbf4e8e26543a2595"
-					}
-				}
-			}
-		};
-		var appUrl = 'http://192.168.1.100:9090/surrservice/fs/fsunionPaycyjkzt';
-		mui.ajax(appUrl, {
-			data: reqInfo,
-			// dataType: 'json',
-			type: 'post',
-			// timeout: atimeout,
-			headers: {
-				'X-Requested-With': 'XMLHttpRequest',
-				'Content-Type': 'application/json;charset=utf-8',
-				'sso-token': '6666'
-			},
-			success: function(data) {
-				if (data != null && data != '') {
-					var backinfo = JSON.parse(data);
-					var code_head = backinfo.head.rtn_code;
-					if(code_head == '0'){
-						var message_body = backinfo.body.taxML.message;
-						mui.alert(message_body);
-					}else{
-						mui.alert(backinfo.head.rtn_msg.Message);
-					}
+						"djxh": djxh,
+						"zblsh": zblsh
+					};
 					
-					console.log("---getData---:" + JSON.stringify(data));
-				} else {
-					mui.toast("数据异常！");
+		var reqInfo = ReqInfo.getReqInfo(tran_id,taxML);
+		mui.showLoading("操作中...");
+		$http.post(appUrl,reqInfo,(res)=>{
+			mui.hideLoading();
+			if(res != null && res != ''){
+				console.log(JSON.stringify(res));
+				var code_head = res.head.rtn_code;
+				if(code_head == '0'){
+					mui.alert(res.body.taxML.message);
+				}else{
+					mui.alert(res.head.rtn_msg.Message);
 				}
-		
-			},
-			error: function(xhr, type, errorThrown) {
-				// mui.hideLoading();
-				//获取本地数据
-				mui.toast("网络连接异常，请确认手机网络状态！");
+			}else{
+				mui.toast("数据异常！");
 			}
 		});
 	}
 	//申报作废
 	owner.sbzfFun = function() {
-		// var sbje = document.getElementById('sbje').value;
-		// var jdsbh = document.getElementById('jdsbh').value;
-		var reqInfo={
-							"service": {
-								"head": {
-									"tran_id": "com.neusoft.fs.fssbxxzf",
-									"channel_id": "HBSW.NFWB.DZSWJWB",
-									"tran_seq": "270799db98b548528e7160dd0be73abb",
-									"tran_date": "20190806",
-									"tran_time": "104606000",
-									"expand": [{
-										"name": "identityType",
-										"value": "Hbswwb#476"
-									},
-									{
-										"name": "sjry",
-										"value": "14200dzswj1"
-									},
-									{
-										"name": "sjjg",
-										"value": "14201091400"
-									}]
-								},
-								"body": {
-									"taxML": {
-										"DLRDJXH": "20124200000011958577",
-										"YZPZXH": "10014219000001482967"
-									}
-								}
-							}
-						};
-		var appUrl = 'http://192.168.1.100:9090/surrservice/fs/fssbxxzf';
-		mui.ajax(appUrl, {
-			data: reqInfo,
-			// dataType: 'json',
-			type: 'post',
-			// timeout: atimeout,
-			headers: {
-				'X-Requested-With': 'XMLHttpRequest',
-				'Content-Type': 'application/json;charset=utf-8',
-				'sso-token': '6666'
-			},
-			success: function(data) {
-				if (data != null && data != '') {
-					var backinfo = JSON.parse(data);
-					var code_head = backinfo.head.rtn_code;
-					var message_head = backinfo.head.rtn_msg.Message;
-					mui.alert(message_head);
-					console.log("---getData---:" + JSON.stringify(data));
-				} else {
-					mui.toast("数据异常！");
+		var yzpzlsh = document.getElementById('yzpzlsh').innerText;
+		var tran_id = tranIdInfo.fssbxxzf;
+		var taxML = {
+						"DLRDJXH": djxh,
+						"YZPZXH": yzpzlsh
+					};
+		var reqInfo = ReqInfo.getReqInfo(tran_id,taxML);
+		
+		mui.showLoading("操作中...");
+		$http.post(appUrl,reqInfo,(res)=>{
+			mui.hideLoading();
+			if(res != null && res != ''){
+				console.log(JSON.stringify(res));
+				var code_head = res.head.rtn_code;
+				if(code_head == '0'){
+					document.getElementById('sbzf').classList.add('mui-hidden');
+					document.getElementById('pay').classList.add('mui-hidden');
+					document.getElementById('cyzt').classList.add('mui-hidden');
+					mui.alert(res.body.taxML.message);
+				}else{
+					mui.alert(res.head.rtn_msg.Message);
 				}
-			
-			},
-			error: function(xhr, type, errorThrown) {
-				// mui.hideLoading();
-				//获取本地数据
-				mui.toast("网络连接异常，请确认手机网络状态！");
+				
+			}else{
+				mui.toast("数据异常！");
 			}
 		});
 	}

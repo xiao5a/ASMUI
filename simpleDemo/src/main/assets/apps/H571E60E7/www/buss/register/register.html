@@ -80,7 +80,7 @@
 		<script src="../../js/common/mui.poppicker.js"></script>
 		<script src="../../js/common/mui.showLoading.js"></script>
 		<script src="../../js/common/baseUtils.js"></script>
-		<script src="../../js/common/commom.js"></script>
+		<script src="../../js/common/common.js"></script>
 		<script src="register.js"></script>
 		<script type="text/javascript">
 			mui.init();
@@ -97,20 +97,29 @@
 			mui.plusReady(function() {
 				var webview = plus.webview.currentWebview();
 				console.log(webview)
+				
+				//设置沉浸式
+				//获取状态栏的高度
+				var statusbarHeight = plus.navigator.getStatusbarHeight()
+				console.log("statusbarHeight>>"+statusbarHeight)
+				//header高度
+				var headerHeight = $("header").height()
+				console.log("headerHeight>>"+headerHeight)
+				//header paddingTop高度
+				$("header").css("paddingTop",statusbarHeight+"px")
+				$("header").css("height",statusbarHeight+headerHeight)
+				//预留高度
+				var preHeight = 0
+				var allHeight = statusbarHeight+headerHeight+preHeight
+				//body paddingTop高度
+				$("body").css("paddingTop",allHeight+"px")
 			});
 			pageLoad()
 			//监听返回操作
 			var old_back = mui.back;
 			mui.back = function(){
-				mui.confirm('是否要离开注册页面',' ',['取消','确认'],function (e) {
-					console.log(e)
-			  	if(e.index==1){
-			  		//执行mui封装好的窗口关闭逻辑；
-			  		old_back();
-			  	}
-			  },'div')
+				old_back();
 			}
-			
 			
 		</script>
 	</body>

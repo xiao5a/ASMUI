@@ -3,13 +3,13 @@
 	var appUrl = baseUtils.URL;
 	//超时时间
 	var atimeout = baseUtils.timeout;
-	//账号
-	var account = baseUtils.getState().account;
-	//token 同时检查是否过期
-	var token = baseUtils.getApiToken();
+	//纳税人名称（姓名）
+	var nsrmc = UserInfoUtils.getUserInfo().nsrmc;
+	//纳税人识别号（身份证号）
+	var nsrsbh = UserInfoUtils.getUserInfo().nsrsbh;
 	
 	//上牌地
-	var gpdPicker =  new mui.PopPicker({
+	var spdPicker =  new mui.PopPicker({
 		layer: 2
 	});
 	
@@ -22,8 +22,20 @@
 	
 	// 初始化
 	owner.myInit = function() {
-		//
-		gpdPicker.setData(cityData);
+		document.getElementById('nsrmc').innerText = "姓名："+UserInfoUtils.getUserInfo().nsrmc;
+		document.getElementById('nsrsbh').innerText = "身份证号："+UserInfoUtils.getUserInfo().nsrsbh;
+		
+		//退出的时候要清除代码表缓存数据
+		// localStorage.removeItem("spdInfo");
+		
+		//获取代码表缓存，如果有，则不再调用初始化代码表方法，如果有调用方法初始化数据
+		var spdInfo = localStorage.getItem("spdInfo");
+		if (spdInfo != "undefined" && spdInfo != null && spdInfo != "" && spdInfo != '{}') {
+			spdPicker.setData(JSON.parse(spdInfo));
+		} else{
+			owner.initSpdData();
+		}
+		
 	}
 	
 	// 刷新
@@ -33,15 +45,16 @@
 	
 	//添加事件
 	owner.addEvent = function() {
-		//绑定监听事件
 		document.getElementById("nextBtn").addEventListener("tap", function() {
-			owner.sbsubmit();
+			owner.nextbtn();
 		});
-		
-		document.getElementById('gpdPicker').addEventListener('tap', function() {
-			gpdPicker.show(function(items) {
-				document.getElementById('gpdPicker').value = items[0].text + " " + items[1].text;
-				document.getElementById('gpdPicker').setAttribute("data-default", items[0].value+","+items[1].value);
+		document.getElementById("searchBtn").addEventListener("tap", function() {
+			owner.searchSbxx();
+		});
+		document.getElementById('spdPicker').addEventListener('tap', function() {
+			spdPicker.show(function(items) {
+				document.getElementById('spdPicker').value = items[0].text + " " + items[1].text;
+				document.getElementById('spdPicker').setAttribute("data-default", items[0].value+","+items[1].value);
 			});
 		});
 	}
@@ -50,149 +63,81 @@
 		// mui.alert("onChangePopPicker");
 		// owner.getZwcnMb();
 	// }
-	
-	owner.sbsubmit = function() {
-		// mui.alert('111111');
-		var clsbdm = document.getElementById('clsbdm').value;
-		var datadefault = document.getElementById('gpdPicker').getAttribute('data-default');
-		var xzqh = datadefault.split(",")[0];
-		var swjgdm = datadefault.split(",")[1];
-		// mui.alert("clsbdm:"+clsbdm+"xzqh:"+xzqh+"swjgdm:"+swjgdm);
-		// mui.alert(fsxmData);
-		var  getcgsfpxx = {
-						"service": {
-							"head": {
-								"tran_id": "com.neusoft.cgs.getcgsfpxx",
-								"channel_id": "HBSW.NFWB.DZSWJWB",
-								"tran_seq": "270799db98b548528e7160dd0be73abb",
-								"tran_date": "20190806",
-								"tran_time": "104606000",
-								"expand": [{
-									"name": "identityType",
-									"value": "Hbswwb#476"
-								},
-								{
-									"name": "sjry",
-									"value": "14200dzswj1"
-								},
-								{
-									"name": "sjjg",
-									"value": "14201091400"
-								}]
-							},
-							"body": {
-								"taxML": {
-										"sfzhm": "422126197505122056",
-										"cjhm": "LA9BF3L87K8YJH090",
-										"djbj": "1"
-									}
-								}
-							}
-						};
-		var appUrl = 'http://192.168.1.100:9090/surrservice/cgs/getcgsfpxx';						
-		var fpCheckappUrl = 'http://192.168.1.100:9090/surrservice/cgs/cgsfpCheck';
-		mui.ajax(appUrl, {
-			data: getcgsfpxx,
-			// dataType: 'json',
-			type: 'post',
-			// timeout: atimeout,
-			headers: {
-				'X-Requested-With': 'XMLHttpRequest',
-				'Content-Type': 'application/json;charset=utf-8',
-				'sso-token': '6666'
-			},
-			success: function(data) {
-				if(data != null && data != ''){
-					var backinfo = JSON.parse(data);
-					var code_head = backinfo.head.rtn_code;
-					if(code_head == '0'){
-						var fphm = backinfo.body.taxML.fpxxs[0].fphm;
-						var fpdm = backinfo.body.taxML.fpxxs[0].fpdm;
-						// mui.alert(fphm);
-						var  cgsfpCheck = {
-											"service": {
-												"head": {
-													"tran_id": "com.neusoft.cgs.cgsfpCheck",
-													"channel_id": "HBSW.NFWB.DZSWJWB",
-													"tran_seq": "270799db98b548528e7160dd0be73abb",
-													"tran_date": "20190806",
-													"tran_time": "104606000",
-													"expand": [{
-														"name": "identityType",
-														"value": "Hbswwb#476"
-													},
-													{
-														"name": "sjry",
-														"value": "14200dzswj1"
-													},
-													{
-														"name": "sjjg",
-														"value": "14201091400"
-													}]
-												},
-												"body": {
-													"taxML": {
-														"fpdm": fpdm,
-														"fphm": fphm,
-														"SPD_SWJG": swjgdm,
-														"cdsx": "1",
-														"clgzdsxDm": "1",
-														"clgzsjsfsDm": "1",
-														"clgzssblxDm": "0100"
-													}
-												}
-											}
-										};
-						mui.ajax(fpCheckappUrl, {
-							data: cgsfpCheck,
-							// dataType: 'json',
-							type: 'post',
-							// timeout: atimeout,
-							headers: {
-								'X-Requested-With': 'XMLHttpRequest',
-								'Content-Type': 'application/json;charset=utf-8',
-								'sso-token': '6666'
-							},
-							success: function(datafpcheck) {
-								if(datafpcheck != null &&datafpcheck != ''){
-									var fpcheckinfo = JSON.parse(datafpcheck);
-									var fpcheckcode_head = fpcheckinfo.head.rtn_code;
-									// mui.alert(datafpcheck);
-									if(fpcheckcode_head == '0'){
-											mui.openWindow({
-												url: 'cgssbxxqr.html',
-												id: 'cgssbxxqr.html',
-												extras: {
-													datafpcheck: datafpcheck
-												}
-											});
-										}else{
-											mui.alert(fpcheckinfo.head.rtn_msg.Message);
-										}
-									}else{
-										mui.toast("数据异常！");
-									}
-							},
-							error: function(xhr, type, errorThrown) {
-								mui.hideLoading();
-								//获取本地数据
-								mui.toast("网络连接异常，请确认手机网络状态！");
-							}
-						});
-						
-					}else{
-						mui.alert(backinfo.head.rtn_msg.Message);
-					}
+	//初始上牌地
+	owner.initSpdData = function() {
+		var tran_id = tranIdInfo.dwcj;
+		var taxML = {
+						"query_id" : "cgs"
+					};
+		var reqInfo = ReqInfo.getReqInfo(tran_id,taxML);
+		
+		$http.post(appUrl,reqInfo,(res)=>{
+			console.log(JSON.stringify(res));
+			if(res != null && res != ''){
+				var code_head = res.head.rtn_code;
+				if(code_head == '0'){
+					spdPicker.setData(res.body.taxML.dwcj);
+					//把数据放到缓存中
+					localStorage.setItem("spdInfo", JSON.stringify(res.body.taxML.dwcj));
 				}else{
-					mui.toast("数据异常！");
+					mui.alert(res.head.rtn_msg.Message);
 				}
-			},
-			error: function(xhr, type, errorThrown) {
-				mui.hideLoading();
-				//获取本地数据
-				mui.toast("网络连接异常，请确认手机网络状态！");
+				
+			}else{
+				mui.toast("数据异常！");
 			}
 		});
 	}
-
+	//下一步
+	owner.nextbtn = function() {
+		var clsbdm = document.getElementById('clsbdm').value;
+		var datadefault = document.getElementById('spdPicker').getAttribute('data-default');
+		var xzqh = datadefault.split(",")[0];
+		var swjgdm = datadefault.split(",")[1];
+		var getcgsfpxx_tran_id = tranIdInfo.getcgsfpxx;
+		var getcgsfpxx_taxML = {
+						"cjhm" : clsbdm
+					};
+		var getcgsfpxx = ReqInfo.getReqInfo(getcgsfpxx_tran_id,getcgsfpxx_taxML);
+		mui.showLoading("操作中...");
+		$http.post(appUrl,getcgsfpxx,(res)=>{
+			mui.hideLoading();
+			console.log(JSON.stringify(res));
+			if(res != null && res != ''){
+				var code_head = res.head.rtn_code;
+				if(code_head == '0'){
+					var fpxx = {
+						"swjgdm" : swjgdm,
+						"res" : res
+					}
+					mui.openWindow({
+						url: 'cgsfpxx.html',
+						id: 'cgsfpxx.html',
+						extras: {
+							fpxxdata: JSON.stringify(fpxx)
+						}
+					});
+					
+				}else{
+					mui.hideLoading();
+					mui.alert(res.head.rtn_msg.Message);
+				}
+				
+			}else{
+				mui.hideLoading();
+				mui.toast("数据异常！");
+			}
+		});
+	}
+	//查询申报数据
+	owner.searchSbxx = function() {
+		var clsbdm = document.getElementById('clsbdm').value;
+		mui.openWindow({
+			url: 'cgssb_sbxx.html',
+			id: "cgssb_sbxx.html",
+			extras: {
+				clsbdmData: clsbdm
+			}
+		});
+	}
 }(mui, window.cgssb = {}));

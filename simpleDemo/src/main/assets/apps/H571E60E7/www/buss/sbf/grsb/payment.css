@@ -1,8 +1,8 @@
 body{padding-top: 44px; padding-bottom: 65px; position: relative;}
 
 .mui-bar-nav~.mui-content{padding-top: 0;}
-/* .mui-content{width: 100%; height: 100%; position: relative;}
- */.hotdeTip{padding: 10px; padding-bottom: 0; display: flex; justify-content: space-between;}
+.mui-content{width: 100%; height: 100%; position: relative;}
+.hotdeTip{padding: 10px; padding-bottom: 0; display: flex; justify-content: space-between;}
 .hotdeTip > span{margin: 0 5px; line-height: 20px; color: #aaa; font-size: 14px;}
 .mui-card{border-radius: 5px;}
 .mui-card-content-inner{padding: 15px; line-height: 22px; color: #333;}
@@ -16,7 +16,7 @@ body{padding-top: 44px; padding-bottom: 65px; position: relative;}
 .payMoney{margin: 10px 0; color: #ff0000; font-size: 22px;}
 .payMoney b{margin-right: 3px; font-size: 12px;}
 .paylineBox{padding: 10px 15px; background: #f8f8f8; border-radius: 5px;}
-.payLine{display: flex; justify-content: space-between;}
+.payLine{display: flex; justify-content: space-between;margin-top: 5px;}
 .plName{line-height: 30px; color: #a0a0a0;}
 .plInfo{line-height: 30px; color: #333;}
 .plInfo.amount{color: #fc4c4c;}
@@ -30,3 +30,12 @@ body{padding-top: 44px; padding-bottom: 65px; position: relative;}
 .sucTip1{font-size: 18px;}
 .sucTip2{margin-top: 5px; color: #aaa;}
 .successBox .mui-popup-inner .mui-btn{padding: 5px 0; margin-top: 20px;}
+.mui-card-footer{
+	position: fixed;
+	bottom: 0px;
+	width: 100%;
+	background-color: #FFFFFF;
+}
+.mui-card-footer button{
+	width: 100%;
+}

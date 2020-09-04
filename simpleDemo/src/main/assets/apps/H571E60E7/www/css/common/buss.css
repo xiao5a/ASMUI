@@ -7,6 +7,18 @@
 				color: #6d6d72;
 				font-size: 15px;
 			}
+.btn{
+	text-align: center;
+	position: relative;
+}
+.btn .mui-btn:first-child{
+	position: absolute;
+	left: 30px;
+}
+.btn .mui-btn:last-child{
+	position: absolute;
+	right: 30px;
+}
 .mui-input-row .mui-btn{
 	line-height:21px;
 	float:right;
@@ -34,8 +46,92 @@
 
 .mui-input-row label{
 	padding-left: 11px;
-	padding-top: 10px;
+	padding-top: 13px;
 	text-align: left;
 	vertical-align: middle;
+	font-size: 14px;
 }
-	
+
+#jk .mui-table-view .mui-table-view-cell{
+text-align: left;
+}
+.icon{
+	font-size: 30px;
+}
+/* 
+.icon-unionpay{
+	color: red;
+}
+
+.icon-wechatpay{
+	color:#439057 ;
+}
+ */
+.icon {
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
+}
+.mui-popover .mui-input-group .mui-input-row:after{
+	height: 0;
+	vertical-align: middle;
+}
+
+.mui-popover .mui-radio input[type='radio']:before{
+	content: none;
+}
+.mui-popover .mui-radio input[type='radio']:checked:before{
+	content: '\e442';
+}
+
+.mui-popover .mui-card{
+	width: 100%;
+	height: auto;
+	margin: 0px;
+	left: 0;
+	top:0px;
+}
+.mui-popover .mui-input-row label{
+	padding: 0px 0px 0px 10px;
+	line-height: 45px;
+	font-size: 16px;
+}
+.mui-popover .mui-input-group .mui-input-row{
+	height: 50px;
+}
+.mui-popover .submitBtn{
+	position:inherit;
+}
+.mui-popover .submitBtn,.mui-popover .submitBtn>button{
+	height: 50px;
+	bottom: 0px;
+}
+.mui-popover .mui-btn-block{
+	padding: 0;
+}
+.mui-popover .fkze{
+	position: relative;
+	height: 45px;
+}
+.mui-popover h5, .mui-h5{
+	font-size: 16px;
+}
+.mui-popover .mui-card .zffs{
+	margin-left: 8px;
+}
+.mui-popover .mui-card .rkfs{
+	margin-left: 20px;
+	color: #8f8f94;
+	font-size: 14px;
+}
+.mui-popover .mui-card .xyfk{
+	position: absolute;
+	right: 5px;
+	font-size: 18px;
+}
+.mui-popover .mui-card .fkje{
+	font-size: 25px;
+	color: red;
+}

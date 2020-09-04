@@ -25,6 +25,8 @@
 			<div class="title">
 				申报信息列表
 			</div>
+			<input id="zblsh" type="text" style="display:none">
+			<input id="SPD_SWJG" type="text" style="display:none">
 			<div class="mui-card" style="margin-bottom: 35px;">
 				<ul class="mui-table-view">
 					<li class="mui-table-view-cell">
@@ -64,6 +66,7 @@
 		<button id="sbzf" type="button" class="mui-btn mui-btn-danger">申报作废</button>
 		<button id="pay" type="button" class="mui-btn mui-btn-blue">缴款</button>
 		<button id="cyzt" type="button" class="mui-btn mui-btn-blue">查验状态</button>
+		<button id="prtwszm" type="button" class="mui-btn mui-btn-blue">证明打印</button>
 		<script src="../../../js/common/jquery-1.11.1.min.js"></script>
 		<script src="../../../js/common/mui.min.js"></script>
 		<script src="../../../js/common/mui.picker.min.js"></script>
@@ -71,12 +74,35 @@
 		<script src="../../../js/common/mui.showLoading.js"></script>
 		<script src="../../../js/common/baseUtils.js"></script>
 		<script src="../../../js/common/crypto-js-aes-min.js"></script> 
+		<script src="../../../js/common/common.js"></script>
 		<script src="./glqlpcf_sb.js"></script>
 		<script type="text/javascript">
 			mui.init();
+			mui('.mui-scroll-wrapper').scroll({
+				scrollY: true,
+				scrollX: false,
+				startX: 0,
+				startY: 0,
+				indicators: true,
+				deceleration: 0.0006,
+				bounce: true
+			});
+			
 			mui.plusReady(function() {
 				var webview = plus.webview.currentWebview();
 				glqlpcf_sb.pageload(webview);
+				window.addEventListener("refreshData", function(e) {
+					var webview = plus.webview.currentWebview();
+					glqlpcf_sb.refresh();
+				});
+				
+				var old_back = mui.back;
+				mui.back = function() {
+					var curr = plus.webview.currentWebview();
+					mui.fire(curr.opener(), "refreshData");
+					old_back();
+				};
+				
 			});
 		</script>
 	</body>

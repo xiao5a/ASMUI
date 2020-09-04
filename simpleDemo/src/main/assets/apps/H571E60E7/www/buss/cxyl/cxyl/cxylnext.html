@@ -1,0 +1,133 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../../../css/common/mui.min.css" rel="stylesheet" />
+		<link href="../../../css/common/mui.picker.min.css" rel="stylesheet" />
+		<link href="../../../css/common/mui.poppicker.css" rel="stylesheet" />
+		<link href="../../../css/common/mui-show-loading.css" rel="stylesheet" />
+		<link href="../../../css/common/common.css" rel="stylesheet" />
+		<link href="../../../css/common/common-ex.css" rel="stylesheet" />
+		<link href="./cxylnext.css" rel="stylesheet" />
+	</head>
+	<style>
+		.loginBox{
+			width: 90%; 
+			height: 100%; 
+			padding: 20px; 
+			padding-bottom: 50px; 
+			margin: 0 auto; 
+			background: #fff; 
+			border-radius: 10px 10px 0 0;
+			}
+		
+		.mydiv{
+			text-align: center;
+			background:#fff;
+		}
+	</style>
+	<body class="colorbody html5box fixbtnbox">
+		<header class="mui-bar mui-bar-nav ex-title-bar">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<button id="saveBtn" type="button" class="mui-btn mui-btn-link mui-pull-right"></button>
+			<h1 class="mui-title">城乡居民养老</h1>
+		</header>
+		
+		<div class="mui-content" id="app">
+			<div class="mui-card loginBox" id="cxjgGridList">
+					<div class="mui-input-row mylable">
+						<label>缴费名称：{{zspmmc}}</label>
+					</div>
+					<div class="mui-input-row mylable">
+						<label>缴费日期：{{date}}</label>
+					</div>
+						<!-- 选择档次 -->
+					<div class="mui-input-row">
+						<label>缴费档次：</label>
+						<div class="mydiv"  @tap='chooseDc()' id="jfdc" name="jfdc">{{jfdc}}</div>
+					</div>
+						<!-- 选择补缴类型 -->
+					<div class="mui-input-row " v-show="jflx_value == '1'">
+						<label>补缴类型：</label>
+						<div class="mydiv"  @tap='chooseBj()' id="bjlx" name="bjlx">{{bjlx}}</div>
+					</div>
+						<!-- 选择补缴年数 -->
+					<div class="mui-input-row " v-show="jflx_value == '1'">
+						<label>补缴年数：</label>
+					    <div class="mydiv"  @tap='chooseBjns()' id="bjns" name="bjns">{{bjns}}</div>
+					</div>
+			</div>
+		</div>
+		
+		<script src="../../../js/common/jquery-1.11.1.min.js"></script>
+		<script src="../../../js/common/mui.min.js"></script>
+		<script src="../../../js/common/mui.picker.min.js"></script>
+		<script src="../../../js/common/mui.poppicker.js"></script>
+		<script src="../../../js/common/mui.showLoading.js"></script>
+		<script src="../../../js/common/baseUtils.js"></script>
+		<script src="../../../js/common/crypto-js-aes-min.js"></script>
+		<script src="../../../js/common/common.js"></script>
+		<script src="../../../js/common/vue.min.js"></script>
+		<script src="./cxylnext.js"></script>
+		<script type="text/javascript">
+			//初始化vue
+			var vm = new Vue({
+				el: '#app',
+				data: {
+					date:new Date().getFullYear()+'-01-01 至 '+ new Date().getFullYear()+'-12-31',
+					sbh:'',
+					jbjg_dm:'',
+					//上一页的缴费类型
+					jflx_value:'',
+					cachekey:'',
+					jfdc:"请选择档次类型",
+					jfdc_value:"",
+					bjlx:"请选择补缴类型",
+					bjlx_value:"",
+					bjns:"请选择补缴年数",
+					bjnsArr:[],
+					bjns_value:"",
+					bjnd:'',
+					zspmmc:"",
+					//传过来的档次类型
+					dcmc:[]
+				}
+			})
+		
+			mui.init();
+			
+			mui('.mui-scroll-wrapper').scroll({
+				scrollY: true, //是否竖向滚动
+				scrollX: false, //是否横向滚动
+				startX: 0, //初始化时滚动至x
+				startY: 0, //初始化时滚动至y
+				indicators: true, //是否显示滚动条
+				deceleration:0.0006, //阻尼系数,系数越小滑动越灵敏
+				bounce: true //是否启用回弹
+			});
+			
+			mui.plusReady(function() {
+				var webview = plus.webview.currentWebview();
+				//获取上一页传过来的数据
+				let cxjgGrid = webview.cxjgGrid
+				vm.jflx_value = webview.jflx_value
+				vm.cachekey = webview.cachekey
+				
+				// 0当期，1补缴
+				console.log("上一页选择的缴费类型值>>>"+vm.jflx_value)
+				
+				let pzmx = cxjgGrid.pzmx
+				vm.sbh = cxjgGrid.sbh
+				vm.jbjg_dm = cxjgGrid.jbjg_dm
+				vm.dcmc = pzmx[0].dcmc
+				vm.zspmmc = pzmx[0].zspmmc
+				pageload(vm)
+			});
+			
+		</script>
+	</body>
+
+</html>

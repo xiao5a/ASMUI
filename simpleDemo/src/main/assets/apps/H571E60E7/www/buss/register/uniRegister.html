@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../../css/common/mui.min.css" rel="stylesheet" />
+		<link href="../../css/common/mui.picker.min.css" rel="stylesheet" />
+		<link href="../../css/common/mui.poppicker.css" rel="stylesheet" />
+		<link href="../../css/common/mui-show-loading.css" rel="stylesheet" />
+		<link href="../../css/common/common.css" rel="stylesheet" />
+		<link href="../../css/common/common-ex.css" rel="stylesheet" /> 
+		<link href="uniRegister.css" rel="stylesheet"/>
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav ex-title-bar">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">银联实名注册</h1>
+		</header>
+		<div class="mui-content regiBg">
+			<div class="mui-scroll-wrapper">
+				<div id="scrollin" class="mui-scroll">
+					<div class="regiHead">
+						<div class="rehName">请填写以下注册信息</div>
+						<div class="rehTip">注意事项<span class="mui-icon mui-icon-help" id="help"></span></div>
+					</div>
+					<div class="loginBox">
+						<form class="mui-input-group">
+							<div class="mui-input-row">
+								<label><span>*</span>姓名</label>
+								<input type="text" class="mui-input-clear" placeholder="请输入您的姓名" id="account">
+							</div>
+							<div class="mui-input-row">
+								<label><span>*</span>用户名</label>
+								<input type="text" class="mui-input-clear" placeholder="请输入您的用户名" id="userName">
+							</div>
+							<div class="mui-input-row">
+								<label><span>*</span>身份证号</label>
+								<input type="text"  class="mui-input-clear" placeholder="请输入您的身份证号" id="idCard">
+							</div>
+							<div class="mui-input-row">
+								<label><span>*</span>手机号</label>
+								<input type="text" placeholder="请输入您的手机号" class="mui-input-clear"id="phone">
+							</div>
+							<div class="mui-input-row">
+								<label><span>*</span>银行卡号</label>
+								<input type="text" placeholder="请输入您的银行卡号" class="mui-input-clear"id="cradNo">
+							</div>
+							
+							<button type="button" class="mui-btn mui-btn-warning mui-btn-block loginBtn" id='register'>下一步</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="help_popover" class="mui-popover">
+		 <div class="mui-popup mui-popup-in successBox">
+			 <div class="mui-popup-inner">
+			 <div class="sucTip1">说  明</div>
+				<ul class="mui-table-view">
+					<li>1.该卡号只用作实名身份认证，并不会产生交易</li>
+					<li>2.目前支持身份认证的银行卡包括：中国银行，工商银行，建设银行，农业银行，交通银行，其他银行卡视具体情况而定</li>
+				</ul>
+			 </div> 
+		 </div>
+		</div>
+		
+		
+		<script src="../../js/common/jquery-1.11.1.min.js"></script>
+		<script src="../../js/common/mui.min.js"></script>
+		<script src="../../js/common/mui.picker.min.js"></script>
+		<script src="../../js/common/mui.poppicker.js"></script>
+		<script src="../../js/common/mui.showLoading.js"></script>
+		<script src="../../js/common/baseUtils.js"></script>
+		<script src="../../js/common/common.js"></script>
+		<script src="uniRegister.js"></script>
+		<script type="text/javascript">
+			mui.init();
+			mui('.mui-scroll-wrapper').scroll({
+				scrollY: true, //是否竖向滚动
+				scrollX: false, //是否横向滚动
+				startX: 0, //初始化时滚动至x
+				startY: 0, //初始化时滚动至y
+				indicators: true, //是否显示滚动条
+				deceleration:0.0006, //阻尼系数,系数越小滑动越灵敏
+				bounce: true //是否启用回弹
+			});
+			
+			mui.plusReady(function() {
+				var webview = plus.webview.currentWebview();
+				console.log(webview)
+				
+				//设置沉浸式
+				//获取状态栏的高度
+				var statusbarHeight = plus.navigator.getStatusbarHeight()
+				console.log("statusbarHeight>>"+statusbarHeight)
+				//header高度
+				var headerHeight = $("header").height()
+				console.log("headerHeight>>"+headerHeight)
+				//header paddingTop高度
+				$("header").css("paddingTop",statusbarHeight+"px")
+				$("header").css("height",statusbarHeight+headerHeight)
+				//预留高度
+				var preHeight = 0
+				var allHeight = statusbarHeight+headerHeight+preHeight
+				//body paddingTop高度
+				$("body").css("paddingTop",allHeight+"px")
+			});
+			pageLoad()
+			
+		</script>
+	</body>
+</html>
