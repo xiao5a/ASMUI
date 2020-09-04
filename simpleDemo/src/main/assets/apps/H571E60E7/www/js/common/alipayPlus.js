@@ -26,7 +26,24 @@ document.addEventListener( "plusready",  function()
 
 //			return B.exec(_BARCODE, "wxLogin", [callbackID, Argus1]);
 
-		}
+		},
+
+		alipay : function (Argus1, successCallback, errorCallback )
+        		{
+        			var success = typeof successCallback !== 'function' ? null : function(args)
+        			{
+        				successCallback(args);
+        			},
+        			fail = typeof errorCallback !== 'function' ? null : function(code)
+        			{
+        				errorCallback(code);
+        			};
+        			callbackID = B.callbackId(success, fail);
+        			return B.exec(_BARCODE, "alipay", [callbackID, Argus1]);
+
+        //			return B.exec(_BARCODE, "wxLogin", [callbackID, Argus1]);
+
+        		}
     };
    window.plus.Alipay = ALipayPlugin
 }, true );

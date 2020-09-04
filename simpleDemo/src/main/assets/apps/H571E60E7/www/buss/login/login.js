@@ -176,7 +176,7 @@
   				 plus.Alipay.alipayLogin("", function( result ) {
                       		         //成功之后异步带回来的数据加入判断
                       		         if(result!=null&&result!=''){
-                      		              alipay(result);
+                      		              aliLoginresult(result);
                       		         }
                       		       },function(result){
                       		         window.location.href ="error.html";
@@ -186,7 +186,7 @@
 	}
 
 
-	function alipay(result) {
+	function aliLoginresult(result) {
 
     			             if(result[0]=="200"&&result[1]=="9000"){
     			             alert("授权登录成功模拟登录,支付宝账户的Id为："+result[2]);
@@ -213,8 +213,50 @@
     			               mui.toast("取消了支付宝授权");
     			             }
     					}
+
+
+
+    					function alipayresult(result) {
+                            			             alert("支付结果,支付宝账户的Id为："+result[0]+result[1]+result[2]);
+
+                            			             if(result[0]=="200"&&result[1]=="9000"){
+                            			             alert("支付结果,支付宝账户的Id为："+result[2]);
+                            			                //授权登录成功
+
+                            			                  gotoIndex();
+                            			             	$.ajax({
+                            								type: "get",
+                            								url: apis.getAlipayInfo,//调用后台接口根据auth_code取支付宝账户的基本信息
+                            								dataType: "json",
+                            								cache: false, //缓存
+                            								async: true, //异步
+                            								data: {
+                            									'authCode':result[2],
+                            									'appID':result[4],
+                            									'scope':result[3],
+                            									'type': 2
+                            								},
+                            								success: function(result) {
+                            										alert("授权登录成功,支付宝账户的Id为："+result.data.alipayId);
+                            								}
+                            							});
+                            			             }else{
+                            			               mui.toast("取消了支付宝授权");
+                            			             }
+                            					}
 	function wechatLogin(){
-		
+		if(window.plus) {
+
+          				 plus.Alipay.alipay("", function( result ) {
+                              		         //成功之后异步带回来的数据加入判断
+                              		         if(result!=null&&result!=''){
+                              		              alipayresult(result);
+                              		         }
+                              		       },function(result){
+                              		         window.location.href ="error.html";
+                              		       });
+          				}
+
 	}
 	
 	//登录校验

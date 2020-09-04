@@ -5,6 +5,7 @@ import android.text.TextUtils;
 import android.util.Log;
 
 import com.alipay.sdk.app.AuthTask;
+import com.alipay.sdk.app.PayTask;
 import com.alipay.sdk.pay.demo.util.OrderInfoUtil2_0;
 import com.neusoft.tax.wx.Constants;
 import com.tencent.mm.opensdk.modelbiz.WXLaunchMiniProgram;
@@ -63,6 +64,49 @@ public class AlipayFeature extends StandardFeature {
          req.miniprogramType = WXLaunchMiniProgram.Req.MINIPROGRAM_TYPE_TEST;// ��ѡ���� �����棬����������ʽ��
         api.sendReq(req);
     }
+
+    public void payV2(final String orderInfo, final Activity activity, final IWebview iWebview, final JSONArray jsonArray) {
+
+
+
+//        boolean rsa2 = (RSA2_PRIVATE.length() > 0);
+//        Map<String, String> params = OrderInfoUtil2_0.buildOrderParamMap(APPID, rsa2);
+//        String orderParam = OrderInfoUtil2_0.buildOrderParam(params);
+//
+//        String privateKey = rsa2 ? RSA2_PRIVATE : RSA_PRIVATE;
+//        String sign = OrderInfoUtil2_0.getSign(params, privateKey, rsa2);
+//        final String orderInfo = orderParam + "&" + sign;
+        Log.i("zfb", "orderInfo"+orderInfo);
+        Runnable payRunnable = new Runnable() {
+
+            @Override
+            public void run() {
+                PayTask alipay = new PayTask(getActivity());
+                Map<String, String> result = alipay.payV2(orderInfo, true);
+                Log.i("msp", result.toString());
+               PayResult payResult = new PayResult(result);
+                String resultInfo = payResult.getResult();// ͬ��������Ҫ��֤����Ϣ
+                String resultStatus = payResult.getResultStatus();
+
+                JSONArray newArray = new JSONArray();
+                newArray.put(payResult.getResult());
+                newArray.put(payResult.getResultStatus());
+                newArray.put(payResult.getMemo());
+//                newArray.put(authResult.getScope());
+//                newArray.put(authResult.getUser_id());
+                //异步返回到login.js
+                JSUtil.execCallback(iWebview, jsonArray.optString(0),newArray, JSUtil.OK, false);
+
+//                Message msg = new Message();
+//                msg.what = SDK_PAY_FLAG;
+//                msg.obj = result;
+//                mHandler.sendMessage(msg);
+            }
+        };
+
+        Thread payThread = new Thread(payRunnable);
+        payThread.start();
+    }
     public void alipayLogin(IWebview iWebview, JSONArray jsonArray) {
         String url=null;
 
@@ -72,6 +116,20 @@ public class AlipayFeature extends StandardFeature {
              url = jsonArray.getString(1);
             //执行支付宝授权方法
             this.authV2(url,this.getActivity(),iWebview,jsonArray);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+    }
+    public void alipay(IWebview iWebview, JSONArray jsonArray) {
+        String info=null;
+
+        JSONObject retJSONObj=null;
+        try {
+            //授权请求的路径
+            info = jsonArray.getString(1);
+            info ="timestamp=2020-09-01+16%3A38%3A55&biz_content=%7B%22total_amount%22%3A%220.01%22%2C%22body%22%3A%22%E5%9F%8E%E4%B9%A1%E5%8C%BB%E4%BF%9D%22%2C%22timeout_express%22%3A%2230m%22%2C%22royalty_parameters%22%3A%5B%7B%22amount%22%3A%220.01%22%2C%22batchNo%22%3A%22app_420700001%22%2C%22transInType%22%3A%22bankIndex%22%2C%22transIn%22%3A%22420700001%22%7D%5D%2C%22subject%22%3A%22%E5%9F%8E%E4%B9%A1%E5%B1%85%E6%B0%91%E5%8C%BB%E4%BF%9D%22%2C%22product_code%22%3A%22QUICK_MSECURITY_PAY%22%2C%22out_trade_no%22%3A%2211%22%2C%22extend_params%22%3A%7B%22corporate_branch_pid%22%3A%222088821647309402%22%7D%7D&sign_type=RSA2&notify_url=https%3A%2F%2Fm-etax.hubei.chinatax.gov.cn%2Fwebroot%2FalipayFk.json&charset=utf-8&method=alipay.trade.app.pay&app_id=2017033106498311&version=1.0&sign=QvftgXnYeAZtNO2llgA1cPwdKLYt4MxNp0VBkJvepUa9C89wpWcEhq6NNS6U3wbMMUxtru%2BU%2F4UzR0GP6BZA1yEX7dQL2g3fecxRezYAUeD%2BxzUlv5bvZVnILNxvpr34avSlyWZ43RFgHzhm5AHXvHCkpAzWa%2Fs5EkE%2FR%2FH1rGtYm7O6NWrpXbVnwAof0QPfkjWFxtGoePSfOtlNjIZ0bSMdXvA2FmY2LoOCdy9j6X76bET7le6Xrn3JW0ePMmPpR9GwX56bMBIG2I%2Fd%2Fm9Kw4BqffGys8K0twbupt8TITOsaU%2FnN1NQxbfOs9dXPLkQceZ9Q8zmxgDfFPDrZJy8dw%3D%3D";
+            //执行支付宝授权方法
+            this.payV2(info,this.getActivity(),iWebview,jsonArray);
         } catch (JSONException e) {
             e.printStackTrace();
         }
