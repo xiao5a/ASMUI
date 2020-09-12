@@ -1,0 +1,125 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../../css/common/mui.min.css" rel="stylesheet" />
+		<link href="../../css/common/mui.picker.min.css" rel="stylesheet" />
+		<link href="../../css/common/mui.poppicker.css" rel="stylesheet" />
+		<link href="../../css/common/mui-show-loading.css" rel="stylesheet" />
+		<link href="../../css/common/common.css" rel="stylesheet" />
+		<link href="../../css/common/common-ex.css" rel="stylesheet" /> 
+		<link href="./messageList.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav" style="padding-left: 0rem;padding-right: 0rem;">
+			<div class="flexGridHeader">
+				<div class="flexGridHeader-item img-bg">
+					<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" style="width: 2rem; height: 2rem;line-height: 2rem;margin: 0 auto;padding-top: 0rem;padding-left: 0rem;color: #FFFFFF;font-size: 1.875rem;"></a>
+				</div>
+				<div class="flexGridHeader-item">
+					<div class="mui-input-row mui-search">
+						<input id="searchid" type="search" class="mui-input-clear" style="background-color: #FFFFFF;border:1px solid #FFFFFF;height: 30px;font-size: 13px;padding-top: 0.625rem;padding-left:1.5625rem" placeholder="" value="">
+					</div>
+				</div>
+				<div class="flexGridHeader-item">
+					<span class="mui-icon mui-icon-pengyouquan" style="color: #FFFFFF;"></span>
+				</div>
+			</div>
+			<div class="mui-input-row flexGridTitle" style="background: url(../../img/message/bg.png) center center no-repeat;background-size: cover;">
+				<p id="titleID" class="flexGridTitle-item">食品监督抽查不合格</p>
+			</div>
+		</header>
+		<div class="mui-content">
+			<div id="tab_con" class="mui-scroll-wrapper mui-control-content tab mui-active" style='margin-top: 6.25rem;' id="scroll">
+				<div class="mui-scroll">
+					<div class="mui-card" style="margin: 0px;margin-bottom: 10px;">
+						<ul class="mui-table-view">
+							<li class="mui-table-view-cell" style="padding-top: 0.625rem;">
+								<div class="flexGrid">
+									<div class="flexGrid-item img_bg">
+										<img src="../../img/message/spjd.png" />
+									</div>
+									<div class="flexGrid-item">
+										<div class="mui-media-body" style="margin-left:0.5rem;">
+											<div attr-name="OENAME">
+												辽宁德胜原食品加工有限公司
+											</div>
+											<p style="font-size: 13px;" attr-name="OENAME">统一社会信用代码：913101175821220588</p>
+										</div>
+									</div>
+								</div>
+								
+								<div style="width: 50%;float: left; margin-top: 0.625rem;">
+									<span class="ex-job-listname">法定代表人：</span><span class="ex-job-listvalue" attr-name="OENAME">陈学良</span>
+								</div>
+								<div style="width: 50%;float: left; margin-top: 0.625rem;">
+									<span class="ex-job-listname">成立日期：</span><span class="ex-job-listvalue" attr-name="EVDATE">2020-06-08</span>
+								</div>
+							 </li>
+							 <li class="mui-table-view-cell" style="padding-bottom: 0.625rem;">
+								 <div style="width: 100%;float: left;">
+									<span class="ex-job-listname" style="text-align: right">证件名称：</span><span class="ex-job-listvalue" attr-name="APERSON" style="width: 80%;">食品生产许可证</span>
+								 </div>
+								 <div style="width: 100%;float: left; margin-top: 0.625rem;">
+									<span class="ex-job-listname" style="text-align: right">许可证号：</span><span class="ex-job-listvalue" attr-name="EVREA" style="width: 80%;">27000000201605190818</span>
+								 </div>
+							 </li>
+						</ul>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+		
+		<template id="card_template">
+			<div class="mui-card" style="margin: 0px;margin-bottom: 10px;">
+				
+			</div>
+		</template>
+
+		<script src="../../js/common/jquery-1.11.1.min.js"></script>
+		<script src="../../js/common/mui.min.js"></script>
+		<script src="../../js/common/mui.picker.min.js"></script>
+		<script src="../../js/common/mui.poppicker.js"></script>
+		<script src="../../js/common/mui.showLoading.js"></script>
+		<script src="../../js/common/baseUtils.js"></script>
+		<script src="./messageList.js"></script>
+		<script type="text/javascript">
+			mui.init();
+			mui('.mui-scroll-wrapper').scroll({
+				scrollY: true, //是否竖向滚动
+				scrollX: false, //是否横向滚动
+				startX: 0, //初始化时滚动至x
+				startY: 0, //初始化时滚动至y
+				indicators: true, //是否显示滚动条
+				deceleration:0.0006, //阻尼系数,系数越小滑动越灵敏
+				bounce: true //是否启用回弹
+			});
+			
+			mui.plusReady(function() {
+				var webview = plus.webview.currentWebview();
+				messageList.pageload(webview);
+				
+				window.addEventListener("refreshData", function(e) {
+					var webview = plus.webview.currentWebview();
+					messageList.refresh();
+				});
+				
+				var old_back = mui.back;
+				mui.back = function(refreshData) {
+					if (refreshData){
+						var curr = plus.webview.currentWebview();
+						mui.fire(curr.opener(), "refreshData");
+					}
+					old_back();
+				};
+			});
+			
+		</script>
+	</body>
+
+</html>

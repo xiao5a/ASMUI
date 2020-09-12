@@ -168,6 +168,7 @@ public class WXEntryActivity extends Activity implements IWXAPIEventHandler{
 //				intent.setClass(context,  Class.forName(classname));
 //				intent.putExtra("id", logininfo[logininfo.length-1]);
 //				startActivity(intent);
+			 this.goback();
 				finish();
 		 }
 		}catch(Exception e){
@@ -188,8 +189,17 @@ public class WXEntryActivity extends Activity implements IWXAPIEventHandler{
 
 
 		}
-	
-	
+
+	private void goback() {
+
+		Intent intent = new Intent();
+		final Activity context = (Activity) this;
+		intent.setClass(context, MuiActivity.class);
+		startActivity(intent);
+		finish();
+	}
+
+
 //	String getTopActivity(Activity context)
 
 //	{
@@ -220,11 +230,11 @@ public class WXEntryActivity extends Activity implements IWXAPIEventHandler{
 
 	private void fpcx() {
 		// TODO Auto-generated method stub
-//		Intent intent = new Intent();
-//		final Activity context = (Activity) this;
-//		intent.setClass(context, FapiaofangweiActivity.class);
-//		startActivity(intent);
-//		finish();
+		Intent intent = new Intent();
+		final Activity context = (Activity) this;
+		intent.setClass(context, MuiActivity.class);
+		startActivity(intent);
+		finish();
 	}
 
 	private void wxsmzzc(String xm, String sfzh,String sjh) {

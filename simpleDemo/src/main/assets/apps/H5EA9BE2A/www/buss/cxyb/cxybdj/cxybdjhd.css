@@ -1,0 +1,98 @@
+/* body{padding-top: 44px; padding-bottom: 65px; position: relative;} */
+/* #app{
+	position: relative;width: 100%;height: 100%;	
+} */
+/* .addDjry{
+	position: absolute;
+	right: 150px;
+	bottom: 300px;
+	z-index: 10;
+	
+} */
+svg.icon{
+	width: 50px;
+	height: 50px;
+}
+.mui-scroll-wrapper{
+	top:85px;
+}
+.mui-scroll-wrapper .mui-scroll{
+	text-align: center;
+}
+.mui-scroll-wrapper .mui-scroll .mui-btn-outlined{
+	margin: 10px 5px 0px 5px;
+}
+.mui-input-group .mui-input-row{
+	height: 100%;
+}
+.mui-checkbox.mui-right input[type=checkbox], .mui-radio.mui-right input[type=radio]{
+	right: 10px;
+}
+.mui-checkbox input[type=checkbox], .mui-radio input[type=radio]{
+	top:35%
+}
+.mui-checkbox.mui-right label, .mui-radio.mui-right label{
+	padding-left: 10px;
+	padding-right: 45px;
+	
+}
+.ry label{
+	position: relative;
+	width: 100%;
+	text-align: left;
+	padding: 5px 0px;
+	font-size: 15px;
+	color: #3a3a3a;
+}
+
+.paylineBox .payLine{
+	margin: 13px 0px;
+}
+/* .paylineBox .je{
+	padding-bottom: 10px;
+	border-bottom: #D2D3D4 1px solid;
+} */
+.paylineBox .payLine .plInfo{
+	position: absolute;
+	text-align: right;
+	right: 30px;
+	width: 60%;
+}
+.submitBtn{
+	text-align: center;
+}
+.submitBtn>button{
+	position: absolute;
+	height: 60px;
+	 /* left: 5%; */
+	bottom: 0px;
+	width: 100%;
+	z-index:11;
+}
+
+.mui-popover{
+	width: 90%;
+	left: 5%;
+	top: 20%;
+	font-size: 16px;
+}
+.addTitle{
+	text-align: center;
+	height: 40px;
+	line-height: 40px;
+}
+.mui-input-row label,.mui-input-row label~input, .mui-input-row label~select, .mui-input-row label~textarea{
+	font-size: 15px;
+}
+
+.mui-input-row label~input, .mui-input-row label~select, .mui-input-row label~textarea{
+	padding-left: 10px;
+	padding-top: 14px;
+}
+
+.addry label{
+	width: 24%;
+}
+.mui-btn-block{
+	margin-bottom: 0px;
+}

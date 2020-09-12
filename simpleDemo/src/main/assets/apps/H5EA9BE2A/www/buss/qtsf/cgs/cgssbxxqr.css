@@ -1,0 +1,19 @@
+.mui-content{
+	margin-bottom: 70px;
+}
+.mui-content .mui-table-view{
+	/* border-top: 5px solid #0079e2; */
+}
+.mui-collapse .icon{
+	height: 30px;
+	width: 30px;
+}
+.mui-table-view-chevron .lb,.mui-collapse .lb{
+	font-size: 16px;
+	font-weight: 700;
+}
+
+#submitBtn{
+	position: fixed;
+	bottom: 0px;
+}

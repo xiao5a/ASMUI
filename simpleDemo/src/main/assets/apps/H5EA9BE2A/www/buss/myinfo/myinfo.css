@@ -1,0 +1,23 @@
+.mui-content .title{
+	margin-top: 10px;
+}
+.mui-bar-nav ~ .mui-content{
+	padding-top: 32px;
+}
+.mui-table-view-cell .mui-navigate-right .icon{
+	width: 22px;
+	height: 22px;
+	position: absolute;
+	top: 9px;
+	
+}
+.mui-content .mui-table-view-cell{
+	font-size: 16px;
+	margin-left: 10px;
+}
+.mui-content .mui-table-view-cell .pswd{
+	margin-left: 30px;
+}
+.mui-table-view-cell .zt{
+	color: #8a8a8b;
+}

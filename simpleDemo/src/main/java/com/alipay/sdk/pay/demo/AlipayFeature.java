@@ -1,16 +1,14 @@
 package com.alipay.sdk.pay.demo;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.text.TextUtils;
 import android.util.Log;
 
 import com.alipay.sdk.app.AuthTask;
 import com.alipay.sdk.app.PayTask;
 import com.alipay.sdk.pay.demo.util.OrderInfoUtil2_0;
-import com.neusoft.tax.wx.Constants;
-import com.tencent.mm.opensdk.modelbiz.WXLaunchMiniProgram;
-import com.tencent.mm.opensdk.openapi.IWXAPI;
-import com.tencent.mm.opensdk.openapi.WXAPIFactory;
+import com.neusoft.tax.wxapi.MuiActivity;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -55,14 +53,19 @@ public class AlipayFeature extends StandardFeature {
     public  void  wxLogin(IWebview iWebview, JSONArray jsonArray){
         wxiWebview = iWebview;
         WxJSONArray = jsonArray;
-        String appId = Constants.APP_ID;
-        IWXAPI api = WXAPIFactory.createWXAPI(this.getActivity(), appId);
 
-        WXLaunchMiniProgram.Req req = new WXLaunchMiniProgram.Req();
-        req.userName = Constants.MINI_APP_ID;
-        req.path = "pages/wxml/appindex?type=login";
-         req.miniprogramType = WXLaunchMiniProgram.Req.MINIPROGRAM_TYPE_TEST;// ��ѡ���� �����棬����������ʽ��
-        api.sendReq(req);
+        Intent intent = new Intent();
+		final Activity context = (Activity) iWebview.getActivity();
+		intent.setClass(context, MuiActivity.class);
+        context.startActivity(intent);
+//        String appId = Constants.APP_ID;
+//        IWXAPI api = WXAPIFactory.createWXAPI(this.getActivity(), appId);
+//
+//        WXLaunchMiniProgram.Req req = new WXLaunchMiniProgram.Req();
+//        req.userName = Constants.MINI_APP_ID;
+//        req.path = "pages/wxml/appindex?type=login";
+//         req.miniprogramType = WXLaunchMiniProgram.Req.MINIPROGRAM_TYPE_TEST;// ��ѡ���� �����棬����������ʽ��
+//        api.sendReq(req);
     }
 
     public void payV2(final String orderInfo, final Activity activity, final IWebview iWebview, final JSONArray jsonArray) {
@@ -127,7 +130,8 @@ public class AlipayFeature extends StandardFeature {
         try {
             //授权请求的路径
             info = jsonArray.getString(1);
-            info ="timestamp=2020-09-01+16%3A38%3A55&biz_content=%7B%22total_amount%22%3A%220.01%22%2C%22body%22%3A%22%E5%9F%8E%E4%B9%A1%E5%8C%BB%E4%BF%9D%22%2C%22timeout_express%22%3A%2230m%22%2C%22royalty_parameters%22%3A%5B%7B%22amount%22%3A%220.01%22%2C%22batchNo%22%3A%22app_420700001%22%2C%22transInType%22%3A%22bankIndex%22%2C%22transIn%22%3A%22420700001%22%7D%5D%2C%22subject%22%3A%22%E5%9F%8E%E4%B9%A1%E5%B1%85%E6%B0%91%E5%8C%BB%E4%BF%9D%22%2C%22product_code%22%3A%22QUICK_MSECURITY_PAY%22%2C%22out_trade_no%22%3A%2211%22%2C%22extend_params%22%3A%7B%22corporate_branch_pid%22%3A%222088821647309402%22%7D%7D&sign_type=RSA2&notify_url=https%3A%2F%2Fm-etax.hubei.chinatax.gov.cn%2Fwebroot%2FalipayFk.json&charset=utf-8&method=alipay.trade.app.pay&app_id=2017033106498311&version=1.0&sign=QvftgXnYeAZtNO2llgA1cPwdKLYt4MxNp0VBkJvepUa9C89wpWcEhq6NNS6U3wbMMUxtru%2BU%2F4UzR0GP6BZA1yEX7dQL2g3fecxRezYAUeD%2BxzUlv5bvZVnILNxvpr34avSlyWZ43RFgHzhm5AHXvHCkpAzWa%2Fs5EkE%2FR%2FH1rGtYm7O6NWrpXbVnwAof0QPfkjWFxtGoePSfOtlNjIZ0bSMdXvA2FmY2LoOCdy9j6X76bET7le6Xrn3JW0ePMmPpR9GwX56bMBIG2I%2Fd%2Fm9Kw4BqffGys8K0twbupt8TITOsaU%2FnN1NQxbfOs9dXPLkQceZ9Q8zmxgDfFPDrZJy8dw%3D%3D";
+            Log.e("alipay",info);
+//            info ="timestamp=2020-09-12+09%3A50%3A02&biz_content=%7B%22total_amount%22%3A%220.01%22%2C%22body%22%3A%22%E5%9F%8E%E4%B9%A1%E5%8C%BB%E4%BF%9D%22%2C%22timeout_express%22%3A%2230m%22%2C%22royalty_parameters%22%3A%5B%7B%22amount%22%3A%220.01%22%2C%22batchNo%22%3A%22app_420700126%22%2C%22transInType%22%3A%22bankIndex%22%2C%22transIn%22%3A%22420700126%22%7D%5D%2C%22subject%22%3A%22%E5%9F%8E%E4%B9%A1%E5%B1%85%E6%B0%91%E5%8C%BB%E4%BF%9D%22%2C%22product_code%22%3A%22QUICK_MSECURITY_PAY%22%2C%22out_trade_no%22%3A%22987540271033994%22%2C%22extend_params%22%3A%7B%22corporate_branch_pid%22%3A%222088900580921772%22%7D%7D&sign_type=RSA2&notify_url=https%3A%2F%2Fm-etax.hubei.chinatax.gov.cn%2Fwebroot%2FalipayFk.json&charset=utf-8&method=alipay.trade.app.pay&app_id=2017033106498311&version=1.0&sign=sOrMRaMCf21fs%2B0yxtEpOkXhk9aBTO0d5WIYCFDg4YSha0NnwdwspMvyen6GtTGCdpW7FWub2yXk86HqxWvsGRFRFrcOklHRF7xfDvMndh9R9nXQ1Ro%2BParQMLbwv8cHBcMsAzl%2BQzS8pKJNKZ9EoaFl2qhlPOg2aWi%2By2uAlQC6FK5m6QWL9sZEFf4AeaBOD8Zbew0VsMws725tuxAhld9JA%2BFqWHmFuTaeeCTMzn40UPaaA7pH5pj%2FKDK17cb0hyp3MnNFnuhylxavBlPvx6hOTmK%2BSJpNA1DcMDPGSpFhOkhR48GOKvd477oGTyOM%2FhMEfyJAwzBWrLwsH5D0ow%3D%3D";
             //执行支付宝授权方法
             this.payV2(info,this.getActivity(),iWebview,jsonArray);
         } catch (JSONException e) {

@@ -1,0 +1,122 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../../../css/common/mui.min.css" rel="stylesheet" />
+		<link href="../../../css/common/mui.picker.min.css" rel="stylesheet" />
+		<link href="../../../css/common/mui.poppicker.css" rel="stylesheet" />
+		<link href="../../../css/common/mui-show-loading.css" rel="stylesheet" />
+		<link href="../../../css/common/common.css" rel="stylesheet" />
+		<link href="../../../css/common/common-ex.css" rel="stylesheet" />
+		<link href="./cxyldj.css" rel="stylesheet" />
+	</head>
+
+	<body>
+	<div id="app">
+		<header class="mui-bar mui-bar-nav ex-title-bar">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<button id="saveBtn" type="button" class="mui-btn mui-btn-link mui-pull-right"></button>
+			<h1 class="mui-title">城乡居民养老代缴</h1>
+		</header>
+		<div class="mui-content">
+			<template v-for="(value, key, index) in cxjgGrid" >
+				<ul class="mui-table-view">
+							<li class="mui-table-view-cell" >
+								<!-- <a class="mui-navigate-right"> -->
+									<!-- <div class="mui-input-row"> -->
+										<span class="plName">劳动机构</span>
+										<span class="plInfo" :id="'jbjg'+value.jbjg.sfzjhm">{{value.jbjg}}</span>
+									<!-- </div> -->
+							</li>
+							<li class="mui-table-view-cell" >
+									<!-- <div class="mui-input-row sbh"> -->
+										<span class="plName">社保号</span>
+										<span class="plInfo" :id="'sbh'+value.sfzjhm">{{value.sbh}}</span>
+									<!-- </div> -->
+								<!-- </a> -->
+							</li>
+							<li class="mui-table-view-cell" >
+								<!-- <div class="mui-input-row jflx"> -->
+									<span class="plName">缴费类型</span>
+									<span class="plInfo" id="mydiv" @tap='chooseJfType()'>{{jflx}}</span>
+								<!-- </div> -->
+							</li>
+						</ul>
+				</div>
+			</template>
+			
+			<div class="wxts">
+				<p>
+					温馨提示：缴费类型选择当期可缴纳本年度城乡居民养老，选择补缴可补缴以前年度城乡居民养老。
+				</p>
+			</div>
+			</div>
+			<div class="submitBtn" @tap="next()">
+				<button type="button" class="mui-btn mui-btn-block mui-btn-primary">下一步</button>
+			</div>
+	</div>
+	
+		
+		<script src="../../../js/common/jquery-1.11.1.min.js"></script>
+		<script src="../../../js/common/mui.min.js"></script>
+		<script src="../../../js/common/mui.picker.min.js"></script>
+		<script src="../../../js/common/mui.poppicker.js"></script>
+		<script src="../../../js/common/mui.showLoading.js"></script>
+		<script src="../../../js/common/baseUtils.js"></script>
+		<script src="../../../js/common/crypto-js-aes-min.js"></script>
+		<script src="../../../js/common/common.js"></script>
+		<script src="../../../js/common/vue.min.js"></script>
+		<script src="./cxyldj.js"></script>
+		<script type="text/javascript">
+			//初始化vue
+			var vm = new Vue({
+				el: '#app',
+				data: {
+					cachekey:'',
+					cxjgGrid:[],
+					jflx: "--请选择缴费类型--",
+					jflx_value: "",
+					cardType:'——请选择证件类型——',
+					userPicker: new mui.PopPicker()//当期 补缴
+				}
+			})
+		
+			mui.init();
+			
+			mui('.mui-scroll-wrapper').scroll({
+				scrollY: true, //是否竖向滚动
+				scrollX: false, //是否横向滚动
+				startX: 0, //初始化时滚动至x
+				startY: 0, //初始化时滚动至y
+				indicators: true, //是否显示滚动条
+				deceleration:0.0006, //阻尼系数,系数越小滑动越灵敏
+				bounce: true //是否启用回弹
+			});
+			
+			mui.plusReady(function() {
+				var webview = plus.webview.currentWebview();
+				pageload(webview.userName,webview.idCard)
+				//获取状态栏的高度
+				var statusbarHeight = plus.navigator.getStatusbarHeight()
+				console.log("statusbarHeight>>"+statusbarHeight)
+				//header高度
+				var headerHeight = $("header").height()
+				console.log("headerHeight>>"+headerHeight)
+				//header paddingTop高度
+				$("header").css("paddingTop",statusbarHeight+"px")
+				$("header").css("height",statusbarHeight+headerHeight)
+				//预留高度
+				var preHeight = 0
+				var allHeight = statusbarHeight+headerHeight+preHeight
+				//body paddingTop高度
+				$("body").css("paddingTop",allHeight+"px")
+				
+				pageUtils.back()
+			});
+			
+		</script>
+	</body>
+
+</html>

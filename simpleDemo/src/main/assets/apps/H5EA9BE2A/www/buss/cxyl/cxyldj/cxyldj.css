@@ -1,0 +1,22 @@
+.mui-bar-nav ~ .mui-content{
+	padding-top: 0px;
+}
+.mui-table-view-cell{
+	line-height: 40px;
+	font-size: 15px;
+}
+.mui-table-view-cell .plInfo{
+	position: absolute;
+	left: 100px;
+}
+.wxts p{
+	margin-top: 10px;
+	color: #f0ad4e;
+}
+.submitBtn>button{
+	position: absolute;
+	bottom: 0px;
+}
+.mui-btn-block{
+	margin-bottom: 0px;
+}

@@ -1,0 +1,206 @@
+.blue .mui-bar-tab .mui-tab-item.mui-active,
+.blue .niticeIndex .mui-bar-tab .mui-tab-item.mui-active,
+.blue .planBulletin .container .news-item .news-word,
+.blue .taskAnno .container .news-item .news-word,
+.blue .resultBulletin .container .news-item .news-word {
+	color: #095ccb;
+}
+.blue .header,
+.blue .shareholderInfo .header,
+.blue .mainPersonnel .header,
+.blue .changeInfo .header ,
+.blue .chattelMortgage .header,
+.blue .equityRegistration .header,
+.blue .seriousDishonesty .header,
+.blue .licensingInfo .header,
+.blue .adminSanction .header,
+.blue .abnormalOperation .header,
+.blue .annualReport .header,
+.blue .annualReportInfo .header,
+.blue .shareInfo .header,
+.blue .ownershipChange .header,
+.blue .noticeSearch .header,
+.blue .noticeInfoMain .header,
+.blue .noticeDetailMain .header,
+.blue .discredit .header,
+.blue .resultAnnoDetail .header,
+.blue .punishmentInfo .header,
+.blue .mortgageInfo .header,
+.blue .detailsEquity .header,
+.blue .planBulletin .header,
+.blue .taskAnno .header,
+.blue .resultBulletin .header,
+.blue .judicialFreezeMain .header,
+.blue .changeRecord .header,
+.blue .discreditNotice .header{
+    background: linear-gradient(135deg, #28a6ff, #1163eb);
+}
+.blue .simpleAnno .header,
+.blue .simpleAnno .simAnTopBlock,
+.blue .simpleAnno .simAnTopBtn,
+.blue  .noticeSearch .regionInfo.regionInfoClick {
+	background:#1578de;
+}
+.blue .container .tag .item,
+.blue .register.container .get-verifcode.active {
+    color: #1578de;
+    border: 1px solid #1578de;
+}
+.blue .base-info,
+.blue .noticeSearch .bottomBtn .okBtn,
+.blue .per-personal .active-change,
+.blue .menu .btn-box .confirm,
+.blue .punishmentInfo .decisionBtn,
+.blue .adminSanction .decisionBtn,
+.blue .decisionBtn,
+.blue .simpleAnnoObjection .okBtn,
+.blue .mui-content-padded .mui-btn-block,
+.blue .container .register-btn,
+.blue .select-pop .confirmBtn,
+.blue .dissent .okBtn
+ {
+    /*background: linear-gradient(135deg, #28a6ff, #1163eb);*/
+   background:linear-gradient(135deg, #0059ab,#0059ab);
+}
+.blue .base-info .prompt .iconfont,
+.blue .base-info .prompt {
+	color: #fdf100;
+}
+.blue .info-container .encounter td .shrink,
+.blue .annualReportInfo .container .basicblocklong .info-more,
+.blue .noticeDetailMain .noticeList .noticeShowLink {
+    color: #1578de;
+}
+.blue .info-container .btn-show-list .ico .iconfont,
+.blue .annualReportInfo .container .iconfont,
+.blue .register.container .mui-input-row .iconfont,
+.blue .adminSanction .linkNetHtml {
+	color: #0b5ed8;
+}
+.blue .corporate-info .info-list .item-title:before,
+.blue .container .details-info .info-title:before,
+.blue .per-personal .modify-main .modify-item .title:before {
+    background: linear-gradient(180deg, #28a6ff, #1163eb);
+}
+.blue .changeInfo .container .news-titleicon,
+.blue .annualReportInfo .shareholderName .shareholderName,
+.blue .annualReportInfo .socialiconTitle,
+.blue .help-container .help-item .title,
+.blue .per-personal .modify-main .change-item .paw-ico,
+.blue .login-tab .tab-item  {
+    color: #197ae5;
+}
+.blue .changeInfo .container .capitalInfo .capitalPointIn ,
+.blue .shareholderInfo .capitalPointIn,
+.blue .changeRecord .container .capitalInfo .capitalPointIn
+ {
+    border: 1px solid #197ae5;
+    background: #197ae5;
+}
+.blue .annualReportInfo .shareholderName .shareholderRound,
+.blue .shareholderInfo .capitalPoint,
+.blue .detailsEquity .firstInfoInfo .infoRound,
+.blue .changeRecord .container .capitalInfo .capitalPoint,
+.blue .simpleAnno .firstInfoInfo .infoRound,
+.blue .login-container .mui-input-group .mui-input-row,
+.blue .select-pop2 .clickBox, 
+.blue .select-pop .clickBox,
+.blue .select-pop .clickAllBox {
+  border: 1px solid #197ae5;
+}
+.blue .chattelMortgage .container .news-item .news-word,
+.blue .equityRegistration .container .news-item .news-word,
+.blue .seriousDishonesty .container .news-item .news-word,
+.blue .licensingInfo .container .news-item .news-word,
+.blue .adminSanction .container .news-item .news-word,
+.blue .login-back  {
+	 color: #197ae5;
+}
+.blue .abnormalOperationBody .rightIcon,
+.blue .annualReportInfo .container .news-titleicon,
+.blue .noticeSearch .container .news-titleicon,
+.blue .per-personal .fun-list .fun-item .iconfont,
+.blue .login-container .mui-input-row label {
+	 color: #197ae5;
+}
+.blue .abnormalOperationBody .alertTitle,
+.blue .noticeSearch .container .news-title {
+    border-bottom: 1px solid #197ae5;
+}
+.blue .simpleAnno .firstInfoTit,
+.blue .simpleAnno .secondInfoTit,
+.blue .punishmentInfo .contentTitle,
+.blue .mortgageInfo .contentTitle,
+.blue .detailsEquity .contentTitle {
+    color: #197ae5;
+    border-bottom: 1px solid #197ae5;
+}
+.blue .noticeSearch .noticeTitle {
+    border-left: 0.05rem solid #197ae5;
+}
+.blue .container .news-item .btn-del,
+.blue .simpleAnnoObjection .header,
+.blue .simpleAnnoObjection .simAnTopBlock,
+.blue .help-container .help-item .title .num,
+.blue .dissent .header,
+.blue .dissent .simAnTopBlock,
+.blue .login-container .mui-input-row .get-verifcode.active {
+	background: #197ae5;
+}
+.blue .container .enterprise .enterprise-name,
+.blue .login-tab .tab-item,
+.blue .select-pop .selectAllRow  {
+    border-bottom: 1px solid #197ae5;
+}
+.blue .help-container .help-item {
+    border-left: 1px dashed #197ae5;
+}
+.blue .menu-container .tag-box .tag.active {
+    background: #197ae5;
+    border: 1px solid #197ae5;
+}
+
+.blue .carousel-box {
+    background-image: url(../../img/index-banner_blue.png);
+}
+.blue .niticeIndex .carousel-box {
+    background-image: url(../../img/niticSearch_blue.png);
+}
+.blue .per-personal .user-box {
+    background-image: url(../../img/avatar_bg_blue.jpg);
+}
+.blue .selectCardBoxClick,
+.blue .select-pop .pop-close {
+	color: #1163EB;
+}
+.blue .login-container {
+    background-image: url(../../img/login/loginBg_blue.png);
+}
+.blue .login-tab .tab-item.active {
+    color: #197ae5;
+    border-bottom: 2px solid #197ae5;
+}
+.blue .login-container .logo{
+	background-size: 100%;
+	background-position: top;
+	background-repeat: no-repeat;
+}
+.blue .login-container .logo img {
+	#opacity: 0;
+}
+.blue .carousel-box .title-box:before {
+	content: '';
+	padding: 0.575rem 0.545rem;
+    position: absolute;
+    left: 50%;
+    margin-left: -0.575rem;
+    top: -1.48rem;
+    background: url(../img/guohui.png);
+    background-size: 100% 100%;
+}
+/*.blue .niticeIndex .carousel-box .title-box:before {
+	content: '';
+	padding: 0;
+	margin: 0;
+	background: none;
+}*/

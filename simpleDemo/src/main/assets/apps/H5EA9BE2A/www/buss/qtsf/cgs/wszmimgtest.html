@@ -1,0 +1,123 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../../../css/common/mui.min.css" rel="stylesheet" />
+		<link href="../../../css/common/mui.picker.min.css" rel="stylesheet" />
+		<link href="../../../css/common/mui-show-loading.css" rel="stylesheet" />
+		<link href="../../../css/common/common.css" rel="stylesheet" /> 
+		<link href="../../../css/common/common-ex.css" rel="stylesheet" />
+		<link href="../../../css/common/mui.css" rel="stylesheet" />
+		<link href="../../../css/common/mui.poppicker.css" rel="stylesheet" />
+		<link href="../../../css/common/buss.css" rel="stylesheet" />
+		<link href="./cgssb.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">车辆购置税申报信息查询</h1>
+		</header>
+		<div class="mui-content">
+			<div class="title">
+				个人基础信息
+			</div>
+			<div class="mui-card" style="<!-- margin-bottom: 35px; -->">
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell">
+						<span>姓名</span>
+						<lebal id="XM">敖玉冰</lebal>
+					</li>
+					<li class="mui-table-view-cell">
+						<span>身份证号</span>
+						<lebal id="SFZH">429001198812292969</lebal>
+					</li>
+				</ul>
+			</div>
+			<div class="title">
+				查询本人申报信息
+			</div>
+			<div class="mui-card">
+				<ul class="mui-table-view">
+					<li>
+						<div class="mui-collapse-content">
+							<form class="mui-input-group">
+								<div class="mui-input-row">
+									<label>车辆识别代码</label>
+									<input id="clsbdm" type="text" placeholder="请输入车辆识别代码">
+								</div>
+								<div class="ewm">
+									<img id="imgid" src="data:img/jpg;base64,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" />
+								</div>
+								<div class="jyyc">
+									<img id="imgid" src="../../../img/message/jyyc.png" />
+								</div>
+							</form>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="submitBtn">
+			<button id="serchBtn" type="button" class="mui-btn mui-btn-block mui-btn-primary">查询申报信息</button>
+		</div>
+		<script src="../../../js/common/jquery-1.11.1.min.js"></script>
+		<script src="../../../js/common/mui.min.js"></script>
+		<script src="../../../js/common/mui.picker.min.js"></script>
+		<script src="../../../js/common/mui.poppicker.js"></script>
+		<script src="../../../js/common/mui.showLoading.js"></script>
+		<script src="../../../js/common/baseUtils.js"></script>
+		<script type="text/javascript">
+			mui.init();
+			
+			mui.plusReady(function() {
+				var webview = plus.webview.currentWebview();
+				//设置沉浸式
+				//获取状态栏的高度
+				var statusbarHeight = plus.navigator.getStatusbarHeight()
+				console.log("statusbarHeight>>"+statusbarHeight)
+				//header高度
+				var headerHeight = $("header").height()
+				console.log("headerHeight>>"+headerHeight)
+				//header paddingTop高度
+				$("header").css("paddingTop",statusbarHeight+"px")
+				$("header").css("height",statusbarHeight+headerHeight)
+				//预留高度
+				var preHeight = 0
+				var allHeight = headerHeight+preHeight
+				//body paddingTop高度
+				$("body").css("paddingTop",allHeight+"px")
+			});
+		</script>
+	</body>
+
+</html>

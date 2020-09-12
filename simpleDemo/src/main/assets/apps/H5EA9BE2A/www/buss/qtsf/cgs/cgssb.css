@@ -1,0 +1,102 @@
+.mui-content{
+	margin-bottom: 20px;
+}
+.mui-content .title{
+	/* color: #00388c; */
+	/* font-size: 14px; */
+	/* font-weight: 400; */
+	}
+.mui-card{
+	margin: 3px 10px 20px 10px;
+	/* border-top: 3px solid #afcbff; */
+}
+.mui-table-view-cell{
+	font-size: 15px;
+}
+.mui-table-view-cell .plInfo{
+	position: absolute;
+	right: 10px;
+	color: #8a8a8b;
+}
+.mui-input-group .mui-input-row{
+	height: 50px;
+}
+.mui-input-row label,.mui-input-row label~input, .mui-input-row label~select, .mui-input-row label~textarea{
+	font-size: 15px;
+	padding: 0px 0px 0px 10px;
+	line-height: 50px;
+}
+select, textarea, input[type='text'], input[type='search'], input[type='password'], input[type='datetime'], input[type='datetime-local'], input[type='date'], input[type='month'], input[type='time'], input[type='week'], input[type='number'], input[type='email'], input[type='url'], input[type='tel'], input[type='color']{
+	height: 50px;
+	color: #8a8a8b;
+}
+.mui-input-group .mui-input-row input{
+padding-top: 10px;
+padding-bottom: 10px;
+}
+.bz{
+	/* position: absolute; */
+	color: red;
+	font-size: 18px;
+}
+/* .mui-btn-outlined{
+	margin-bottom: 10px;
+} */
+#searchBtn{
+	margin-right: 40px;
+}
+
+.mui-table-view{
+	margin-top:3px;
+}
+.mui-table-view .mui-table-view-cell lebal{
+	color: #8a8a8b;
+}
+
+.submitBtn .mui-btn-primary{
+	position: absolute;
+	bottom: 10px;
+}
+.wxts{
+	margin-top:10px;
+}
+.wxts p{
+	color: #f0ad4e;
+}
+#SBJKZT,.hyjg{
+	font-size: 18px;
+	color: #00aa00;
+}
+.hyjg{
+	position: absolute;
+	right: 10px;
+	font-size: 24px;
+}
+.mui-table-view .mui-table-view-cell .je{
+	color: red;
+}
+.btn{
+	margin-top: 15px;
+}
+#lastbtn{
+	margin-left: 10px;
+}
+
+.mui-content ul li lebal{
+	width: 68%;
+	text-align: right;
+}
+#submitBtn{
+	margin-bottom: 10px;
+}
+.ewm{
+	text-align: center;
+}
+.jyyc{
+	text-align: right;
+	margin-right: 10px;
+}
+.mui-table-view .mui-table-view-cell .font{
+	font-size: 20px;
+	color: #000000;
+}

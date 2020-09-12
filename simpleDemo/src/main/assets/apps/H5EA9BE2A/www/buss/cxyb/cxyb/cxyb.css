@@ -1,0 +1,164 @@
+body{
+	position: relative;width: 100%;height: 100%;
+}
+ 
+svg.icon{
+	width: 50px;
+	height: 50px;
+}
+.mui-scroll-wrapper{
+	top:85px;
+}
+
+.mui-scroll-wrapper .mui-scroll{
+	text-align: center;
+}
+
+.mui-input-group .mui-input-row{
+	height: 100%;
+}
+.mui-checkbox.mui-right input[type=checkbox], .mui-radio.mui-right input[type=radio]{
+	right: 12px;
+}
+.mui-checkbox input[type=checkbox], .mui-radio input[type=radio]{
+	top:15%
+}
+.mui-checkbox.mui-right label, .mui-radio.mui-right label{
+	/* padding-right: 35px; */
+	padding-left: 10px;
+	
+}
+.ry label{
+	position: relative;
+	width: 100%;
+	text-align: left;
+	padding: 5px 0px;
+	font-size: 15px;
+	color: #3a3a3a;
+}
+
+.paylineBox .payLine{
+	margin: 13px 5px;
+}
+.paylineBox .je{
+	/* padding-bottom: 10px; */
+	/* border-bottom: #D2D3D4 1px solid; */
+}
+.paylineBox .payLine .plInfo{
+	position: absolute;
+	text-align: right;
+	right: 10%;
+	width: 90%;
+}
+.submitBtn{
+	text-align: center;
+}
+.submitBtn>button{
+	position: absolute; 
+	bottom: 0px;
+	width: 100%;
+	z-index: 99;
+}
+
+.mui-popover{
+	width: 90%;
+	left: 5%;
+	top: 20%;
+	font-size: 16px;
+}
+.addTitle{
+	text-align: center;
+	height: 40px;
+	line-height: 40px;
+}
+.mui-input-row label,.mui-input-row label~input, .mui-input-row label~select, .mui-input-row label~textarea{
+	font-size: 13px;
+}
+
+.mui-input-row label~input, .mui-input-row label~select, .mui-input-row label~textarea{
+	padding-left: 10px;
+	padding-top: 14px;
+}
+
+.addry label{
+	width: 24%;
+}
+
+
+
+.mui_card_box{
+	border-radius: 10px;
+}
+.footer_div{
+	position: relative; 
+	text-align: left;
+	width: 100%;
+	border-top: 1px solid #d8d8d8;
+	background-color: #fffefe;
+	height: 40px;
+	margin-top: 0px;
+}
+.footer_div:active{
+	background-color: #9a9a9a;
+}
+.footer_div_title{
+	width: 100px ;
+	margin-left: 13px;
+	margin-top: 10px;"
+}
+.footer_div_value{
+	position: absolute;
+	right: 5px;
+	top:10px
+}
+
+/**
+ * 加载loading
+ */
+.mui_popover_loading{
+	position: relative;
+	left: 35%;
+	top:40%;
+	width: 100px;
+	height: 50px;
+	border-radius: 0px;
+	background-color:rgba(239,239,244,1) ;
+    box-shadow: 0 0 0px rgba(0,0,0,.1);
+	display: hidden;
+}
+.mui_popover_loading_img{
+	position: relative;
+	left: 30%;
+	top: 10%;
+}
+.mui_popover_loading_title{
+	position: relative;
+	left: 20%;
+	top: 10%;
+}
+.mui-btn-block{
+	font-size:15px;
+	margin-bottom: 0px;
+	border-radius: 15px;
+}
+.mui-backdrop {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 998;
+    background-color: rgba(0,0,0,.3);
+}
+/**
+ * 蒙版样式
+ */
+.mask{
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 998;
+    background-color: rgba(0,0,0,.3);
+}

@@ -1,0 +1,31 @@
+/* .loginBox{
+		width: 96%; 
+		background: #fff; 
+		margin-left: 2%;
+		border-radius: 10px ;
+} */
+/* .mui-bar-nav~.mui-content {
+     padding-top: -47px;
+} */
+.mui-input-group .mui-input-row{
+	height: 45px;
+}
+.mui-input-row label {
+    width: 24%;
+    font-size: 15px;
+    text-align: left;
+	padding-left: 10px;
+}
+.mui-input-row label~input, .mui-input-row label~select, .mui-input-row label~textarea{
+	font-size: 15px;
+	line-height: 45px;
+	padding-left: 30px;
+	padding-top:13px
+}
+.wxts p{
+	margin-top: 10px;
+	color: #f0ad4e;
+}
+.submitBtn>button{
+	position: absolute;
+}

@@ -1,0 +1,105 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../../css/common/mui.min.css" rel="stylesheet" />
+		<link href="../../css/common/mui.picker.min.css" rel="stylesheet" />
+		<link href="../../css/common/mui.poppicker.css" rel="stylesheet" />
+		<link href="../../css/common/mui-show-loading.css" rel="stylesheet" />
+		<link href="../../css/common/common.css" rel="stylesheet" /> 
+		<link href="../../css/common/common-ex.css" rel="stylesheet" />
+		<link href="./login.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<div class="mui-content">
+			<div class="mui-scroll-wrapper" id="mainScroll">
+				<div class="mui-scroll" id="scrollin" style="height: 100%;">
+					<div class="loginTitle">
+						<div class="loginTitleItem">食安辽宁</div>
+						<div class="loginTitleItem">辽宁省食品安全信用监管系统</div>
+					</div>
+					
+					
+					<form id='login-form'>
+						<div class="loginForm">
+							<div class="lform-div" style="text-align: center;font-size: 0.9rem;margin-bottom: 0.625rem;">
+								<span><font id="regulatoryId" style="color: #FFFFFF;margin: 1rem 0.3125rem;">监管人员登录</font>|<font id="corporateId" style="color: #095FA9;margin: 1rem 0.3125rem;">企业登录</font></span>
+							</div>
+							<div class="lform-div">
+								<input id='userid' class="lform-input" type="text" placeholder="请输入用户名"/>
+							</div>
+							<div class="lform-div">
+								<input id='password' class="lform-input" type="password" placeholder="请输入密码"/>
+							</div>
+							<div class="lform-div">
+								<div class="loginCode">
+									<input id='verifycode' class="lform-input" type="text" placeholder="请输入验证码"/>
+									<div id="verificationCode" class="codePic">
+										<canvas width="100" height="40" id="verifyCanvas"></canvas>
+										<img id="code_img" >
+									</div>
+								</div>
+							</div>
+							<button id='loginBtn' class="baseBtn lform-btn" type="button">登 录</button>
+							<div id= "registerDiv" class="lform-div" style="color: #FFFFFF;text-align: center;font-size: 0.7rem;margin-top: 0.625rem;display: none;">
+								<span><font id="registerFont" style="margin: 0 0.3125rem;">立即注册</font>|<font id="forgetPassword" style="margin: 0 0.3125rem;">忘记密码</font></span>
+							</div>
+						</div>
+					</form>
+					
+<!-- 					<div class="returnLogin">
+						<span class="mui-icon mui-icon-undo mui-action-back"><font style="font-size: 0.875rem;">返回</font></span>
+					</div> -->
+				</div><!-- <div class="mui-scroll" id="scrollin"> -->
+			</div>
+		</div>
+
+		<script src="../../js/common/jquery-1.11.1.min.js"></script>
+		<script src="../../js/common/mui.min.js"></script>
+		<script src="../../js/common/mui.picker.min.js"></script>
+		<script src="../../js/common/mui.poppicker.js"></script>
+		<script src="../../js/common/mui.showLoading.js"></script>
+		<script src="../../js/common/baseUtils.js"></script>
+		<script src="../../js/common/flexible.min.js"></script>
+		<script src="../../js/common/crypto-js-aes-min.js"></script>
+		<script src="./verifycode.js"></script>
+		<script src="./login.js"></script>
+		
+		<script type="text/javascript">
+			mui.init();
+			mui('.mui-scroll-wrapper').scroll({
+				scrollY: true, //是否竖向滚动
+				scrollX: false, //是否横向滚动
+				startX: 0, //初始化时滚动至x
+				startY: 0, //初始化时滚动至y
+				indicators: true, //是否显示滚动条
+				deceleration:0.0006, //阻尼系数,系数越小滑动越灵敏
+				bounce: true //是否启用回弹
+			});
+			
+			mui.plusReady(function() {
+				var webview = plus.webview.currentWebview();
+				login.pageload(webview);
+				
+				window.addEventListener("refreshData", function(e) {
+					var webview = plus.webview.currentWebview();
+					login.refresh();
+				});
+				
+				var old_back = mui.back;
+				mui.back = function(refreshData) {
+					if (refreshData){
+						var curr = plus.webview.currentWebview();
+						mui.fire(curr.opener(), "refreshData");
+					}
+					old_back();
+				};
+			});
+		</script>
+	</body>
+
+</html>
