@@ -4,10 +4,9 @@ import android.app.Activity;
 import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
-import android.widget.Toast;
 
 import com.alipay.sdk.pay.demo.AlipayFeature;
+import com.neusoft.tax.R;
 import com.neusoft.tax.wx.Constants;
 import com.tencent.mm.opensdk.constants.ConstantsAPI;
 import com.tencent.mm.opensdk.modelbase.BaseReq;
@@ -23,6 +22,7 @@ import org.json.JSONArray;
 import java.util.HashMap;
 import java.util.Map;
 
+import io.dcloud.common.DHInterface.IWebview;
 import io.dcloud.common.util.JSUtil;
 
 public class WXEntryActivity extends Activity implements IWXAPIEventHandler{
@@ -37,22 +37,32 @@ public class WXEntryActivity extends Activity implements IWXAPIEventHandler{
 	private String nsrsbh = "";
 	private String msg = "";
 	private String type = "";
-	private WXEntryActivity wxentryactivity ; 
+	private WXEntryActivity wxentryactivity ;
+	public 	static IWebview wxiWebview  ;
+	public  static JSONArray WxJSONArray;
+	public  static AlipayFeature AlipayFeature   ;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        setContentView(R.layout.entry);
-		Toast.makeText(this, "onCreate", Toast.LENGTH_LONG).show();
+        setContentView(R.layout.entry);
+//		Toast.makeText(this, "onCreate", Toast.LENGTH_LONG).show();
 
 		wxentryactivity = this ;
     	api = WXAPIFactory.createWXAPI(this, Constants.APP_ID, false);
-        api.handleIntent(getIntent(), this);
+		try {
+			if (!api.handleIntent(getIntent(), this)) {
+				finish();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+//        api.handleIntent(getIntent(), this);
     }
 
 	@Override
 	protected void onNewIntent(Intent intent) {
 		super.onNewIntent(intent);
-		Toast.makeText(this, "onNewIntent", Toast.LENGTH_LONG).show();
+//		Toast.makeText(this, "onNewIntent", Toast.LENGTH_LONG).show();
 
 		setIntent(intent);
         api.handleIntent(intent, this);
@@ -61,14 +71,14 @@ public class WXEntryActivity extends Activity implements IWXAPIEventHandler{
 	
 	 @Override
 	    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-		 Toast.makeText(this, "onActivityResult", Toast.LENGTH_LONG).show();
+//		 Toast.makeText(this, "onActivityResult", Toast.LENGTH_LONG).show();
 
 		 super.onActivityResult(requestCode, resultCode, data);
 	        api.handleIntent(data,this);
 	    }
 	@Override
 	public void onReq(BaseReq req) {
-		Toast.makeText(this, "onReqopenid = " + req.openId, Toast.LENGTH_SHORT).show();
+//		Toast.makeText(this, "onReqopenid = " + req.openId, Toast.LENGTH_SHORT).show();
 		
 		switch (req.getType()) {
 		case ConstantsAPI.COMMAND_GETMESSAGE_FROM_WX:
@@ -78,7 +88,7 @@ public class WXEntryActivity extends Activity implements IWXAPIEventHandler{
 //			goToShowMsg((ShowMessageFromWX.Req) req);
 			break;
 		case ConstantsAPI.COMMAND_LAUNCH_BY_WX:
-			Toast.makeText(this, "", Toast.LENGTH_SHORT).show();
+//			Toast.makeText(this, "", Toast.LENGTH_SHORT).show();
 			break;
 		default:
 			break;
@@ -87,20 +97,18 @@ public class WXEntryActivity extends Activity implements IWXAPIEventHandler{
 
  	@Override
 	public void onResp(BaseResp resp) {
-		Toast.makeText(this, "onRespopenid = " + resp.openId, Toast.LENGTH_SHORT).show();
+//		Toast.makeText(this, "onRespopenid = " + resp.openId, Toast.LENGTH_SHORT).show();
 
 
-		JSONArray newArray = new JSONArray();
-		newArray.put(resp.openId);
-		newArray.put(resp.openId);
-		newArray.put(resp.openId);
 //                newArray.put(authResult.getScope());
 //                newArray.put(authResult.getUser_id());
 		//异步返回到login.js
-		JSUtil.execCallback(AlipayFeature.wxiWebview, AlipayFeature.WxJSONArray.optString(0),newArray, JSUtil.OK, false);
+//		Toast.makeText(this, "WXEntryActivity.WxJSONArray.optString(0) = " + WXEntryActivity.WxJSONArray.optString(0), Toast.LENGTH_SHORT).show();
+
+//		Toast.makeText(this, "*****WXEntryActivity.WxJSONArray.optString(0) = " + WXEntryActivity.WxJSONArray.optString(0), Toast.LENGTH_SHORT).show();
 
 		if (resp.getType() == ConstantsAPI.COMMAND_SENDAUTH) {
-			Toast.makeText(this, "code = " + ((SendAuth.Resp) resp).code, Toast.LENGTH_SHORT).show();
+//			Toast.makeText(this, "code = " + ((SendAuth.Resp) resp).code, Toast.LENGTH_SHORT).show();
 			Map<String, String> paramsMap = new HashMap();
 			paramsMap.put("code", ((SendAuth.Resp) resp).code);
 //			getaccess_token(this,paramsMap);
@@ -110,7 +118,7 @@ public class WXEntryActivity extends Activity implements IWXAPIEventHandler{
 	    if (resp.getType() == ConstantsAPI.COMMAND_LAUNCH_WX_MINIPROGRAM) {
 	        WXLaunchMiniProgram.Resp launchMiniProResp = (WXLaunchMiniProgram.Resp) resp;
 	          extraData =launchMiniProResp.extMsg; // ��ӦJsApi navigateBackApplication�е�extraData�ֶ�����
-	        Toast.makeText(this, "extraData = " + extraData, Toast.LENGTH_SHORT).show();
+//	        Toast.makeText(this, "extraData = " + extraData, Toast.LENGTH_SHORT).show();
 	        
 	    }
 		
@@ -141,7 +149,7 @@ public class WXEntryActivity extends Activity implements IWXAPIEventHandler{
 			 
 		 }
 		 else if(logininfo[logininfo.length-1].equals("login")) {
-		 this.loginzfb(logininfo[0], logininfo[1]);
+		 this.loginzfb(extraData);
 		 }
 		 else if (logininfo[logininfo.length-1].equals("wxsmrz")){
 			 this.wxsmrz(logininfo[0], logininfo[1],logininfo[2]);
@@ -162,14 +170,23 @@ public class WXEntryActivity extends Activity implements IWXAPIEventHandler{
 		 }
 		 else{
 			 
+//			 Toast.makeText(this, "finish", Toast.LENGTH_SHORT).show();
 //			 Intent intent = new Intent();
 //				final Activity context = (Activity) this;
 //				String  classname  = getTopActivity(context);
 //				intent.setClass(context,  Class.forName(classname));
 //				intent.putExtra("id", logininfo[logininfo.length-1]);
 //				startActivity(intent);
-			 this.goback();
-				finish();
+//			 this.goback();
+
+//			 Toast.makeText(this, "goback", Toast.LENGTH_LONG).show();
+//			 JSONArray newArray = new JSONArray();
+//			 newArray.put("事事顺遂");
+//			 JSUtil.execCallback(WXEntryActivity.wxiWebview, WXEntryActivity.WxJSONArray.optString(0),newArray, JSUtil.OK, false);
+
+			goback(extraData);
+
+//			 this.finish();
 		 }
 		}catch(Exception e){
 			
@@ -183,19 +200,24 @@ public class WXEntryActivity extends Activity implements IWXAPIEventHandler{
 //				(Activity) this);
 ////		myClient.post(url, params, new AsyncHttpResponseHandler() {
 
-        this.finish();  
+       finish();
 
        
 
 
 		}
 
-	private void goback() {
+	private void goback(String s) {
 
 		Intent intent = new Intent();
 		final Activity context = (Activity) this;
-		intent.setClass(context, MuiActivity.class);
+		intent.putExtra("id", "goback");
+		intent.setClass(context, io.dcloud.PandoraEntry.class);
 		startActivity(intent);
+		JSONArray newArray = new JSONArray();
+		newArray.put(s);
+		JSUtil.execCallback(WXEntryActivity.wxiWebview, WXEntryActivity.WxJSONArray.optString(0),newArray, JSUtil.OK, false);
+
 		finish();
 	}
 
@@ -317,11 +339,17 @@ public class WXEntryActivity extends Activity implements IWXAPIEventHandler{
 
 	}
 
-	private void loginzfb(String xm, String sfzh) {
+	private void loginzfb(String s) {
+		Intent intent = new Intent();
 		final Activity context = (Activity) this;
+		intent.putExtra("id", "goback");
+		intent.setClass(context, io.dcloud.PandoraEntry.class);
+		startActivity(intent);
+		JSONArray newArray = new JSONArray();
+		newArray.put(s);
+		JSUtil.execCallback(WXEntryActivity.wxiWebview, WXEntryActivity.WxJSONArray.optString(0),newArray, JSUtil.OK, false);
 
-		Log.i("TAX", xm);
-		Log.i("TAX", sfzh);
+		finish();
 
 
 	}

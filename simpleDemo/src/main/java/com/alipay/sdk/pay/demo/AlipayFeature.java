@@ -1,14 +1,17 @@
 package com.alipay.sdk.pay.demo;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.text.TextUtils;
 import android.util.Log;
 
 import com.alipay.sdk.app.AuthTask;
 import com.alipay.sdk.app.PayTask;
 import com.alipay.sdk.pay.demo.util.OrderInfoUtil2_0;
-import com.neusoft.tax.wxapi.MuiActivity;
+import com.neusoft.tax.wx.Constants;
+import com.neusoft.tax.wxapi.WXEntryActivity;
+import com.tencent.mm.opensdk.modelbiz.WXLaunchMiniProgram;
+import com.tencent.mm.opensdk.openapi.IWXAPI;
+import com.tencent.mm.opensdk.openapi.WXAPIFactory;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -27,6 +30,8 @@ import io.dcloud.common.util.JSUtil;
  * 说明:桌面角标扩展插件类
  */
 public class AlipayFeature extends StandardFeature {
+    private OnCallBackListener listener;
+
     public static final String APPID = "2017033106498311";
 
     /** 支付宝账户登录授权业务：入参pid值 */
@@ -49,23 +54,22 @@ public class AlipayFeature extends StandardFeature {
      * @param jsonArray 显示的角标数量参数 (固定参数,必须要写)
      */
 
-
     public  void  wxLogin(IWebview iWebview, JSONArray jsonArray){
-        wxiWebview = iWebview;
-        WxJSONArray = jsonArray;
+        WXEntryActivity.wxiWebview = iWebview;
+        WXEntryActivity.WxJSONArray = jsonArray;
 
-        Intent intent = new Intent();
-		final Activity context = (Activity) iWebview.getActivity();
-		intent.setClass(context, MuiActivity.class);
-        context.startActivity(intent);
-//        String appId = Constants.APP_ID;
-//        IWXAPI api = WXAPIFactory.createWXAPI(this.getActivity(), appId);
-//
-//        WXLaunchMiniProgram.Req req = new WXLaunchMiniProgram.Req();
-//        req.userName = Constants.MINI_APP_ID;
-//        req.path = "pages/wxml/appindex?type=login";
-//         req.miniprogramType = WXLaunchMiniProgram.Req.MINIPROGRAM_TYPE_TEST;// ��ѡ���� �����棬����������ʽ��
-//        api.sendReq(req);
+//        Intent intent = new Intent();
+//		final Activity context = (Activity) iWebview.getActivity();
+//		intent.setClass(context, MuiActivity.class);
+//        context.startActivity(intent);
+        String appId = Constants.APP_ID;
+        IWXAPI api = WXAPIFactory.createWXAPI(this.getActivity(), appId);
+
+        WXLaunchMiniProgram.Req req = new WXLaunchMiniProgram.Req();
+        req.userName = Constants.MINI_APP_ID;
+        req.path = "pages/wxml/appindex?type=login";
+         req.miniprogramType = WXLaunchMiniProgram.Req.MINIPTOGRAM_TYPE_RELEASE;// ��ѡ���� �����棬����������ʽ��
+        api.sendReq(req);
     }
 
     public void payV2(final String orderInfo, final Activity activity, final IWebview iWebview, final JSONArray jsonArray) {
@@ -99,6 +103,10 @@ public class AlipayFeature extends StandardFeature {
 //                newArray.put(authResult.getUser_id());
                 //异步返回到login.js
                 JSUtil.execCallback(iWebview, jsonArray.optString(0),newArray, JSUtil.OK, false);
+
+
+
+//                JSUtil.execCallback(iWebview, CallBackID, newArray, JSUtil.OK, false);
 
 //                Message msg = new Message();
 //                msg.what = SDK_PAY_FLAG;
@@ -224,7 +232,28 @@ public class AlipayFeature extends StandardFeature {
         }
         return null;
     }
-    };
+
+
+
+    //拿到前面页面传来的数据
+    public void invokewxhandler(String testOne,int testTwo,String testThree){
+
+        listener.onCallBackListener(wxiWebview,WxJSONArray);
+    }
+
+    //向外暴露接口
+    public void setOnCallBackListener(OnCallBackListener listener){
+        this.listener=listener;
+    }
+
+    //创建一个回调接口
+    public  interface OnCallBackListener{
+        public void onCallBackListener(IWebview wxiWebview,JSONArray WxJSONArray );
+
+    }
+
+
+}
 
 
 

@@ -97,15 +97,21 @@
             android:exported="true"
             android:label="@string/app_name"
             android:launchMode="singleTop"
+            android:taskAffinity="${applicationId}"
+
             android:theme="@android:style/Theme.Translucent">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
 
                 <category android:name="android.intent.category.DEFAULT" />
 
-                <data android:scheme="wxd930ea5d5a258f4f" />
+                <data android:scheme="wxd03d1957db322034" />
             </intent-filter>
         </activity> <!-- 百度定位 begin -->
+
+
+
+
         <meta-data
             android:name="com.baidu.lbsapi.API_KEY"
             android:value="y5Th0MGGKHbbRmdGjjx4eYv63igjNWqO"></meta-data>
